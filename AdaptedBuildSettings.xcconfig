@@ -5,3 +5,7 @@
 //  Created by Jan Verrept on 7/08/17.
 //  Copyright © 2017 OneClick. All rights reserved.
 //
+
+// Incude the source-headers for the binary dylibs
+HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../Third Party Code/YASDI/**"
+

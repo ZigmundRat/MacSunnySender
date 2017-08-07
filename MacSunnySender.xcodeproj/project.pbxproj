@@ -344,6 +344,7 @@
 /* Begin XCBuildConfiguration section */
 		DC9FC2211F38E5FD0000A6DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -376,6 +377,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -390,6 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -401,6 +404,7 @@
 		};
 		DC9FC2221F38E5FD0000A6DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -441,6 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -450,6 +455,7 @@
 		};
 		DC9FC2241F38E5FD0000A6DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -468,6 +474,7 @@
 		};
 		DC9FC2251F38E5FD0000A6DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
