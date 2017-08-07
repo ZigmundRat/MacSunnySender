@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC2A20D61F38E94100DC3230 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
 		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9FC2161F38E5FD0000A6DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		DC9FC2081F38E5FD0000A6DD = {
 			isa = PBXGroup;
 			children = (
+				DC2A20D61F38E94100DC3230 /* YasdiConfigFile.ini */,
 				DC9FC2281F38E7D50000A6DD /* ToDo */,
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
@@ -315,6 +317,7 @@
 				DC9FC2251F38E5FD0000A6DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
