@@ -42,7 +42,6 @@
 		DC9FC2081F38E5FD0000A6DD = {
 			isa = PBXGroup;
 			children = (
-				DC2A20D61F38E94100DC3230 /* YasdiConfigFile.ini */,
 				DC9FC2281F38E7D50000A6DD /* ToDo */,
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
@@ -68,6 +67,7 @@
 				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
 				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
 				DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */,
+				DC2A20D61F38E94100DC3230 /* YasdiConfigFile.ini */,
 			);
 			path = MacSunnySender;
 			sourceTree = "<group>";
