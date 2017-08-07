@@ -5,3 +5,12 @@ Change to document based structure with a window for each inverter
 
 Add the ability to send data to sunnyportal with an SMTP client
 
+
+Document the use of dylibs:
+(Optionaly create a xcode project from general C-code using cmake with -g xcode agruments)
+First Build dylibs as seperated project
+Add libray projectfile as subproject in the main project
+Add the compiled dylibs 'Embedded binaries' in general tab of the target
+Add a configuration files to define the of the subproject HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../Third Party Code/YASDI/**"
+Use the configuratuon file the info tab of the project
+
