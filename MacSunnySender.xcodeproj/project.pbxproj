@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */; };
+		DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* ViewController.swift */; };
+		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
+		DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */; };
+		DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC9FC2161F38E5FD0000A6DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC9FC2181F38E5FD0000A6DD /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC9FC21D1F38E5FD0000A6DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC9FC21F1F38E5FD0000A6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSunnySender.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC9FC20E1F38E5FD0000A6DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC9FC2081F38E5FD0000A6DD = {
+			isa = PBXGroup;
+			children = (
+				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
+				DC9FC2121F38E5FD0000A6DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC9FC2121F38E5FD0000A6DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC9FC2131F38E5FD0000A6DD /* MacSunnySender */ = {
+			isa = PBXGroup;
+			children = (
+				DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */,
+				DC9FC2161F38E5FD0000A6DD /* ViewController.swift */,
+				DC9FC2181F38E5FD0000A6DD /* Document.swift */,
+				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
+				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
+				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
+				DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */,
+			);
+			path = MacSunnySender;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC9FC2101F38E5FD0000A6DD /* MacSunnySender */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9FC2231F38E5FD0000A6DD /* Build configuration list for PBXNativeTarget "MacSunnySender" */;
+			buildPhases = (
+				DC9FC20D1F38E5FD0000A6DD /* Sources */,
+				DC9FC20E1F38E5FD0000A6DD /* Frameworks */,
+				DC9FC20F1F38E5FD0000A6DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacSunnySender;
+			productName = MacSunnySender;
+			productReference = DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC9FC2091F38E5FD0000A6DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = OneClick;
+				TargetAttributes = {
+					DC9FC2101F38E5FD0000A6DD = {
+						CreatedOnToolsVersion = 9.0;
+					};
+				};
+			};
+			buildConfigurationList = DC9FC20C1F38E5FD0000A6DD /* Build configuration list for PBXProject "MacSunnySender" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC9FC2081F38E5FD0000A6DD;
+			productRefGroup = DC9FC2121F38E5FD0000A6DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC9FC2101F38E5FD0000A6DD /* MacSunnySender */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC9FC20F1F38E5FD0000A6DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */,
+				DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC9FC20D1F38E5FD0000A6DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */,
+				DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */,
+				DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC9FC21D1F38E5FD0000A6DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC9FC2211F38E5FD0000A6DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC9FC2221F38E5FD0000A6DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		DC9FC2241F38E5FD0000A6DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacSunnySender/MacSunnySender.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				INFOPLIST_FILE = MacSunnySender/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		DC9FC2251F38E5FD0000A6DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacSunnySender/MacSunnySender.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
+				INFOPLIST_FILE = MacSunnySender/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC9FC20C1F38E5FD0000A6DD /* Build configuration list for PBXProject "MacSunnySender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9FC2211F38E5FD0000A6DD /* Debug */,
+				DC9FC2221F38E5FD0000A6DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9FC2231F38E5FD0000A6DD /* Build configuration list for PBXNativeTarget "MacSunnySender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9FC2241F38E5FD0000A6DD /* Debug */,
+				DC9FC2251F38E5FD0000A6DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC9FC2091F38E5FD0000A6DD /* Project object */;
+}
