@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC2541D41F39136100A82EA6 /* libyasdi_drv_ip.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.dylib */; };
+		DC2541D51F39136100A82EA6 /* libyasdi_drv_serial.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.dylib */; };
+		DC2541D61F39136100A82EA6 /* libyasdi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4401F38F3E9003AAD6D /* libyasdi.dylib */; };
+		DC2541D71F39136100A82EA6 /* libyasdimaster.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4461F38F3E9003AAD6D /* libyasdimaster.dylib */; };
 		DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */; };
 		DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* ViewController.swift */; };
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
@@ -16,6 +20,9 @@
 		DCAF23AC1F38FACE0025C31C /* libyasdi_drv_ip.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCAF23AF1F38FACE0025C31C /* libyasdi_drv_serial.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCAF23B21F38FACE0025C31C /* libyasdimaster.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4461F38F3E9003AAD6D /* libyasdimaster.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */; };
+		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
+		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +121,9 @@
 		DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSunnySender.entitlements; sourceTree = "<group>"; };
 		DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdaptedBuildSettings.xcconfig; sourceTree = "<group>"; };
 		DC9FC2281F38E7D50000A6DD /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAMeasurement.swift; sourceTree = "<group>"; };
+		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
+		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
 		DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yasdi.xcodeproj; path = "../../../Third Party Code/YASDI/XcodeBuild/yasdi.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +132,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2541D41F39136100A82EA6 /* libyasdi_drv_ip.dylib in Frameworks */,
+				DC2541D51F39136100A82EA6 /* libyasdi_drv_serial.dylib in Frameworks */,
+				DC2541D61F39136100A82EA6 /* libyasdi.dylib in Frameworks */,
+				DC2541D71F39136100A82EA6 /* libyasdimaster.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +168,9 @@
 				DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */,
 				DC9FC2161F38E5FD0000A6DD /* ViewController.swift */,
 				DC9FC2181F38E5FD0000A6DD /* Document.swift */,
+				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
+				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
+				DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */,
 				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
 				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
 				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
@@ -300,7 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */,
+				DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */,
 				DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */,
+				DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */,
+				DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */,
 				DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
