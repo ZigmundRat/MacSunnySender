@@ -7,51 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC2541D41F39136100A82EA6 /* libyasdi_drv_ip.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.dylib */; };
-		DC2541D51F39136100A82EA6 /* libyasdi_drv_serial.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.dylib */; };
-		DC2541D61F39136100A82EA6 /* libyasdi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4401F38F3E9003AAD6D /* libyasdi.dylib */; };
-		DC2541D71F39136100A82EA6 /* libyasdimaster.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4461F38F3E9003AAD6D /* libyasdimaster.dylib */; };
+		DC2BA4231F44F7E6001D0744 /* libyasdi_drv_ip.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.1.8.1.dylib */; };
+		DC2BA4241F44F7E6001D0744 /* libyasdi_drv_serial.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.1.8.1.dylib */; };
+		DC2BA4251F44F7E6001D0744 /* libyasdi.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4401F38F3E9003AAD6D /* libyasdi.1.8.1.dylib */; };
+		DC2BA4261F44F7E6001D0744 /* libyasdimaster.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCD7A4461F38F3E9003AAD6D /* libyasdimaster.1.8.1.dylib */; };
+		DC2BA4271F44F817001D0744 /* libyasdi.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4401F38F3E9003AAD6D /* libyasdi.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DC2BA4281F44F817001D0744 /* libyasdi_drv_ip.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DC2BA4291F44F817001D0744 /* libyasdi_drv_serial.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DC2BA42A1F44F817001D0744 /* libyasdimaster.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4461F38F3E9003AAD6D /* libyasdimaster.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */; };
 		DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* ViewController.swift */; };
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
 		DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */; };
 		DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */; };
-		DCAF23A91F38FACE0025C31C /* libyasdi.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4401F38F3E9003AAD6D /* libyasdi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCAF23AC1F38FACE0025C31C /* libyasdi_drv_ip.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCAF23AF1F38FACE0025C31C /* libyasdi_drv_serial.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCAF23B21F38FACE0025C31C /* libyasdimaster.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCD7A4461F38F3E9003AAD6D /* libyasdimaster.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */; };
 		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
 		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DCAF23AA1F38FACE0025C31C /* PBXContainerItemProxy */ = {
+		DC2BA4171F44E734001D0744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 718A3F2C372C4AE6A2B36F15;
+			remoteGlobalIDString = A1CAB68B3B2D44E683A82E9A;
 			remoteInfo = yasdi;
 		};
-		DCAF23AD1F38FACE0025C31C /* PBXContainerItemProxy */ = {
+		DC2BA41A1F44E734001D0744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 2D2E70CABC0A4571A7D29601;
+			remoteGlobalIDString = 2BF0C8D45F3F44F6862FAAEF;
 			remoteInfo = yasdi_drv_ip;
 		};
-		DCAF23B01F38FACE0025C31C /* PBXContainerItemProxy */ = {
+		DC2BA41D1F44E734001D0744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9A26ECF6367F48CA9DEE0682;
+			remoteGlobalIDString = 017AE7C80236435DB60C889C;
 			remoteInfo = yasdi_drv_serial;
 		};
-		DCAF23B31F38FACE0025C31C /* PBXContainerItemProxy */ = {
+		DC2BA4201F44E734001D0744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1BC1084634B74553BEA69ADA;
+			remoteGlobalIDString = 2F752B440FB24F789A36F93B;
 			remoteInfo = yasdimaster;
 		};
 		DCD7A43F1F38F3E9003AAD6D /* PBXContainerItemProxy */ = {
@@ -92,24 +92,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DCAF23B51F38FACE0025C31C /* Embed Libraries */ = {
+		DC2BA4221F44E734001D0744 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = YASDI;
+			dstSubfolderSpec = 10;
+			files = (
+				DC2BA4271F44F817001D0744 /* libyasdi.1.8.1.dylib in Embed Libraries */,
+				DC2BA4281F44F817001D0744 /* libyasdi_drv_ip.1.8.1.dylib in Embed Libraries */,
+				DC2BA4291F44F817001D0744 /* libyasdi_drv_serial.1.8.1.dylib in Embed Libraries */,
+				DC2BA42A1F44F817001D0744 /* libyasdimaster.1.8.1.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC2BA42B1F450050001D0744 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstSubfolderSpec = 16;
 			files = (
-				DCAF23A91F38FACE0025C31C /* libyasdi.dylib in Embed Libraries */,
-				DCAF23AF1F38FACE0025C31C /* libyasdi_drv_serial.dylib in Embed Libraries */,
-				DCAF23AC1F38FACE0025C31C /* libyasdi_drv_ip.dylib in Embed Libraries */,
-				DCAF23B21F38FACE0025C31C /* libyasdimaster.dylib in Embed Libraries */,
 			);
-			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DC2A20D61F38E94100DC3230 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
+		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
 		DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacSunnySender-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,10 +141,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC2541D41F39136100A82EA6 /* libyasdi_drv_ip.dylib in Frameworks */,
-				DC2541D51F39136100A82EA6 /* libyasdi_drv_serial.dylib in Frameworks */,
-				DC2541D61F39136100A82EA6 /* libyasdi.dylib in Frameworks */,
-				DC2541D71F39136100A82EA6 /* libyasdimaster.dylib in Frameworks */,
+				DC2BA4231F44F7E6001D0744 /* libyasdi_drv_ip.1.8.1.dylib in Frameworks */,
+				DC2BA4241F44F7E6001D0744 /* libyasdi_drv_serial.1.8.1.dylib in Frameworks */,
+				DC2BA4251F44F7E6001D0744 /* libyasdi.1.8.1.dylib in Frameworks */,
+				DC2BA4261F44F7E6001D0744 /* libyasdimaster.1.8.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +154,8 @@
 		DC9FC2081F38E5FD0000A6DD = {
 			isa = PBXGroup;
 			children = (
-				DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */,
 				DC9FC2281F38E7D50000A6DD /* ToDo */,
+				DCD7A4331F38F3E8003AAD6D /* yasdi.xcodeproj */,
 				DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */,
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
@@ -171,11 +180,11 @@
 				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
 				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
 				DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */,
+				DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */,
 				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
 				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
 				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
 				DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */,
-				DC2A20D61F38E94100DC3230 /* YasdiConfigFile.ini */,
 			);
 			path = MacSunnySender;
 			sourceTree = "<group>";
@@ -183,10 +192,10 @@
 		DCD7A4341F38F3E8003AAD6D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCD7A4401F38F3E9003AAD6D /* libyasdi.dylib */,
-				DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.dylib */,
-				DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.dylib */,
-				DCD7A4461F38F3E9003AAD6D /* libyasdimaster.dylib */,
+				DCD7A4401F38F3E9003AAD6D /* libyasdi.1.8.1.dylib */,
+				DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.1.8.1.dylib */,
+				DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.1.8.1.dylib */,
+				DCD7A4461F38F3E9003AAD6D /* libyasdimaster.1.8.1.dylib */,
 				DCD7A4481F38F3E9003AAD6D /* yasdishell */,
 			);
 			name = Products;
@@ -202,15 +211,16 @@
 				DC9FC20D1F38E5FD0000A6DD /* Sources */,
 				DC9FC20E1F38E5FD0000A6DD /* Frameworks */,
 				DC9FC20F1F38E5FD0000A6DD /* Resources */,
-				DCAF23B51F38FACE0025C31C /* Embed Libraries */,
+				DC2BA4221F44E734001D0744 /* Embed Libraries */,
+				DC2BA42B1F450050001D0744 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DCAF23AB1F38FACE0025C31C /* PBXTargetDependency */,
-				DCAF23AE1F38FACE0025C31C /* PBXTargetDependency */,
-				DCAF23B11F38FACE0025C31C /* PBXTargetDependency */,
-				DCAF23B41F38FACE0025C31C /* PBXTargetDependency */,
+				DC2BA4181F44E734001D0744 /* PBXTargetDependency */,
+				DC2BA41B1F44E734001D0744 /* PBXTargetDependency */,
+				DC2BA41E1F44E734001D0744 /* PBXTargetDependency */,
+				DC2BA4211F44E734001D0744 /* PBXTargetDependency */,
 			);
 			name = MacSunnySender;
 			productName = MacSunnySender;
@@ -230,6 +240,11 @@
 					DC9FC2101F38E5FD0000A6DD = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -258,34 +273,30 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DCD7A4401F38F3E9003AAD6D /* libyasdi.dylib */ = {
+		DCD7A4401F38F3E9003AAD6D /* libyasdi.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdi.dylib;
 			path = libyasdi.1.8.1.dylib;
 			remoteRef = DCD7A43F1F38F3E9003AAD6D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.dylib */ = {
+		DCD7A4421F38F3E9003AAD6D /* libyasdi_drv_ip.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdi_drv_ip.dylib;
 			path = libyasdi_drv_ip.1.8.1.dylib;
 			remoteRef = DCD7A4411F38F3E9003AAD6D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.dylib */ = {
+		DCD7A4441F38F3E9003AAD6D /* libyasdi_drv_serial.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdi_drv_serial.dylib;
 			path = libyasdi_drv_serial.1.8.1.dylib;
 			remoteRef = DCD7A4431F38F3E9003AAD6D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DCD7A4461F38F3E9003AAD6D /* libyasdimaster.dylib */ = {
+		DCD7A4461F38F3E9003AAD6D /* libyasdimaster.1.8.1.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			name = libyasdimaster.dylib;
 			path = libyasdimaster.1.8.1.dylib;
 			remoteRef = DCD7A4451F38F3E9003AAD6D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -328,25 +339,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DCAF23AB1F38FACE0025C31C /* PBXTargetDependency */ = {
+		DC2BA4181F44E734001D0744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = yasdi;
-			targetProxy = DCAF23AA1F38FACE0025C31C /* PBXContainerItemProxy */;
+			targetProxy = DC2BA4171F44E734001D0744 /* PBXContainerItemProxy */;
 		};
-		DCAF23AE1F38FACE0025C31C /* PBXTargetDependency */ = {
+		DC2BA41B1F44E734001D0744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = yasdi_drv_ip;
-			targetProxy = DCAF23AD1F38FACE0025C31C /* PBXContainerItemProxy */;
+			targetProxy = DC2BA41A1F44E734001D0744 /* PBXContainerItemProxy */;
 		};
-		DCAF23B11F38FACE0025C31C /* PBXTargetDependency */ = {
+		DC2BA41E1F44E734001D0744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = yasdi_drv_serial;
-			targetProxy = DCAF23B01F38FACE0025C31C /* PBXContainerItemProxy */;
+			targetProxy = DC2BA41D1F44E734001D0744 /* PBXContainerItemProxy */;
 		};
-		DCAF23B41F38FACE0025C31C /* PBXTargetDependency */ = {
+		DC2BA4211F44E734001D0744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = yasdimaster;
-			targetProxy = DCAF23B31F38FACE0025C31C /* PBXContainerItemProxy */;
+			targetProxy = DC2BA4201F44E734001D0744 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -412,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Third Party Code/YASDI\"/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -475,11 +486,9 @@
 		};
 		DC9FC2241F38E5FD0000A6DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = MacSunnySender/MacSunnySender.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
 				INFOPLIST_FILE = MacSunnySender/Info.plist;
@@ -494,11 +503,9 @@
 		};
 		DC9FC2251F38E5FD0000A6DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = MacSunnySender/MacSunnySender.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5G3AJTSDZ7;
 				INFOPLIST_FILE = MacSunnySender/Info.plist;
