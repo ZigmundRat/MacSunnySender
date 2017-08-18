@@ -1,0 +1,10 @@
+//
+//  InstallPathDYlibs.xcconfig
+//  MacSunnySender
+//
+//  Created by Jan Verrept on 16/08/17.
+//  Copyright © 2017 OneClick. All rights reserved.
+//
+
+DYLIB_INSTALL_NAME_BASE = "@loader_path/../Frameworks"
+
