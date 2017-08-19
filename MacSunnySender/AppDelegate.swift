@@ -8,9 +8,11 @@
 
 import Cocoa
 
-let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from the preferences window
-let MAXSTRINGLENGTH:Int = 32
 typealias Handle = DWORD
+
+let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from the preferences window
+let MAXCSTRINGLENGTH:Int = 32
+let sunnyPortalClient = EmailClient.sharedInstance
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

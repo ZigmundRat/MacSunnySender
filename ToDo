@@ -1,13 +1,12 @@
 
 Test reading of values
-Add an icon
+Test sending of testmail to myself
 
+Send real mail to myself from current virtual machine
+compose real data for the emailbody
+
+Add an icon
 Install on server
 
-
 Change to document based structure with a window for each inverter
-add gitconfigure file
-
-Add the ability to send data to sunnyportal with an SMTP client
-
-
+add proper gitconfigure file

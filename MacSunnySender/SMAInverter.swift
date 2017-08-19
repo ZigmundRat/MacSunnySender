@@ -75,6 +75,9 @@ class SMAinverter{
 		                                    repeats: true
 		)
 		
+		print("✅ Inverter \(deviceInfo["Name"] as! String) found online")
+
+		
 	}
 	
 	private func setDeviceInfo(_ device:Handle){
@@ -84,11 +87,11 @@ class SMAinverter{
 		let errorCode:Int32 = -1
 		var resultCode:Int32 = errorCode
 		
-		let deviceName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXSTRINGLENGTH)
+		let deviceName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
 		resultCode = errorCode
 		resultCode = GetDeviceName(device,
 		                           deviceName,
-		                           Int32(MAXSTRINGLENGTH))
+		                           Int32(MAXCSTRINGLENGTH))
 		if resultCode != errorCode {
 			deviceInfo["Name"] = deviceName.pointee
 		}
@@ -101,11 +104,11 @@ class SMAinverter{
 			deviceInfo["SN"] = deviceSN.pointee
 		}
 		
-		let deviceType: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXSTRINGLENGTH)
+		let deviceType: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
 		resultCode = errorCode
 		resultCode = GetDeviceType(device,
 		                           deviceType,
-		                           Int32(MAXSTRINGLENGTH))
+		                           Int32(MAXCSTRINGLENGTH))
 		if resultCode != errorCode {
 			deviceInfo["Type"] = deviceType.pointee
 		}
@@ -182,32 +185,32 @@ class SMAinverter{
 			let errorCode:Int32 = -1
 			var resultCode:Int32 = errorCode
 			
-			let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXSTRINGLENGTH)
+			let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
 			
 			resultCode = GetChannelName(
 				DWORD(channelNumber),
 				channelName,
-				DWORD(MAXSTRINGLENGTH)
+				DWORD(MAXCSTRINGLENGTH)
 			)
 			
 			if resultCode != errorCode {
 				
 				let device = deviceInfo["Number"] as! Handle
 				let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
-				let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXSTRINGLENGTH)
+				let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
 				let maxChannelAgeInSeconds:DWORD = 5
 				
 				GetChannelValue(Handle(channelNumber),
 				                device,
 				                currentValue,
 				                currentValueAsText,
-				                DWORD(MAXSTRINGLENGTH),
+				                DWORD(MAXCSTRINGLENGTH),
 				                maxChannelAgeInSeconds
 				)
 				
 				
-				let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXSTRINGLENGTH)
-				GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXSTRINGLENGTH))
+				let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+				GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
 				
 				let currentMeasurement = SMAMeasurement(
 					name: String(cString: channelName),

@@ -74,8 +74,8 @@ class SMADriver{
 		let errorCode:BOOL = 0
 		var resultCode:BOOL = errorCode
 		
-		let driverName:UnsafeMutablePointer<CHAR> = UnsafeMutablePointer<CHAR>.allocate(capacity:MAXSTRINGLENGTH)
-		resultCode = yasdiMasterGetDriverName(Handle(number),driverName,DWORD(MAXSTRINGLENGTH))
+		let driverName:UnsafeMutablePointer<CHAR> = UnsafeMutablePointer<CHAR>.allocate(capacity:MAXCSTRINGLENGTH)
+		resultCode = yasdiMasterGetDriverName(Handle(number),driverName,DWORD(MAXCSTRINGLENGTH))
 		
 		if resultCode != errorCode{
 			self.name = String(cString: driverName)
@@ -111,7 +111,7 @@ class SMADriver{
 		
 		yasdiMasterSetDriverOffline(Handle(number))
 		state = State.offline
-		print("ℹ️ Driver \(name) is now offline")
+		print("ℹ️ Driver \(name) is back offline")
 		
 	}
 	

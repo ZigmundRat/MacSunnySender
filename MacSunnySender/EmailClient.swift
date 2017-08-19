@@ -7,9 +7,36 @@
 //
 
 import Foundation
+import Cocoa
 
-func sendDataToSunnyPortal(inverter:SMAinverter){
+
+class EmailClient{
 	
-	// Yet to implement this functionality
+	static let sharedInstance:EmailClient = EmailClient()
+	
+	func sendDataToSunnyPortal(inverter:SMAinverter){
+		
+		// Yet to implement this functionality
+		let pVPlantIdentifier = "OnsNestje" // Replace this String with the name from the preferences window
+		
+		#if DEBUG
+			let emailRecipient = "janverrept@me.com"
+		#else
+			let emailRecipient = "datacenter@sunny-portal.de"
+		#endif
+		
+		let emailBody           = "Testvalues"
+		let emailService        = NSSharingService(named: NSSharingService.Name.composeEmail)!
+		emailService.recipients = [emailRecipient]
+		emailService.subject    = pVPlantIdentifier
+		
+		if emailService.canPerform(withItems: [emailBody]) {
+			emailService.perform(withItems: [emailBody])
+		} else {
+			// email cannot be sent, perhaps no email client is set up
+			// Show alert with email address and instructions
+		}
+		
+	}
 	
 }
