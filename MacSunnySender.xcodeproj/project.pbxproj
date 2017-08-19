@@ -33,6 +33,7 @@
 		DCE0B19A1F48D560006A867E /* libyasdi_drv_serial.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E8391F46DC49000A0B5D /* libyasdi_drv_serial.dylib */; };
 		DCE0B19B1F48D560006A867E /* libyasdi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E83C1F46DC49000A0B5D /* libyasdi.dylib */; };
 		DCE0B19C1F48D560006A867E /* libyasdimaster.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E83B1F46DC49000A0B5D /* libyasdimaster.dylib */; };
+		DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0B1A91F48E313006A867E /* EmailClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
 		DCBCE46C1F48876E0094D1B1 /* yasdishell */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = yasdishell; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/yasdishell"; sourceTree = "<group>"; };
+		DCE0B1A91F48E313006A867E /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
 				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
 				DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */,
+				DCE0B1A91F48E313006A867E /* EmailClient.swift */,
 				DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */,
 				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
 				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
@@ -368,6 +371,7 @@
 				DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */,
 				DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */,
 				DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */,
+				DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */,
 				DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */,
 				DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */,
 				DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */,
