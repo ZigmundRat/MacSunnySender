@@ -32,25 +32,33 @@ class SMAinverter{
 	
 	class private func searchDevices(maxNumberToSearch maxNumber:Int)->[Handle]?{
 		
-		let errorCode:DWORD = 0
-		var resultCode:DWORD = errorCode
+		var devices:[Handle]? = nil
 		
-		let deviceHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity:maxNumber)
-		resultCode = GetDeviceHandles(deviceHandles, DWORD(maxNumber))
+		let errorCode:Int32 = -1
+		var resultCode:Int32 = errorCode
+		
+		resultCode = DoStartDeviceDetection(CInt(maxNumber), 1);
+		
 		if resultCode != errorCode {
 			
-			// convert to a swift array of devicehandles
-			let numberOfDevices = resultCode
-			var devices:[Handle] = []
-			for _ in 0..<numberOfDevices{
-				devices.append(deviceHandles.pointee)
-				_ = deviceHandles.advanced(by: 1)
+			let errorCode:DWORD = 0
+			var resultCode:DWORD = errorCode
+			
+			let deviceHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity:maxNumber)
+			resultCode = GetDeviceHandles(deviceHandles, DWORD(maxNumber))
+			if resultCode != errorCode {
+				
+				// convert to a swift array of devicehandles
+				let numberOfDevices = resultCode
+				devices = []
+				for _ in 0..<numberOfDevices{
+					devices!.append(deviceHandles.pointee)
+					_ = deviceHandles.advanced(by: 1)
+				}
 			}
-			return devices
-		}else{
-			return nil
 		}
 		
+		return devices
 	}
 	
 	init(_ device:Handle){

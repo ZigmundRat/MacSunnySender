@@ -16,7 +16,7 @@ class SMADriver{
 		case offline = 0
 		case online = 1
 	}
-
+	
 	
 	let number:Int
 	let name:String
@@ -36,6 +36,18 @@ class SMADriver{
 			
 		}
 		return true
+	}
+	
+	class func unInstallDrivers(){
+		
+		let numberOfDrivers = SMADriver.drivers.count
+
+		for driverNumber in 0..<numberOfDrivers{
+			let driver = SMADriver(driverNumber)
+			driver.setOffline()
+		}
+		
+		
 	}
 	
 	private class func readTheConfigFile(_ configFile:String)->Int?{
@@ -95,6 +107,13 @@ class SMADriver{
 		
 	}
 	
+	private func setOffline(){
+		
+		yasdiMasterSetDriverOffline(Handle(number))
+		state = State.offline
+		print("ℹ️ Driver \(name) is now offline")
+		
+	}
 	
 }
 

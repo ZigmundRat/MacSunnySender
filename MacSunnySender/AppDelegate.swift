@@ -8,6 +8,7 @@
 
 import Cocoa
 
+let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from the preferences window
 let MAXSTRINGLENGTH:Int = 32
 typealias Handle = DWORD
 
@@ -18,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		// Insert code here to initialize your application
 		if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
-			SMAinverter.createInverters(maxNumberToSearch: 1) // Replace this integer with the number from the preferences window
+			SMAinverter.createInverters(maxNumberToSearch: maxNumberOfInvertersInPlant)
 		}
 		
 	}
@@ -26,6 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationWillTerminate(_ aNotification: Notification) {
 		
 		// Insert code here to tear down your application
+		SMADriver.unInstallDrivers()
 		yasdiMasterShutdown()
 		
 	}
