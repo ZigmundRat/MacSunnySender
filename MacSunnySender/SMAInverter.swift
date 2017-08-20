@@ -123,7 +123,7 @@ class SMAinverter{
 		var resultCode:DWORD = errorCode
 		
 		let device = deviceInfo["Number"] as! Handle
-		let parameterHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
+		var parameterHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
 		let channelType = TChanType.init(1)
 		
 		resultCode = GetChannelHandlesEx(device,
@@ -138,7 +138,7 @@ class SMAinverter{
 			let numberOfParameters = resultCode
 			for _ in 0..<numberOfParameters{
 				parameterNumbers.append(Int(parameterHandles.pointee))
-				_ = parameterHandles.advanced(by: 1)
+				parameterHandles = parameterHandles.advanced(by: 1)
 			}
 			
 		}else{
@@ -152,7 +152,7 @@ class SMAinverter{
 		var resultCode:DWORD = errorCode
 		
 		let device = deviceInfo["Number"] as! Handle
-		let channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
+		var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
 		let channelType = TChanType.init(0)
 		
 		resultCode = GetChannelHandlesEx(device,
@@ -165,14 +165,16 @@ class SMAinverter{
 			
 			// convert to a swift array of parameterNumbers
 			let numberOfChannels = resultCode
+
 			for _ in 0..<numberOfChannels{
 				channelNumbers.append(Int(channelHandles.pointee))
-				_ = channelHandles.advanced(by: 1)
+				channelHandles = channelHandles.advanced(by: 1)
 			}
 			
 		}else{
 			channelNumbers = []
 		}
+		
 	}
 	
 	
@@ -220,12 +222,13 @@ class SMAinverter{
 				)
 				
 				currentMeasurements.append(currentMeasurement)
-				
-				print(currentMeasurement) // Temp test 
+				print(currentMeasurement) // Temp Test
+
 				
 			}
 			
 		}
+		
 		
 	}
 }

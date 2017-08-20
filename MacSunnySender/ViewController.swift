@@ -30,7 +30,7 @@ class ViewController: NSViewController {
 	@IBAction func testCode(sender:NSButton){
 		
 		let emailClient = EmailClient.sharedInstance
-		emailClient.sendDataToSunnyPortal(inverter:SMAinverter.inverters[0].deviceInfo["Number"] as! SMAinverter)
+		emailClient.sendDataToSunnyPortal(inverter:SMAinverter.inverters[0].deviceInfo["Number"])
 		
 	}
 	

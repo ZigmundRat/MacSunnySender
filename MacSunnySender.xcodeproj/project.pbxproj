@@ -13,6 +13,7 @@
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
 		DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */; };
 		DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */; };
+		DCB060021F498ADF00767FC7 /* WR46A-01.dti in Resources */ = {isa = PBXBuildFile; fileRef = DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */; };
 		DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */; };
 		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
 		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
@@ -129,6 +130,7 @@
 		DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSunnySender.entitlements; sourceTree = "<group>"; };
 		DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdaptedBuildSettings.xcconfig; sourceTree = "<group>"; };
 		DC9FC2281F38E7D50000A6DD /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WR46A-01.dti"; sourceTree = "<group>"; };
 		DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAMeasurement.swift; sourceTree = "<group>"; };
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
 				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
 				DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */,
+				DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */,
 			);
 			path = MacSunnySender;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCBCE4761F48876E0094D1B1 /* yasdishell in Resources */,
+				DCB060021F498ADF00767FC7 /* WR46A-01.dti in Resources */,
 				DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */,
 				DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */,
 			);

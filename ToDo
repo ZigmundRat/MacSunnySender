@@ -1,10 +1,10 @@
 
-Test reading of values
 Test sending of testmail to myself
 
 Send real mail to myself from current virtual machine
 compose real data for the emailbody
 
+Add tableview with bindings
 Add an icon
 Install on server
 

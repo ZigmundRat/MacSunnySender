@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<DeviceSpecificationFile>
+    <Version>1.0</Version>
+    <Date>2017-08-20</Date>
+    <User>janverrept@me.com</User>
+    <Language>en</Language>
+    <DeviceType deviceclass="PV_INVERTER" name="WR46A-01" vendor="SMA Technologie AG" typeID="WR46A-01" release="WR46A-01">
+        <Parameter>
+            <DataObject id="SMA-SN" valueType="ANALOG" level="rwr-r-">
+                <Name languageID="en">SMA-SN</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>4294899968</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Upv-Start" valueType="ANALOG" level="rwrwr-" unit="V">
+                <Name languageID="en">Vpv-Start</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>600</MaxValue>
+                        <MinValue>250</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="T-Start" valueType="ANALOG" level="rwrwr-" unit="s">
+                <Name languageID="en">T-Start</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>1600</MaxValue>
+                        <MinValue>5</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="T-Stop" valueType="ANALOG" level="rwrwr-" unit="s">
+                <Name languageID="en">T-Stop</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>3600</MaxValue>
+                        <MinValue>1</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="dU U-Konst" valueType="ANALOG" level="rw----" unit="V/s">
+                <Name languageID="en">dV V-Const</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>5</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="dU-Mpp Track" valueType="ANALOG" level="rw----" unit="V/TaMpp">
+                <Name languageID="en">dV-Mpp Track</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>10</MaxValue>
+                        <MinValue>0,319999992847443</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="I Such neu" valueType="ANALOG" level="rw----" unit="mA">
+                <Name languageID="en">I SearchNewMPP</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>6000</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Usoll-Konst" valueType="ANALOG" level="rwrwr-" unit="V">
+                <Name languageID="en">Vconst-Setpoint</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>600</MaxValue>
+                        <MinValue>250</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Isoll-Konst" valueType="ANALOG" level="rw----" unit="%">
+                <Name languageID="en">Iset-Const</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="KP_Ureg SMA" valueType="ANALOG" level="rw----">
+                <Name languageID="en">KP_Ureg SMA</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>20</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="KI-Ureg SMA" valueType="ANALOG" level="rw----">
+                <Name languageID="en">KI-Ureg SMA</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>10</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="KD-Ureg SMA" valueType="ANALOG" level="rw----">
+                <Name languageID="en">KD-Ureg SMA</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>1</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Pmax" valueType="ANALOG" level="rwrw--" unit="W">
+                <Name languageID="en">Pmax</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>5050</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Plimit" valueType="ANALOG" level="r-r-r-" unit="W">
+                <Name languageID="en">Plimit</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>5000</MaxValue>
+                        <MinValue>5000</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="I-NiTest" valueType="ANALOG" level="rwrw--" unit="mA">
+                <Name languageID="en">testcurrent Zac</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>25000</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Cnt-Imax" valueType="ANALOG" level="rw----">
+                <Name languageID="en">Cnt-Overcurrent</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>1000</MaxValue>
+                        <MinValue>1</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="AntiIsland-Ampl" valueType="ANALOG" level="rwrw--" unit="grd">
+                <Name languageID="en">AntiIsland-Ampl</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>10</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="AntiIsland-Freq" valueType="ANALOG" level="rwrw--" unit="mHz">
+                <Name languageID="en">AntiIsland-Freq</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>2000</MaxValue>
+                        <MinValue>0,100000001490116</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Upv-Max" valueType="ANALOG" level="rw----" unit="V">
+                <Name languageID="en">Vpv-Max</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>600</MaxValue>
+                        <MinValue>250</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="LDVtgC" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">LDVtgC</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>50</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Uac-Min" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">Vac-Min</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>230</MaxValue>
+                        <MinValue>160</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Uac-Max" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">Vac-Max</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>300</MaxValue>
+                        <MinValue>230</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="ACVtgRPro" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">ACVtgRPro</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>300</MaxValue>
+                        <MinValue>230</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Uac-Tavg" valueType="ANALOG" level="r-r---" unit="ms">
+                <Name languageID="en">Uac-Tavg</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>2000</MaxValue>
+                        <MinValue>20</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Fac-delta-" valueType="ANALOG" level="rwrw--" unit="Hz">
+                <Name languageID="en">Fac-delta-</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>4,5</MaxValue>
+                        <MinValue>0,100000001490116</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Fac-delta+" valueType="ANALOG" level="rwrw--" unit="Hz">
+                <Name languageID="en">Fac-delta+</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>4,5</MaxValue>
+                        <MinValue>0,100000001490116</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Fac-Tavg" valueType="ANALOG" level="r-r---" unit="ms">
+                <Name languageID="en">Fac-Tavg</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>2000</MaxValue>
+                        <MinValue>20</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="dFac-Max" valueType="ANALOG" level="rwrw--" unit="Hz/s">
+                <Name languageID="en">dFac-Max</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>4</MaxValue>
+                        <MinValue>0,100000001490116</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="dZac-Max" valueType="ANALOG" level="rwrw--" unit="mOhm">
+                <Name languageID="en">dZac-Max</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>20000</MaxValue>
+                        <MinValue>0,349999994039536</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Riso-Min" valueType="ANALOG" level="rw----" unit="kOhm">
+                <Name languageID="en">Riso-Min</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>10000</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Tkk-Max" valueType="ANALOG" level="rw----" unit="grdC">
+                <Name languageID="en">Temp derat</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>101</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Upv-Fakt" valueType="ANALOG" level="rw----">
+                <Name languageID="en">Vpv-Fact</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0,025000000372529</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Iso-Fakt" valueType="ANALOG" level="rw----">
+                <Name languageID="en">Iso-Fact</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>0,00999999977648258</MaxValue>
+                        <MinValue>0,00300000002607703</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="It-Fakt" valueType="ANALOG" level="rw----" unit="1/mA">
+                <Name languageID="en">It-Fact</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>27</MaxValue>
+                        <MinValue>22</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Hardware-BFS" valueType="ANALOG" level="r-r-r-" unit="Version">
+                <Name languageID="en">Hardware-BFS</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Software-BFR" valueType="ANALOG" level="r-r-r-" unit="Version">
+                <Name languageID="en">Firmware-BFR</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Software-SRR" valueType="ANALOG" level="r-r-r-" unit="Version">
+                <Name languageID="en">Firmware-SRR</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="SMA-Grid-Guard" valueType="ANALOG" level="r-r-r-" unit="Version">
+                <Name languageID="en">SMA-Grid-Guard</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Uac-BFR-Fakt" valueType="ANALOG" level="rw----">
+                <Name languageID="en">Uac-BFR-Fakt</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>0,400049984455109</MaxValue>
+                        <MinValue>0,361950010061264</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Uac-SRR-Fakt" valueType="ANALOG" level="rw----">
+                <Name languageID="en">Uac-SRR-Fakt</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>0,261449992656708</MaxValue>
+                        <MinValue>0,236549988389015</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="AD0-3KorrFakt" valueType="ANALOG" level="rw----">
+                <Name languageID="en">AD0-3KorrFakt</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>36044</MaxValue>
+                        <MinValue>29491</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="AD0-3KorrOffs" valueType="ANALOG" level="rw----">
+                <Name languageID="en">AD0-3KorrOffs</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>11000</MaxValue>
+                        <MinValue>9000</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="AD4-7KorrFakt" valueType="ANALOG" level="rw----">
+                <Name languageID="en">AD4-7KorrFakt</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>36044</MaxValue>
+                        <MinValue>29491</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="AD4-7KorrOffs" valueType="ANALOG" level="rw----">
+                <Name languageID="en">AD4-7KorrOffs</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>11000</MaxValue>
+                        <MinValue>9000</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Inst.-Code" valueType="ANALOG" level="rwrw--">
+                <Name languageID="en">Inst.-Code</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>4294899968</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="E_Total" valueType="ANALOG" level="rwrw--" unit="kWh">
+                <Name languageID="en">E_Total</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>200000</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="h_Total" valueType="ANALOG" level="rwrw--" unit="h">
+                <Name languageID="en">h_Total</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>200000</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="UdcWindStart" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">UdcWindStart</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>600</MaxValue>
+                        <MinValue>1</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="UdcWindMid" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">UdcWindMid</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>600</MaxValue>
+                        <MinValue>1</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="UdcWindMax" valueType="ANALOG" level="rwrw--" unit="V">
+                <Name languageID="en">UdcWindMax</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>600</MaxValue>
+                        <MinValue>1</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="KP-Wind-Reg" valueType="ANALOG" level="rwrw--">
+                <Name languageID="en">KP-Wind-Reg</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>0,25</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="KI-Wind-Reg" valueType="ANALOG" level="rwrw--">
+                <Name languageID="en">KI-Wind-Reg</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>0,25</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Fac-Start delta" valueType="ANALOG" level="rwrw--" unit="Hz">
+                <Name languageID="en">Fac-Start delta</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>5</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Fac-Limit delta" valueType="ANALOG" level="rwrw--" unit="Hz">
+                <Name languageID="en">Fac-Limit delta</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>5</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="T-Stop-Fan" valueType="ANALOG" level="rwrwr-" unit="grdC">
+                <Name languageID="en">T-Stop-Fan</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="T-Start-Fan" valueType="ANALOG" level="rwrwr-" unit="grdC">
+                <Name languageID="en">T-Start-Fan</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="T-Max-Fan" valueType="ANALOG" level="rwrwr-" unit="grdC">
+                <Name languageID="en">T-Max-Fan</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>100</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Fan-Test" valueType="ANALOG" level="rwrw--">
+                <Name languageID="en">Fan-Test</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>1</MaxValue>
+                        <MinValue>0</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="P-Wind-Ramp" valueType="ANALOG" level="rwrw--" unit="W/s">
+                <Name languageID="en">P-Wind-Ramp</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>2000</MaxValue>
+                        <MinValue>10</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="P-Wind-Mid" valueType="ANALOG" level="rwrw--" unit="W">
+                <Name languageID="en">P-Wind-Mid</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>5000</MaxValue>
+                        <MinValue>10</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Ripple-Ctl-Lev" valueType="ANALOG" level="rwrwr-" unit="%">
+                <Name languageID="en">Ripple-Ctl-Lev</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>8</MaxValue>
+                        <MinValue>0,5</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Ripple-Ctl-Frq" valueType="ANALOG" level="rwrwr-" unit="Hz">
+                <Name languageID="en">Ripple-Ctl-Frq</Name>
+                <Value>
+                    <Range>
+                        <MaxValue>1605</MaxValue>
+                        <MinValue>105</MinValue>
+                    </Range>
+                </Value>
+            </DataObject>
+            <DataObject id="Betriebsart" valueType="RECORD" level="rwrwr-">
+                <Name languageID="en">Operating Mode</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">Stop</State>
+                        <State id="1" languageID="en">Konstantspg.</State>
+                        <State id="2" languageID="en">Mpp-Betrieb</State>
+                        <State id="3" languageID="en">Turbine</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="Speicherfunkt." valueType="RECORD" level="rwrw--">
+                <Name languageID="en">Memory Function</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">Keine Funktion</State>
+                        <State id="1" languageID="en">R1</State>
+                        <State id="2" languageID="en">Default Param.</State>
+                        <State id="3" languageID="en">Reset Betrdaten</State>
+                        <State id="4" languageID="en">Reset Fehler</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="SMA -Funktion" valueType="RECORD" level="rw----">
+                <Name languageID="en">SMA-Function</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">SMA-Stop</State>
+                        <State id="1" languageID="en">SMA-Ukonst</State>
+                        <State id="2" languageID="en">SMA-Mpp</State>
+                        <State id="3" languageID="en">SMA-Turbine</State>
+                        <State id="4" languageID="en">R0</State>
+                        <State id="5" languageID="en">R1</State>
+                        <State id="6" languageID="en">R2</State>
+                        <State id="7" languageID="en">Normalbetrieb</State>
+                        <State id="8" languageID="en">Reset Betrdaten</State>
+                        <State id="9" languageID="en">Reset Event-Cnt</State>
+                        <State id="10" languageID="en">Reset Max-Werte</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="Default" valueType="RECORD" level="rwrwr-">
+                <Name languageID="en">Default</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">GER/VDE0126-1-1</State>
+                        <State id="1" languageID="en">GB  / G83</State>
+                        <State id="2" languageID="en">AUS / AS4777</State>
+                        <State id="3" languageID="en">USA / UL1741</State>
+                        <State id="4" languageID="en">Reserved</State>
+                        <State id="5" languageID="en">Off_Grid</State>
+                        <State id="6" languageID="en">SP  / RD1663</State>
+                        <State id="7" languageID="en">Other</State>
+                        <State id="8" languageID="en">trimmed</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="Control" valueType="RECORD" level="rwrwr-">
+                <Name languageID="en">Control</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">Auto</State>
+                        <State id="1" languageID="en">Grid</State>
+                        <State id="2" languageID="en">Brigde</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="Ripple-Ctl-Rcvr" valueType="RECORD" level="rwrwr-">
+                <Name languageID="en">Ripple-Ctl-Rcvr</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">disable</State>
+                        <State id="1" languageID="en">enable</State>
+                        <State id="2" languageID="en">auto</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="PowerBalancer" valueType="RECORD" level="rwrwr-">
+                <Name languageID="en">PowerBalancer</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">Off</State>
+                        <State id="1" languageID="en">PhaseGuard</State>
+                        <State id="2" languageID="en">PowerGuard</State>
+                        <State id="3" languageID="en">FaultGuard</State>
+                    </Record>
+                </Value>
+            </DataObject>
+        </Parameter>
+        <ProcessData>
+            <DataObject id="Upv-Ist" valueType="ANALOG" level="r-r-r-" unit="V">
+                <Name languageID="en">Vpv</Name>
+            </DataObject>
+            <DataObject id="Upv-Soll" valueType="ANALOG" level="r-r-r-" unit="V">
+                <Name languageID="en">Vpv-Setpoint</Name>
+            </DataObject>
+            <DataObject id="Iac-Ist" valueType="ANALOG" level="r-r-r-" unit="A">
+                <Name languageID="en">Iac</Name>
+            </DataObject>
+            <DataObject id="Iac-Soll" valueType="ANALOG" level="r-----" unit="%">
+                <Name languageID="en">Iac-Set-Point</Name>
+            </DataObject>
+            <DataObject id="Uac" valueType="ANALOG" level="r-r-r-" unit="V">
+                <Name languageID="en">Vac</Name>
+            </DataObject>
+            <DataObject id="Fac" valueType="ANALOG" level="r-r-r-" unit="Hz">
+                <Name languageID="en">Fac</Name>
+            </DataObject>
+            <DataObject id="Pac" valueType="ANALOG" level="r-r-r-" unit="W">
+                <Name languageID="en">Pac</Name>
+            </DataObject>
+            <DataObject id="Zac" valueType="ANALOG" level="r-r-r-" unit="Ohm">
+                <Name languageID="en">Zac</Name>
+            </DataObject>
+            <DataObject id="dZac" valueType="ANALOG" level="r-----" unit="Ohm">
+                <Name languageID="en">dZac</Name>
+            </DataObject>
+            <DataObject id="Riso" valueType="ANALOG" level="r-r-r-" unit="kOhm">
+                <Name languageID="en">Riso</Name>
+            </DataObject>
+            <DataObject id="Uac-Srr" valueType="ANALOG" level="r-----" unit="V">
+                <Name languageID="en">Vac-Srr</Name>
+            </DataObject>
+            <DataObject id="Fac-Srr" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">Fac-Srr</Name>
+            </DataObject>
+            <DataObject id="Zac-Srr" valueType="ANALOG" level="r-----" unit="Ohm">
+                <Name languageID="en">Zac-Srr</Name>
+            </DataObject>
+            <DataObject id="Izac" valueType="ANALOG" level="r-----" unit="A">
+                <Name languageID="en">Izac</Name>
+            </DataObject>
+            <DataObject id="Tkk" valueType="ANALOG" level="r-----" unit="grdC">
+                <Name languageID="en">Temperature</Name>
+            </DataObject>
+            <DataObject id="Ipv" valueType="ANALOG" level="r-r-r-" unit="A">
+                <Name languageID="en">Ipv</Name>
+            </DataObject>
+            <DataObject id="Tkk max" valueType="ANALOG" level="r-----" unit="grdC">
+                <Name languageID="en">Tkk max</Name>
+            </DataObject>
+            <DataObject id="Upv max" valueType="ANALOG" level="r-----" unit="V">
+                <Name languageID="en">Upv max</Name>
+            </DataObject>
+            <DataObject id="U-Fan" valueType="ANALOG" level="r-r---" unit="V">
+                <Name languageID="en">U-Fan</Name>
+            </DataObject>
+            <DataObject id="Freq1" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">Freq1</Name>
+            </DataObject>
+            <DataObject id="Freq2" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">Freq2</Name>
+            </DataObject>
+            <DataObject id="Freq3" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">Freq3</Name>
+            </DataObject>
+            <DataObject id="Freq4" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">Freq4</Name>
+            </DataObject>
+            <DataObject id="Freq5" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">Freq5</Name>
+            </DataObject>
+            <DataObject id="FreqRes" valueType="ANALOG" level="r-----" unit="Hz">
+                <Name languageID="en">FreqRes</Name>
+            </DataObject>
+            <DataObject id="FreqCnt" valueType="ANALOG" level="r-----">
+                <Name languageID="en">FreqCnt</Name>
+            </DataObject>
+            <DataObject id="E-Total" valueType="COUNTER" level="r-r-r-" unit="kWh">
+                <Name languageID="en">E-total</Name>
+            </DataObject>
+            <DataObject id="h-Total" valueType="COUNTER" level="r-r-r-" unit="h">
+                <Name languageID="en">h-total</Name>
+            </DataObject>
+            <DataObject id="h-On" valueType="COUNTER" level="r-r-r-" unit="h">
+                <Name languageID="en">h-On</Name>
+            </DataObject>
+            <DataObject id="Netz-Ein" valueType="COUNTER" level="r-r-r-">
+                <Name languageID="en">Power On</Name>
+            </DataObject>
+            <DataObject id="Event-Cnt" valueType="COUNTER" level="r-r---">
+                <Name languageID="en">Event-Cnt</Name>
+            </DataObject>
+            <DataObject id="Seriennummer" valueType="COUNTER" level="r-r-r-">
+                <Name languageID="en">Serial Number</Name>
+            </DataObject>
+            <DataObject id="Status" valueType="RECORD" level="r-r-r-">
+                <Name languageID="en">Mode</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">Offset</State>
+                        <State id="1" languageID="en">Stop</State>
+                        <State id="2" languageID="en">Netzueb.</State>
+                        <State id="3" languageID="en">Warten</State>
+                        <State id="4" languageID="en">U-Konst</State>
+                        <State id="5" languageID="en">Turbine</State>
+                        <State id="6" languageID="en">Mpp-Such</State>
+                        <State id="7" languageID="en">Mpp</State>
+                        <State id="8" languageID="en">Stoer.</State>
+                        <State id="9" languageID="en">Fehler</State>
+                        <State id="10" languageID="en">Mpp-Peak</State>
+                        <State id="11" languageID="en">Derating</State>
+                        <State id="12" languageID="en">Balanced</State>
+                        <State id="13" languageID="en">Res2</State>
+                        <State id="14" languageID="en">Res3</State>
+                        <State id="15" languageID="en">Res4</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="Balancer" valueType="RECORD" level="r-r-r-">
+                <Name languageID="en">Balancer</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">Off</State>
+                        <State id="1" languageID="en">PhaseGuard</State>
+                        <State id="2" languageID="en">PowerGuard</State>
+                        <State id="3" languageID="en">FaultGuard</State>
+                        <State id="4" languageID="en">R2</State>
+                        <State id="5" languageID="en">R3</State>
+                        <State id="6" languageID="en">R4</State>
+                        <State id="7" languageID="en">R5</State>
+                        <State id="8" languageID="en">R6</State>
+                        <State id="9" languageID="en">R7</State>
+                        <State id="10" languageID="en">R8</State>
+                        <State id="11" languageID="en">R9</State>
+                        <State id="12" languageID="en">R10</State>
+                        <State id="13" languageID="en">R11</State>
+                        <State id="14" languageID="en">R12</State>
+                        <State id="15" languageID="en">R13</State>
+                    </Record>
+                </Value>
+            </DataObject>
+            <DataObject id="Fehler" valueType="RECORD" level="r-r-r-">
+                <Name languageID="en">Error</Name>
+                <Value>
+                    <Record>
+                        <State id="0" languageID="en">-------</State>
+                        <State id="1" languageID="en">NUW-UAC</State>
+                        <State id="2" languageID="en">NUW-FAC</State>
+                        <State id="3" languageID="en">NUW-ZAC</State>
+                        <State id="4" languageID="en">K1-Trenn</State>
+                        <State id="5" languageID="en">K2-Trenn</State>
+                        <State id="6" languageID="en">EEPROM dBh</State>
+                        <State id="7" languageID="en">ROM</State>
+                        <State id="8" languageID="en">Trafo-Temp-W</State>
+                        <State id="9" languageID="en">Trafo-Temp-F</State>
+                        <State id="10" languageID="en">Derating</State>
+                        <State id="11" languageID="en">PowerBalance</State>
+                        <State id="12" languageID="en">B12</State>
+                        <State id="13" languageID="en">EeRestore</State>
+                        <State id="14" languageID="en">B14</State>
+                        <State id="15" languageID="en">B15</State>
+                        <State id="16" languageID="en">B16</State>
+                        <State id="17" languageID="en">B17</State>
+                        <State id="18" languageID="en">OFFSET</State>
+                        <State id="19" languageID="en">EEPROM</State>
+                        <State id="20" languageID="en">Bfr-Srr</State>
+                        <State id="21" languageID="en">K1-Schliess</State>
+                        <State id="22" languageID="en">Watchdog</State>
+                        <State id="23" languageID="en">B23</State>
+                        <State id="24" languageID="en">UpvMax</State>
+                        <State id="25" languageID="en">Riso</State>
+                        <State id="26" languageID="en">B26</State>
+                        <State id="27" languageID="en">ACVtgRPro</State>
+                        <State id="28" languageID="en">Uac-Bfr</State>
+                        <State id="29" languageID="en">Fac-Bfr</State>
+                        <State id="30" languageID="en">Zac-Bfr</State>
+                        <State id="31" languageID="en">dZac-Bfr</State>
+                        <State id="32" languageID="en">S1</State>
+                        <State id="33" languageID="en">S2</State>
+                        <State id="34" languageID="en">S3</State>
+                        <State id="35" languageID="en">S4</State>
+                        <State id="36" languageID="en">S5</State>
+                        <State id="37" languageID="en">S6</State>
+                        <State id="38" languageID="en">S7</State>
+                        <State id="39" languageID="en">S8</State>
+                        <State id="40" languageID="en">S9</State>
+                        <State id="41" languageID="en">S10</State>
+                        <State id="42" languageID="en">S11</State>
+                        <State id="43" languageID="en">S12</State>
+                        <State id="44" languageID="en">S13</State>
+                        <State id="45" languageID="en">S14</State>
+                        <State id="46" languageID="en">S15</State>
+                        <State id="47" languageID="en">S16</State>
+                        <State id="48" languageID="en">S17</State>
+                        <State id="49" languageID="en">S18</State>
+                        <State id="50" languageID="en">S19</State>
+                        <State id="51" languageID="en">S20</State>
+                        <State id="52" languageID="en">S21</State>
+                        <State id="53" languageID="en">S22</State>
+                        <State id="54" languageID="en">Offset</State>
+                        <State id="55" languageID="en">S24</State>
+                        <State id="56" languageID="en">Imax</State>
+                        <State id="57" languageID="en">Shut-Down</State>
+                        <State id="58" languageID="en">S27</State>
+                        <State id="59" languageID="en">Uac-Srr</State>
+                        <State id="60" languageID="en">Fac-Srr</State>
+                        <State id="61" languageID="en">Zac-Srr</State>
+                        <State id="62" languageID="en">dZac-Srr</State>
+                        <State id="63" languageID="en">NUW-Timeout</State>
+                    </Record>
+                </Value>
+            </DataObject>
+        </ProcessData>
+    </DeviceType>
+</DeviceSpecificationFile>
