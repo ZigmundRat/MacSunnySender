@@ -82,7 +82,7 @@ class SMAinverter{
 	
 	private func setDeviceInfo(_ device:Handle){
 		
-		deviceInfo["Number"] = Int(device)
+		deviceInfo["Number"] = device
 		
 		let errorCode:Int32 = -1
 		var resultCode:Int32 = errorCode
@@ -93,7 +93,7 @@ class SMAinverter{
 		                           deviceName,
 		                           Int32(MAXCSTRINGLENGTH))
 		if resultCode != errorCode {
-			deviceInfo["Name"] = deviceName.pointee
+			deviceInfo["Name"] = String(cString:deviceName)
 		}
 		
 		let deviceSN: UnsafeMutablePointer<DWORD> = UnsafeMutablePointer<DWORD>.allocate(capacity: 1)
@@ -110,7 +110,7 @@ class SMAinverter{
 		                           deviceType,
 		                           Int32(MAXCSTRINGLENGTH))
 		if resultCode != errorCode {
-			deviceInfo["Type"] = deviceType.pointee
+			deviceInfo["Type"] = String(cString: deviceType)
 		}
 		
 	}
@@ -220,6 +220,8 @@ class SMAinverter{
 				)
 				
 				currentMeasurements.append(currentMeasurement)
+				
+				print(currentMeasurement) // Temp test 
 				
 			}
 			
