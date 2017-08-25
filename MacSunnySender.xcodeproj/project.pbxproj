@@ -13,67 +13,144 @@
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
 		DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */; };
 		DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */; };
+		DCA8A6881F50AC9D00CCC796 /* libyasdi.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB64411F50AA24005C66B6 /* libyasdi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DCA8A68B1F50AC9D00CCC796 /* libyasdi_drv_ip.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB64431F50AA24005C66B6 /* libyasdi_drv_ip.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DCA8A68E1F50AC9D00CCC796 /* libyasdi_drv_serial.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB64451F50AA24005C66B6 /* libyasdi_drv_serial.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DCA8A6911F50AC9D00CCC796 /* libyasdimaster.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB64471F50AA24005C66B6 /* libyasdimaster.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DCA8A69B1F50ACAF00CCC796 /* libyasdi_drv_ip.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB64431F50AA24005C66B6 /* libyasdi_drv_ip.dylib */; };
+		DCA8A69C1F50ACAF00CCC796 /* libyasdi_drv_serial.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB64451F50AA24005C66B6 /* libyasdi_drv_serial.dylib */; };
+		DCA8A69D1F50ACAF00CCC796 /* libyasdi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB64411F50AA24005C66B6 /* libyasdi.dylib */; };
+		DCA8A69E1F50ACAF00CCC796 /* libyasdimaster.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB64471F50AA24005C66B6 /* libyasdimaster.dylib */; };
+		DCA8A6A31F50AD3000CCC796 /* libyasdi_drv_ip.1.8.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A69F1F50AD3000CCC796 /* libyasdi_drv_ip.1.8.1.dylib */; };
+		DCA8A6A41F50AD3000CCC796 /* libyasdimaster.1.8.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6A01F50AD3000CCC796 /* libyasdimaster.1.8.1.dylib */; };
+		DCA8A6A51F50AD3000CCC796 /* libyasdi_drv_serial.1.8.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6A11F50AD3000CCC796 /* libyasdi_drv_serial.1.8.1.dylib */; };
+		DCA8A6A61F50AD3000CCC796 /* libyasdi.1.8.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6A21F50AD3000CCC796 /* libyasdi.1.8.1.dylib */; };
+		DCA8A6AF1F50AD6900CCC796 /* libyasdi_drv_serial.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6A71F50AD6800CCC796 /* libyasdi_drv_serial.1.dylib */; };
+		DCA8A6B01F50AD6900CCC796 /* libyasdi_drv_ip.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6A81F50AD6800CCC796 /* libyasdi_drv_ip.1.dylib */; };
+		DCA8A6B11F50AD6900CCC796 /* libyasdi_drv_serial.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6A91F50AD6800CCC796 /* libyasdi_drv_serial.dylib */; };
+		DCA8A6B21F50AD6900CCC796 /* libyasdimaster.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6AA1F50AD6900CCC796 /* libyasdimaster.1.dylib */; };
+		DCA8A6B31F50AD6900CCC796 /* libyasdi_drv_ip.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6AB1F50AD6900CCC796 /* libyasdi_drv_ip.dylib */; };
+		DCA8A6B41F50AD6900CCC796 /* libyasdimaster.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6AC1F50AD6900CCC796 /* libyasdimaster.dylib */; };
+		DCA8A6B51F50AD6900CCC796 /* libyasdi.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6AD1F50AD6900CCC796 /* libyasdi.1.dylib */; };
+		DCA8A6B61F50AD6900CCC796 /* libyasdi.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA8A6AE1F50AD6900CCC796 /* libyasdi.dylib */; };
 		DCB060021F498ADF00767FC7 /* WR46A-01.dti in Resources */ = {isa = PBXBuildFile; fileRef = DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */; };
 		DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */; };
 		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
 		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
-		DCBC475D1F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC47591F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib */; };
-		DCBC475E1F4DE7C30084CF8F /* libyasdimaster.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC475A1F4DE7C30084CF8F /* libyasdimaster.1.dylib */; };
-		DCBC475F1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC475B1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib */; };
-		DCBC47601F4DE7C30084CF8F /* libyasdi.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC475C1F4DE7C30084CF8F /* libyasdi.1.dylib */; };
-		DCE0B18C1F48D54B006A867E /* libyasdi_drv_ip.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A061F478B4A008EB4A2 /* libyasdi_drv_ip.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B18D1F48D54B006A867E /* libyasdi_drv_serial.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A001F478B4A008EB4A2 /* libyasdi_drv_serial.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B18E1F48D54B006A867E /* libyasdi.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A071F478B4A008EB4A2 /* libyasdi.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B18F1F48D54B006A867E /* libyasdimaster.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A081F478B4A008EB4A2 /* libyasdimaster.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B1901F48D54B006A867E /* libyasdi_drv_ip.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC19E83A1F46DC49000A0B5D /* libyasdi_drv_ip.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B1911F48D54B006A867E /* libyasdi_drv_serial.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC19E8391F46DC49000A0B5D /* libyasdi_drv_serial.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B1921F48D54B006A867E /* libyasdi.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC19E83C1F46DC49000A0B5D /* libyasdi.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B1931F48D54B006A867E /* libyasdimaster.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC19E83B1F46DC49000A0B5D /* libyasdimaster.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		DCE0B1951F48D560006A867E /* libyasdi_drv_ip.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC021A061F478B4A008EB4A2 /* libyasdi_drv_ip.1.8.1.dylib */; };
-		DCE0B1961F48D560006A867E /* libyasdi_drv_serial.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC021A001F478B4A008EB4A2 /* libyasdi_drv_serial.1.8.1.dylib */; };
-		DCE0B1971F48D560006A867E /* libyasdi.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC021A071F478B4A008EB4A2 /* libyasdi.1.8.1.dylib */; };
-		DCE0B1981F48D560006A867E /* libyasdimaster.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC021A081F478B4A008EB4A2 /* libyasdimaster.1.8.1.dylib */; };
-		DCE0B1991F48D560006A867E /* libyasdi_drv_ip.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E83A1F46DC49000A0B5D /* libyasdi_drv_ip.dylib */; };
-		DCE0B19A1F48D560006A867E /* libyasdi_drv_serial.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E8391F46DC49000A0B5D /* libyasdi_drv_serial.dylib */; };
-		DCE0B19B1F48D560006A867E /* libyasdi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E83C1F46DC49000A0B5D /* libyasdi.dylib */; };
-		DCE0B19C1F48D560006A867E /* libyasdimaster.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC19E83B1F46DC49000A0B5D /* libyasdimaster.dylib */; };
 		DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0B1A91F48E313006A867E /* EmailClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC19E7FE1F46D90E000A0B5D /* PBXContainerItemProxy */ = {
+		DCA8A6891F50AC9D00CCC796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0BD5C4CBFFD147D7BF3B4485;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A3715CD41384D9596D67FD8;
 			remoteInfo = yasdi;
 		};
-		DC19E8001F46D90E000A0B5D /* PBXContainerItemProxy */ = {
+		DCA8A68C1F50AC9D00CCC796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 49A02C3246DA4A32B941ED2D;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52651D93D674401B98D72DF0;
 			remoteInfo = yasdi_drv_ip;
 		};
-		DC19E8021F46D90E000A0B5D /* PBXContainerItemProxy */ = {
+		DCA8A68F1F50AC9D00CCC796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7DC2B6B779364C03AD928DE9;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C68CCFFE9F97416DAE6F4A00;
 			remoteInfo = yasdi_drv_serial;
 		};
-		DC19E8041F46D90E000A0B5D /* PBXContainerItemProxy */ = {
+		DCA8A6921F50AC9D00CCC796 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5414363218AF46EB981A3B12;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CC62808B0EC42739D3A920C;
 			remoteInfo = yasdimaster;
 		};
-		DC19E8061F46D90E000A0B5D /* PBXContainerItemProxy */ = {
+		DCAB64261F50AA17005C66B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 570C716C9866477B88E8EB97;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		DCAB64281F50AA17005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		DCAB642A1F50AA17005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		DCAB642C1F50AA17005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		DCAB642E1F50AA17005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		DCAB64301F50AA17005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		DCAB64321F50AA17005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+		DCAB64401F50AA24005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DBC1CF2EFD6C4E759010ECF2;
+			remoteInfo = yasdi;
+		};
+		DCAB64421F50AA24005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B108FFE922B54E11B31C3250;
+			remoteInfo = yasdi_drv_ip;
+		};
+		DCAB64441F50AA24005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A914FE8F3CDE4E29A35B3C4F;
+			remoteInfo = yasdi_drv_serial;
+		};
+		DCAB64461F50AA24005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A17631DF98884AEF9A8FF412;
+			remoteInfo = yasdimaster;
+		};
+		DCAB64481F50AA24005C66B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 31B7D8EAEDCE4240B0DDC5E4;
 			remoteInfo = yasdishell;
 		};
 /* End PBXContainerItemProxy section */
@@ -85,11 +162,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				DCA8A6A31F50AD3000CCC796 /* libyasdi_drv_ip.1.8.1.dylib in CopyFiles */,
+				DCA8A6A41F50AD3000CCC796 /* libyasdimaster.1.8.1.dylib in CopyFiles */,
+				DCA8A6A51F50AD3000CCC796 /* libyasdi_drv_serial.1.8.1.dylib in CopyFiles */,
+				DCA8A6A61F50AD3000CCC796 /* libyasdi.1.8.1.dylib in CopyFiles */,
+				DCA8A6AF1F50AD6900CCC796 /* libyasdi_drv_serial.1.dylib in CopyFiles */,
+				DCA8A6B01F50AD6900CCC796 /* libyasdi_drv_ip.1.dylib in CopyFiles */,
+				DCA8A6B11F50AD6900CCC796 /* libyasdi_drv_serial.dylib in CopyFiles */,
+				DCA8A6B21F50AD6900CCC796 /* libyasdimaster.1.dylib in CopyFiles */,
+				DCA8A6B31F50AD6900CCC796 /* libyasdi_drv_ip.dylib in CopyFiles */,
+				DCA8A6B41F50AD6900CCC796 /* libyasdimaster.dylib in CopyFiles */,
+				DCA8A6B51F50AD6900CCC796 /* libyasdi.1.dylib in CopyFiles */,
+				DCA8A6B61F50AD6900CCC796 /* libyasdi.dylib in CopyFiles */,
 				DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */,
-				DCBC475D1F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib in CopyFiles */,
-				DCBC475E1F4DE7C30084CF8F /* libyasdimaster.1.dylib in CopyFiles */,
-				DCBC475F1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib in CopyFiles */,
-				DCBC47601F4DE7C30084CF8F /* libyasdi.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,14 +184,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DCE0B18D1F48D54B006A867E /* libyasdi_drv_serial.1.8.1.dylib in Embed Libraries */,
-				DCE0B18F1F48D54B006A867E /* libyasdimaster.1.8.1.dylib in Embed Libraries */,
-				DCE0B18E1F48D54B006A867E /* libyasdi.1.8.1.dylib in Embed Libraries */,
-				DCE0B1931F48D54B006A867E /* libyasdimaster.dylib in Embed Libraries */,
-				DCE0B1921F48D54B006A867E /* libyasdi.dylib in Embed Libraries */,
-				DCE0B18C1F48D54B006A867E /* libyasdi_drv_ip.1.8.1.dylib in Embed Libraries */,
-				DCE0B1911F48D54B006A867E /* libyasdi_drv_serial.dylib in Embed Libraries */,
-				DCE0B1901F48D54B006A867E /* libyasdi_drv_ip.dylib in Embed Libraries */,
+				DCA8A6881F50AC9D00CCC796 /* libyasdi.dylib in Embed Libraries */,
+				DCA8A68E1F50AC9D00CCC796 /* libyasdi_drv_serial.dylib in Embed Libraries */,
+				DCA8A68B1F50AC9D00CCC796 /* libyasdi_drv_ip.dylib in Embed Libraries */,
+				DCA8A6911F50AC9D00CCC796 /* libyasdimaster.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,19 +195,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DC021A001F478B4A008EB4A2 /* libyasdi_drv_serial.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.1.8.1.dylib; path = Frameworks/libyasdi_drv_serial.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
-		DC021A061F478B4A008EB4A2 /* libyasdi_drv_ip.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.1.8.1.dylib; path = Frameworks/libyasdi_drv_ip.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
-		DC021A071F478B4A008EB4A2 /* libyasdi.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.8.1.dylib; path = Frameworks/libyasdi.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
-		DC021A081F478B4A008EB4A2 /* libyasdimaster.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.8.1.dylib; path = Frameworks/libyasdimaster.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
 		DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "multi-window-app_2x.png"; sourceTree = "<group>"; };
-		DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yasdi.xcodeproj; path = "../../../../../Third Party Code/YASDI/build-xcode/yasdi.xcodeproj"; sourceTree = "<group>"; };
-		DC19E8391F46DC49000A0B5D /* libyasdi_drv_serial.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.dylib; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.dylib"; sourceTree = "<group>"; };
-		DC19E83A1F46DC49000A0B5D /* libyasdi_drv_ip.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.dylib; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.dylib"; sourceTree = "<group>"; };
-		DC19E83B1F46DC49000A0B5D /* libyasdimaster.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.dylib; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/libyasdimaster.dylib"; sourceTree = "<group>"; };
-		DC19E83C1F46DC49000A0B5D /* libyasdi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.dylib; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.dylib"; sourceTree = "<group>"; };
 		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
-		DC6A7F5B1F46188E002BD9A3 /* YASDI-10NE1106.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "YASDI-10NE1106.pdf"; sourceTree = "<group>"; };
-		DC6A7F5C1F46188E002BD9A3 /* YASDI-TDE084020.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "YASDI-TDE084020.pdf"; sourceTree = "<group>"; };
 		DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacSunnySender-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,15 +208,24 @@
 		DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSunnySender.entitlements; sourceTree = "<group>"; };
 		DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdaptedBuildSettings.xcconfig; sourceTree = "<group>"; };
 		DC9FC2281F38E7D50000A6DD /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		DCA8A69F1F50AD3000CCC796 /* libyasdi_drv_ip.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.1.8.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.1.8.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6A01F50AD3000CCC796 /* libyasdimaster.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.8.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdimaster.1.8.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6A11F50AD3000CCC796 /* libyasdi_drv_serial.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.1.8.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.1.8.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6A21F50AD3000CCC796 /* libyasdi.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.8.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.1.8.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6A71F50AD6800CCC796 /* libyasdi_drv_serial.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6A81F50AD6800CCC796 /* libyasdi_drv_ip.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6A91F50AD6800CCC796 /* libyasdi_drv_serial.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.dylib"; sourceTree = "<group>"; };
+		DCA8A6AA1F50AD6900CCC796 /* libyasdimaster.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdimaster.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6AB1F50AD6900CCC796 /* libyasdi_drv_ip.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.dylib"; sourceTree = "<group>"; };
+		DCA8A6AC1F50AD6900CCC796 /* libyasdimaster.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdimaster.dylib"; sourceTree = "<group>"; };
+		DCA8A6AD1F50AD6900CCC796 /* libyasdi.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.1.dylib"; sourceTree = "<group>"; };
+		DCA8A6AE1F50AD6900CCC796 /* libyasdi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.dylib"; sourceTree = "<group>"; };
+		DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = SQLiteSwift/SQLite.xcodeproj; sourceTree = "<group>"; };
+		DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yasdi.xcodeproj; path = "../../../../Third Party Code/YASDI/build-xcode/yasdi.xcodeproj"; sourceTree = "<group>"; };
 		DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WR46A-01.dti"; sourceTree = "<group>"; };
 		DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAMeasurement.swift; sourceTree = "<group>"; };
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
-		DCBC47591F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.1.dylib"; sourceTree = "<group>"; };
-		DCBC475A1F4DE7C30084CF8F /* libyasdimaster.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdimaster.1.dylib"; sourceTree = "<group>"; };
-		DCBC475B1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.1.dylib"; sourceTree = "<group>"; };
-		DCBC475C1F4DE7C30084CF8F /* libyasdi.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.1.dylib"; sourceTree = "<group>"; };
-		DCBCE46C1F48876E0094D1B1 /* yasdishell */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = yasdishell; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/yasdishell"; sourceTree = "<group>"; };
 		DCE0B1A91F48E313006A867E /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,81 +234,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCE0B1951F48D560006A867E /* libyasdi_drv_ip.1.8.1.dylib in Frameworks */,
-				DCE0B1961F48D560006A867E /* libyasdi_drv_serial.1.8.1.dylib in Frameworks */,
-				DCE0B1971F48D560006A867E /* libyasdi.1.8.1.dylib in Frameworks */,
-				DCE0B1981F48D560006A867E /* libyasdimaster.1.8.1.dylib in Frameworks */,
-				DCE0B1991F48D560006A867E /* libyasdi_drv_ip.dylib in Frameworks */,
-				DCE0B19A1F48D560006A867E /* libyasdi_drv_serial.dylib in Frameworks */,
-				DCE0B19B1F48D560006A867E /* libyasdi.dylib in Frameworks */,
-				DCE0B19C1F48D560006A867E /* libyasdimaster.dylib in Frameworks */,
+				DCA8A69B1F50ACAF00CCC796 /* libyasdi_drv_ip.dylib in Frameworks */,
+				DCA8A69C1F50ACAF00CCC796 /* libyasdi_drv_serial.dylib in Frameworks */,
+				DCA8A69D1F50ACAF00CCC796 /* libyasdi.dylib in Frameworks */,
+				DCA8A69E1F50ACAF00CCC796 /* libyasdimaster.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC19E7F31F46D90E000A0B5D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DC19E7FF1F46D90E000A0B5D /* libyasdi.dylib */,
-				DC19E8011F46D90E000A0B5D /* libyasdi_drv_ip.dylib */,
-				DC19E8031F46D90E000A0B5D /* libyasdi_drv_serial.dylib */,
-				DC19E8051F46D90E000A0B5D /* libyasdimaster.dylib */,
-				DC19E8071F46D90E000A0B5D /* yasdishell */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DC6A7F5A1F46188E002BD9A3 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				DC6A7F5B1F46188E002BD9A3 /* YASDI-10NE1106.pdf */,
-				DC6A7F5C1F46188E002BD9A3 /* YASDI-TDE084020.pdf */,
-			);
-			path = Documentation;
-			sourceTree = "<group>";
-		};
-		DC6A7F721F463403002BD9A3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DC6A7F5A1F46188E002BD9A3 /* Documentation */,
-				DC6A7F731F463415002BD9A3 /* YASDI */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		DC6A7F731F463415002BD9A3 /* YASDI */ = {
-			isa = PBXGroup;
-			children = (
-				DCBCE46C1F48876E0094D1B1 /* yasdishell */,
-				DC021A061F478B4A008EB4A2 /* libyasdi_drv_ip.1.8.1.dylib */,
-				DC021A001F478B4A008EB4A2 /* libyasdi_drv_serial.1.8.1.dylib */,
-				DC021A071F478B4A008EB4A2 /* libyasdi.1.8.1.dylib */,
-				DC021A081F478B4A008EB4A2 /* libyasdimaster.1.8.1.dylib */,
-				DC19E83A1F46DC49000A0B5D /* libyasdi_drv_ip.dylib */,
-				DC19E8391F46DC49000A0B5D /* libyasdi_drv_serial.dylib */,
-				DC19E83C1F46DC49000A0B5D /* libyasdi.dylib */,
-				DC19E83B1F46DC49000A0B5D /* libyasdimaster.dylib */,
-				DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */,
-			);
-			path = YASDI;
-			sourceTree = "<group>";
-		};
 		DC9FC2081F38E5FD0000A6DD = {
 			isa = PBXGroup;
 			children = (
-				DCBC475B1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib */,
-				DCBC47591F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib */,
-				DCBC475C1F4DE7C30084CF8F /* libyasdi.1.dylib */,
-				DCBC475A1F4DE7C30084CF8F /* libyasdimaster.1.dylib */,
+				DCA8A6A81F50AD6800CCC796 /* libyasdi_drv_ip.1.dylib */,
+				DCA8A6AB1F50AD6900CCC796 /* libyasdi_drv_ip.dylib */,
+				DCA8A6A71F50AD6800CCC796 /* libyasdi_drv_serial.1.dylib */,
+				DCA8A6A91F50AD6800CCC796 /* libyasdi_drv_serial.dylib */,
+				DCA8A6AD1F50AD6900CCC796 /* libyasdi.1.dylib */,
+				DCA8A6AE1F50AD6900CCC796 /* libyasdi.dylib */,
+				DCA8A6AA1F50AD6900CCC796 /* libyasdimaster.1.dylib */,
+				DCA8A6AC1F50AD6900CCC796 /* libyasdimaster.dylib */,
+				DCA8A69F1F50AD3000CCC796 /* libyasdi_drv_ip.1.8.1.dylib */,
+				DCA8A6A11F50AD3000CCC796 /* libyasdi_drv_serial.1.8.1.dylib */,
+				DCA8A6A21F50AD3000CCC796 /* libyasdi.1.8.1.dylib */,
+				DCA8A6A01F50AD3000CCC796 /* libyasdimaster.1.8.1.dylib */,
 				DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */,
 				DC9FC2281F38E7D50000A6DD /* ToDo */,
 				DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */,
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
 				DC9FC2121F38E5FD0000A6DD /* Products */,
-				DC6A7F721F463403002BD9A3 /* Frameworks */,
+				DCAB5E131F50A53E005C66B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,6 +297,41 @@
 			path = MacSunnySender;
 			sourceTree = "<group>";
 		};
+		DCAB5E131F50A53E005C66B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */,
+				DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCAB641D1F50AA17005C66B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCAB64271F50AA17005C66B6 /* SQLite.framework */,
+				DCAB64291F50AA17005C66B6 /* SQLiteTests iOS.xctest */,
+				DCAB642B1F50AA17005C66B6 /* SQLite.framework */,
+				DCAB642D1F50AA17005C66B6 /* SQLiteTests Mac.xctest */,
+				DCAB642F1F50AA17005C66B6 /* SQLite.framework */,
+				DCAB64311F50AA17005C66B6 /* SQLiteTests tvOS.xctest */,
+				DCAB64331F50AA17005C66B6 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCAB64351F50AA24005C66B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCAB64411F50AA24005C66B6 /* libyasdi.dylib */,
+				DCAB64431F50AA24005C66B6 /* libyasdi_drv_ip.dylib */,
+				DCAB64451F50AA24005C66B6 /* libyasdi_drv_serial.dylib */,
+				DCAB64471F50AA24005C66B6 /* libyasdimaster.dylib */,
+				DCAB64491F50AA24005C66B6 /* yasdishell */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -268,15 +339,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC9FC2231F38E5FD0000A6DD /* Build configuration list for PBXNativeTarget "MacSunnySender" */;
 			buildPhases = (
+				DC2BA42B1F450050001D0744 /* CopyFiles */,
 				DC9FC20D1F38E5FD0000A6DD /* Sources */,
 				DC9FC20E1F38E5FD0000A6DD /* Frameworks */,
 				DC9FC20F1F38E5FD0000A6DD /* Resources */,
-				DC2BA42B1F450050001D0744 /* CopyFiles */,
 				DCE0B1941F48D54B006A867E /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DCA8A68A1F50AC9D00CCC796 /* PBXTargetDependency */,
+				DCA8A68D1F50AC9D00CCC796 /* PBXTargetDependency */,
+				DCA8A6901F50AC9D00CCC796 /* PBXTargetDependency */,
+				DCA8A6931F50AC9D00CCC796 /* PBXTargetDependency */,
 			);
 			name = MacSunnySender;
 			productName = MacSunnySender;
@@ -317,8 +392,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = DC19E7F31F46D90E000A0B5D /* Products */;
-					ProjectRef = DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */;
+					ProductGroup = DCAB641D1F50AA17005C66B6 /* Products */;
+					ProjectRef = DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */;
+				},
+				{
+					ProductGroup = DCAB64351F50AA24005C66B6 /* Products */;
+					ProjectRef = DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -329,43 +408,92 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DC19E7FF1F46D90E000A0B5D /* libyasdi.dylib */ = {
+		DCAB64271F50AA17005C66B6 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DCAB64261F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB64291F50AA17005C66B6 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = DCAB64281F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB642B1F50AA17005C66B6 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DCAB642A1F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB642D1F50AA17005C66B6 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = DCAB642C1F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB642F1F50AA17005C66B6 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DCAB642E1F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB64311F50AA17005C66B6 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = DCAB64301F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB64331F50AA17005C66B6 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DCAB64321F50AA17005C66B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCAB64411F50AA24005C66B6 /* libyasdi.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			name = libyasdi.dylib;
 			path = libyasdi.1.8.1.dylib;
-			remoteRef = DC19E7FE1F46D90E000A0B5D /* PBXContainerItemProxy */;
+			remoteRef = DCAB64401F50AA24005C66B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DC19E8011F46D90E000A0B5D /* libyasdi_drv_ip.dylib */ = {
+		DCAB64431F50AA24005C66B6 /* libyasdi_drv_ip.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			name = libyasdi_drv_ip.dylib;
 			path = libyasdi_drv_ip.1.8.1.dylib;
-			remoteRef = DC19E8001F46D90E000A0B5D /* PBXContainerItemProxy */;
+			remoteRef = DCAB64421F50AA24005C66B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DC19E8031F46D90E000A0B5D /* libyasdi_drv_serial.dylib */ = {
+		DCAB64451F50AA24005C66B6 /* libyasdi_drv_serial.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			name = libyasdi_drv_serial.dylib;
 			path = libyasdi_drv_serial.1.8.1.dylib;
-			remoteRef = DC19E8021F46D90E000A0B5D /* PBXContainerItemProxy */;
+			remoteRef = DCAB64441F50AA24005C66B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DC19E8051F46D90E000A0B5D /* libyasdimaster.dylib */ = {
+		DCAB64471F50AA24005C66B6 /* libyasdimaster.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			name = libyasdimaster.dylib;
 			path = libyasdimaster.1.8.1.dylib;
-			remoteRef = DC19E8041F46D90E000A0B5D /* PBXContainerItemProxy */;
+			remoteRef = DCAB64461F50AA24005C66B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DC19E8071F46D90E000A0B5D /* yasdishell */ = {
+		DCAB64491F50AA24005C66B6 /* yasdishell */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = yasdishell;
-			remoteRef = DC19E8061F46D90E000A0B5D /* PBXContainerItemProxy */;
+			remoteRef = DCAB64481F50AA24005C66B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -399,6 +527,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCA8A68A1F50AC9D00CCC796 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yasdi;
+			targetProxy = DCA8A6891F50AC9D00CCC796 /* PBXContainerItemProxy */;
+		};
+		DCA8A68D1F50AC9D00CCC796 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yasdi_drv_ip;
+			targetProxy = DCA8A68C1F50AC9D00CCC796 /* PBXContainerItemProxy */;
+		};
+		DCA8A6901F50AC9D00CCC796 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yasdi_drv_serial;
+			targetProxy = DCA8A68F1F50AC9D00CCC796 /* PBXContainerItemProxy */;
+		};
+		DCA8A6931F50AC9D00CCC796 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = yasdimaster;
+			targetProxy = DCA8A6921F50AC9D00CCC796 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */ = {
@@ -536,6 +687,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/YASDI",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,6 +710,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/YASDI",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
