@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SQLite3
 
 typealias Handle = DWORD
 

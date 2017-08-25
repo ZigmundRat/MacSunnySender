@@ -17,7 +17,10 @@
 		DCB282F81F390F6D00E66CA1 /* SMAMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */; };
 		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
 		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
-		DCBCE4761F48876E0094D1B1 /* yasdishell in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46C1F48876E0094D1B1 /* yasdishell */; };
+		DCBC475D1F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC47591F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib */; };
+		DCBC475E1F4DE7C30084CF8F /* libyasdimaster.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC475A1F4DE7C30084CF8F /* libyasdimaster.1.dylib */; };
+		DCBC475F1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC475B1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib */; };
+		DCBC47601F4DE7C30084CF8F /* libyasdi.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCBC475C1F4DE7C30084CF8F /* libyasdi.1.dylib */; };
 		DCE0B18C1F48D54B006A867E /* libyasdi_drv_ip.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A061F478B4A008EB4A2 /* libyasdi_drv_ip.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCE0B18D1F48D54B006A867E /* libyasdi_drv_serial.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A001F478B4A008EB4A2 /* libyasdi_drv_serial.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DCE0B18E1F48D54B006A867E /* libyasdi.1.8.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC021A071F478B4A008EB4A2 /* libyasdi.1.8.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -83,6 +86,10 @@
 			dstSubfolderSpec = 16;
 			files = (
 				DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */,
+				DCBC475D1F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib in CopyFiles */,
+				DCBC475E1F4DE7C30084CF8F /* libyasdimaster.1.dylib in CopyFiles */,
+				DCBC475F1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib in CopyFiles */,
+				DCBC47601F4DE7C30084CF8F /* libyasdi.1.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +118,7 @@
 		DC021A061F478B4A008EB4A2 /* libyasdi_drv_ip.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.1.8.1.dylib; path = Frameworks/libyasdi_drv_ip.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
 		DC021A071F478B4A008EB4A2 /* libyasdi.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.8.1.dylib; path = Frameworks/libyasdi.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
 		DC021A081F478B4A008EB4A2 /* libyasdimaster.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.8.1.dylib; path = Frameworks/libyasdimaster.1.8.1.dylib; sourceTree = SOURCE_ROOT; };
+		DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "multi-window-app_2x.png"; sourceTree = "<group>"; };
 		DC19E7F21F46D90E000A0B5D /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yasdi.xcodeproj; path = "../../../../../Third Party Code/YASDI/build-xcode/yasdi.xcodeproj"; sourceTree = "<group>"; };
 		DC19E8391F46DC49000A0B5D /* libyasdi_drv_serial.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.dylib; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.dylib"; sourceTree = "<group>"; };
 		DC19E83A1F46DC49000A0B5D /* libyasdi_drv_ip.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.dylib; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.dylib"; sourceTree = "<group>"; };
@@ -134,6 +142,10 @@
 		DCB282F01F390F6D00E66CA1 /* SMAMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAMeasurement.swift; sourceTree = "<group>"; };
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
+		DCBC47591F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_serial.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_serial.1.dylib"; sourceTree = "<group>"; };
+		DCBC475A1F4DE7C30084CF8F /* libyasdimaster.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdimaster.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdimaster.1.dylib"; sourceTree = "<group>"; };
+		DCBC475B1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi_drv_ip.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi_drv_ip.1.dylib"; sourceTree = "<group>"; };
+		DCBC475C1F4DE7C30084CF8F /* libyasdi.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.1.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.1.dylib"; sourceTree = "<group>"; };
 		DCBCE46C1F48876E0094D1B1 /* yasdishell */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = yasdishell; path = "../../../../../Third Party Code/YASDI/build-xcode/Debug/yasdishell"; sourceTree = "<group>"; };
 		DCE0B1A91F48E313006A867E /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +219,11 @@
 		DC9FC2081F38E5FD0000A6DD = {
 			isa = PBXGroup;
 			children = (
+				DCBC475B1F4DE7C30084CF8F /* libyasdi_drv_ip.1.dylib */,
+				DCBC47591F4DE7C30084CF8F /* libyasdi_drv_serial.1.dylib */,
+				DCBC475C1F4DE7C30084CF8F /* libyasdi.1.dylib */,
+				DCBC475A1F4DE7C30084CF8F /* libyasdimaster.1.dylib */,
+				DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */,
 				DC9FC2281F38E7D50000A6DD /* ToDo */,
 				DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */,
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
@@ -358,7 +375,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCBCE4761F48876E0094D1B1 /* yasdishell in Resources */,
 				DCB060021F498ADF00767FC7 /* WR46A-01.dti in Resources */,
 				DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */,
 				DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */,
@@ -503,7 +519,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};

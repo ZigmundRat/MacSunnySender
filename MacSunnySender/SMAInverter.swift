@@ -6,7 +6,7 @@
 //  Copyright © 2017 OneClick. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 class SMAinverter{
 	
@@ -25,7 +25,9 @@ class SMAinverter{
 		
 		if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
 			for device in devices{
-				inverters.append(SMAinverter(device))
+				let newInverter = SMAinverter(device)
+				inverters.append(newInverter)
+				NSDocumentController.shared.addDocument(Document())
 			}
 		}
 	}
