@@ -1,0 +1,4 @@
+;4;4;4;4;4;4;1;1;1;1
+;2000814023;2000814023;2000814023;2000814023;2000814023;2000814023;2000814023;2000814023;2000814023;2000814023
+TimeStamp;E-Total;h-Total;h-On;Netz-Ein;Event-Cnt;Seriennummer;Pac;Iac-Ist;Ipv;Upv max
+{DD}.{MM}.{YYYY} {hh}:{mm}:{ss};kWh;h;h;;;;W;A;A;V
