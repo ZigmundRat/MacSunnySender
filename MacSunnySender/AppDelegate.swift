@@ -7,13 +7,15 @@
 //
 
 import Cocoa
-import SQLite3
+import SQLite
 
 typealias Handle = DWORD
 
 let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from the preferences window
 let MAXCSTRINGLENGTH:Int = 32
 let sunnyPortalClient = EmailClient.sharedInstance
+let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
+let model = SQLiteDbase(dataPath:dataFile!)
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

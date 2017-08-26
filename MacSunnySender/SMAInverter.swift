@@ -115,6 +115,9 @@ class SMAinverter{
 			deviceInfo["Type"] = String(cString: deviceType)
 		}
 		
+		
+		model.addInverter(inverter: self)
+		
 	}
 	
 	
@@ -223,8 +226,7 @@ class SMAinverter{
 					timeStamp: Date()
 				)
 				
-				currentMeasurements.append(currentMeasurement)
-				print(currentMeasurement) // Temp Test
+				model.addMeasurement(inverter: self, data:currentMeasurement)
 
 				
 			}
