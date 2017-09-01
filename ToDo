@@ -1,5 +1,9 @@
+replace sqliteClass with protocol
+Implement UPSET from within protocol
+remove testdb from code and project after testing
 
-Add an SQLite as databackend
+
+Install temp solution on server
 
 Add tableview with bindings
 
@@ -8,4 +12,4 @@ compose real data for the emailbody
 Add the icon
 add proper gitconfigure file
 
-Install on server
+1 hour =  10KB of data

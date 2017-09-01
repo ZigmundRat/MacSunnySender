@@ -13,13 +13,15 @@ class SMAinverter{
 	static var inverters:[SMAinverter] = []
 	
 	
-	var deviceInfo:[String:Any] = [:]
-	var parameterNumbers:[Int] = []
-	var channelNumbers:[Int] = []
+	var deviceInfo:SMAInverter!
+	var parameterNumbers:[Int]! = []
+	var channelNumbers:[Int]! = []
 	
 	var pollingTimer: Timer? = nil
-	var currentMeasurements:[SMAMeasurement] = []
 	
+	let sqlTimeStampFormatter = DateFormatter()
+	let dateFormatter = DateFormatter()
+	let timeFormatter = DateFormatter()
 	
 	class func createInverters(maxNumberToSearch maxNumber:Int){
 		
@@ -65,6 +67,11 @@ class SMAinverter{
 	
 	init(_ device:Handle){
 		
+		sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
+		dateFormatter.dateFormat = "yyyy-MM-dd" // Local date string
+		dateFormatter.timeZone = TimeZone.current
+		timeFormatter.dateFormat = "HH:mm:ss" // Local time string
+		timeFormatter.timeZone = TimeZone.current
 		
 		setDeviceInfo(device)
 		findParameterNumbers(maxNumberToSearch:30)
@@ -77,46 +84,55 @@ class SMAinverter{
 		                                    repeats: true
 		)
 		
-		print("✅ Inverter \(deviceInfo["Name"] as! String) found online")
-
+		print("✅ Inverter \(deviceInfo.name) found online")
+		
 		
 	}
 	
 	private func setDeviceInfo(_ device:Handle){
 		
-		deviceInfo["Number"] = device
+		var deviceSN:DWORD = 0
+		var deviceName:String = ""
+		var deviceType:String = ""
 		
 		let errorCode:Int32 = -1
 		var resultCode:Int32 = errorCode
 		
-		let deviceName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-		resultCode = errorCode
-		resultCode = GetDeviceName(device,
-		                           deviceName,
-		                           Int32(MAXCSTRINGLENGTH))
-		if resultCode != errorCode {
-			deviceInfo["Name"] = String(cString:deviceName)
-		}
-		
-		let deviceSN: UnsafeMutablePointer<DWORD> = UnsafeMutablePointer<DWORD>.allocate(capacity: 1)
+		let deviceSNvar: UnsafeMutablePointer<DWORD> = UnsafeMutablePointer<DWORD>.allocate(capacity: 1)
 		resultCode = errorCode
 		resultCode = GetDeviceSN(device,
-		                         deviceSN)
+		                         deviceSNvar)
 		if resultCode != errorCode {
-			deviceInfo["SN"] = deviceSN.pointee
+			deviceSN = deviceSNvar.pointee
 		}
 		
-		let deviceType: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+		let deviceNameVar: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
 		resultCode = errorCode
-		resultCode = GetDeviceType(device,
-		                           deviceType,
+		resultCode = GetDeviceName(device,
+		                           deviceNameVar,
 		                           Int32(MAXCSTRINGLENGTH))
 		if resultCode != errorCode {
-			deviceInfo["Type"] = String(cString: deviceType)
+			deviceName = String(cString:deviceNameVar)
+		}
+		
+		let deviceTypeVar: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+		resultCode = errorCode
+		resultCode = GetDeviceType(device,
+		                           deviceTypeVar,
+		                           Int32(MAXCSTRINGLENGTH))
+		if resultCode != errorCode {
+			deviceType = String(cString: deviceTypeVar)
 		}
 		
 		
-		model.addInverter(inverter: self)
+		deviceInfo = SMAInverter(
+			serial: Int(deviceSN),
+			number: device,
+			name: deviceName,
+			deviceType: deviceType
+		)
+		
+		deviceInfo.toSQLiteRecord(in:testDb)
 		
 	}
 	
@@ -127,7 +143,7 @@ class SMAinverter{
 		let errorCode:DWORD = 0
 		var resultCode:DWORD = errorCode
 		
-		let device = deviceInfo["Number"] as! Handle
+		let device = deviceInfo.number
 		var parameterHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
 		let channelType = TChanType.init(1)
 		
@@ -156,7 +172,7 @@ class SMAinverter{
 		let errorCode:DWORD = 0
 		var resultCode:DWORD = errorCode
 		
-		let device = deviceInfo["Number"] as! Handle
+		let device = deviceInfo.number
 		var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
 		let channelType = TChanType.init(0)
 		
@@ -170,7 +186,7 @@ class SMAinverter{
 			
 			// convert to a swift array of parameterNumbers
 			let numberOfChannels = resultCode
-
+			
 			for _ in 0..<numberOfChannels{
 				channelNumbers.append(Int(channelHandles.pointee))
 				channelHandles = channelHandles.advanced(by: 1)
@@ -186,53 +202,66 @@ class SMAinverter{
 	
 	@objc private func readChannels(){
 		
-		currentMeasurements = []
+		let systemTimeStamp = Date()
+		let currentLocalHour = Calendar.current.component(Calendar.Component.hour, from: systemTimeStamp)
 		
-		for channelNumber in channelNumbers{
-			let errorCode:Int32 = -1
-			var resultCode:Int32 = errorCode
+		// Only record dat between 06:00 and 23:00
+		if (6...23) ~= currentLocalHour{
 			
-			let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-			
-			resultCode = GetChannelName(
-				DWORD(channelNumber),
-				channelName,
-				DWORD(MAXCSTRINGLENGTH)
-			)
-			
-			if resultCode != errorCode {
+			for channelNumber in channelNumbers{
 				
-				let device = deviceInfo["Number"] as! Handle
-				let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
-				let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-				let maxChannelAgeInSeconds:DWORD = 5
+				var recordedTimeStamp = systemTimeStamp
+				let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), deviceInfo.number)
+				if onlineTimeStamp > 0{
+					recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
+				}
 				
-				GetChannelValue(Handle(channelNumber),
-				                device,
-				                currentValue,
-				                currentValueAsText,
-				                DWORD(MAXCSTRINGLENGTH),
-				                maxChannelAgeInSeconds
+				let errorCode:Int32 = -1
+				var resultCode:Int32 = errorCode
+				
+				let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+				
+				resultCode = GetChannelName(
+					DWORD(channelNumber),
+					channelName,
+					DWORD(MAXCSTRINGLENGTH)
 				)
 				
-				
-				let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-				GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
-				
-				let currentMeasurement = SMAMeasurement(
-					name: String(cString: channelName),
-					value: currentValue.pointee,
-					unit: String(cString: unit),
-					timeStamp: Date()
-				)
-				
-				model.addMeasurement(inverter: self, data:currentMeasurement)
-
+				if resultCode != errorCode {
+					
+					let device = deviceInfo.number
+					let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
+					let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+					let maxChannelAgeInSeconds:DWORD = 5
+					
+					GetChannelValue(Handle(channelNumber),
+					                device,
+					                currentValue,
+					                currentValueAsText,
+					                DWORD(MAXCSTRINGLENGTH),
+					                maxChannelAgeInSeconds
+					)
+					
+					
+					let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+					GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
+					
+					var currentMeasurement = SMAMeasurement(
+						serial: deviceInfo.serial,
+						timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
+						date: dateFormatter.string(from: recordedTimeStamp),
+						time: timeFormatter.string(from: recordedTimeStamp),
+						name: String(cString: channelName),
+						value: currentValue.pointee,
+						unit: String(cString: unit)
+					)
+					
+					currentMeasurement.toSQLiteRecord(in:testDb)
+					
+				}
 				
 			}
 			
 		}
-		
-		
 	}
 }

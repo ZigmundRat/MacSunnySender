@@ -15,7 +15,9 @@ let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from
 let MAXCSTRINGLENGTH:Int = 32
 let sunnyPortalClient = EmailClient.sharedInstance
 let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
-let model = SQLiteDbase(dataPath:dataFile!)
+let model = try! Connection(dataFile!)
+let testDb = try! Connection(Bundle.main.path(forResource: "MacSunnySenderTestData", ofType: "sqlite")!)
+
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

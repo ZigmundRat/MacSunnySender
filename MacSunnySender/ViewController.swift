@@ -31,8 +31,8 @@ class ViewController: NSViewController, NSWindowDelegate {
 	}
 	
 	func updateData(){
-		if let inverterName = inverter?.deviceInfo["Name"]{
-			view.window?.title = inverterName as! String
+		if let inverterName = inverter?.deviceInfo.name{
+			view.window?.title = inverterName
 		}
 	}
 	
