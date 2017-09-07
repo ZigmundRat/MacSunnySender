@@ -23,6 +23,8 @@ class SMAinverter{
     let dateFormatter = DateFormatter()
     let timeFormatter = DateFormatter()
     
+    var currentMeasurements:[SMAMeasurement]? = nil
+    
     class func createInverters(maxNumberToSearch maxNumber:Int){
         if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
             for device in devices{
@@ -203,6 +205,8 @@ class SMAinverter{
     
     @objc private func readChannels(){
         
+        currentMeasurements = []
+        
         let systemTimeStamp = Date()
         let currentLocalHour = Calendar.current.component(Calendar.Component.hour, from: systemTimeStamp)
         
@@ -257,6 +261,7 @@ class SMAinverter{
                         unit: String(cString: unit)
                     )
                     
+                    currentMeasurements?.append(currentMeasurement)
                     let _ = JVSQliteRecord(data:currentMeasurement, in:model).upsert()
                     
                 }

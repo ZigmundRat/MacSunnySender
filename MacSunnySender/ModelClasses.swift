@@ -1,5 +1,5 @@
 //
-//  SMAMeasurement.swift
+//  ModelClasses.swift
 //  MacSunnySender
 //
 //  Created by Jan Verrept on 30/07/17.
