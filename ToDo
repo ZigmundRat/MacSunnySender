@@ -1,15 +1,8 @@
-replace sqliteClass with protocol
-Implement UPSET from within protocol
-remove testdb from code and project after testing
-
+Use last rowID to switch to insert after update
 
 Install temp solution on server
-
 Add tableview with bindings
 
 compose real data for the emailbody
-
-Add the icon
-add proper gitconfigure file
 
 1 hour =  10KB of data

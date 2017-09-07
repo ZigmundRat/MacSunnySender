@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct SMAInverter:dbaseRecordable {
+struct SMAInverter{
 	var serial: Int
 	var number: Handle
 	var name: String
-	var deviceType: String
+	var type: String
 }
 
-struct SMAMeasurement:dbaseRecordable  {
+struct SMAMeasurement{
 	var serial: Int
 	var timeStamp:String
 	var date: String
@@ -23,5 +23,4 @@ struct SMAMeasurement:dbaseRecordable  {
 	var name: String
 	var value: Double
 	var unit: String
-	
 }

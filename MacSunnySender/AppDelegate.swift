@@ -6,6 +6,7 @@
 //  Copyright © 2017 OneClick. All rights reserved.
 //
 
+
 import Cocoa
 import SQLite
 
@@ -16,13 +17,12 @@ let MAXCSTRINGLENGTH:Int = 32
 let sunnyPortalClient = EmailClient.sharedInstance
 let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
 let model = try! Connection(dataFile!)
-let testDb = try! Connection(Bundle.main.path(forResource: "MacSunnySenderTestData", ofType: "sqlite")!)
-
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		
 		
 		// Insert code here to initialize your application
 		if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
@@ -48,11 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		yasdiReset()
 		
 	}
-	
-	
-	
-	
-	
 	
 }
 

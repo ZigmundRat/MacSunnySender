@@ -4,5 +4,3 @@
 
 #import "smadef.h"
 #import "master.h"
-
-
