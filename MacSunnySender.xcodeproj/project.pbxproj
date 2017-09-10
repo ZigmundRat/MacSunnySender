@@ -16,8 +16,11 @@
 		DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */ = {isa = PBXBuildFile; fileRef = DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */; };
 		DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */; };
 		DC84666B1F5B33A500A98140 /* yasdiInstallNames.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */; };
+		DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */; };
+		DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */; };
+		DC9CD3761F6329EB00C993B0 /* Prefs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */; };
 		DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */; };
-		DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* ViewController.swift */; };
+		DC9FC2171F38E5FD0000A6DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */; };
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
 		DC9FC21B1F38E5FD0000A6DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */; };
 		DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */; };
@@ -219,9 +222,12 @@
 		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
 		DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = yasdiInstallNames.xcconfig; sourceTree = "<group>"; };
 		DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacSunnySender-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsWindowController.swift; sourceTree = "<group>"; };
+		DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prefs.storyboard; sourceTree = "<group>"; };
 		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC9FC2161F38E5FD0000A6DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC9FC2181F38E5FD0000A6DD /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC9FC21D1F38E5FD0000A6DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -267,6 +273,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC9CD3771F632D2100C993B0 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */,
+				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
+				DC9FC2181F38E5FD0000A6DD /* Document.swift */,
+				DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */,
+				DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */,
+				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
+				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		DC9CD3781F632D3000C993B0 /* PrefsWindow */ = {
+			isa = PBXGroup;
+			children = (
+				DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */,
+				DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */,
+			);
+			path = PrefsWindow;
+			sourceTree = "<group>";
+		};
+		DC9CD3791F632DA000C993B0 /* JVCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */,
+				DC1C2ED01F58A6C10096AA10 /* JVFullProtocolExtensions.swift */,
+			);
+			path = JVCocoa;
+			sourceTree = "<group>";
+		};
+		DC9CD37A1F632E0400C993B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCB282F01F390F6D00E66CA1 /* ModelClasses.swift */,
+				DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DC9FC2081F38E5FD0000A6DD = {
 			isa = PBXGroup;
 			children = (
@@ -282,13 +329,12 @@
 				DCA8A6A11F50AD3000CCC796 /* libyasdi_drv_serial.1.8.1.dylib */,
 				DCA8A6A21F50AD3000CCC796 /* libyasdi.1.8.1.dylib */,
 				DCA8A6A01F50AD3000CCC796 /* libyasdimaster.1.8.1.dylib */,
-				DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */,
 				DC9FC2281F38E7D50000A6DD /* ToDo */,
 				DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */,
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
 				DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
-				DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */,
+				DC9CD3791F632DA000C993B0 /* JVCocoa */,
 				DC9FC2121F38E5FD0000A6DD /* Products */,
 				DCAB5E131F50A53E005C66B6 /* Frameworks */,
 			);
@@ -306,17 +352,12 @@
 			isa = PBXGroup;
 			children = (
 				DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */,
-				DC9FC2161F38E5FD0000A6DD /* ViewController.swift */,
-				DC9FC2181F38E5FD0000A6DD /* Document.swift */,
-				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
-				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
-				DCB282F01F390F6D00E66CA1 /* ModelClasses.swift */,
-				DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */,
-				DC1C2ED01F58A6C10096AA10 /* JVFullProtocolExtensions.swift */,
 				DCE0B1A91F48E313006A867E /* EmailClient.swift */,
+				DC9CD3781F632D3000C993B0 /* PrefsWindow */,
+				DC9CD3771F632D2100C993B0 /* MainWindow */,
+				DC9CD37A1F632E0400C993B0 /* Model */,
 				DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */,
 				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
-				DC9FC21C1F38E5FD0000A6DD /* Main.storyboard */,
 				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
 				DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */,
 				DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */,
@@ -537,6 +578,7 @@
 				DC5D86411F50AEA2004FEF58 /* MacSunnySenderData.sqlite in Resources */,
 				DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */,
 				DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */,
+				DC9CD3761F6329EB00C993B0 /* Prefs.storyboard in Resources */,
 				DC84666B1F5B33A500A98140 /* yasdiInstallNames.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,9 +590,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9FC2171F38E5FD0000A6DD /* ViewController.swift in Sources */,
+				DC9FC2171F38E5FD0000A6DD /* MainViewController.swift in Sources */,
+				DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */,
 				DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */,
 				DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */,
+				DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */,
 				DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */,
 				DCB282F81F390F6D00E66CA1 /* ModelClasses.swift in Sources */,
 				DC1C2ED11F58A6C10096AA10 /* JVFullProtocolExtensions.swift in Sources */,

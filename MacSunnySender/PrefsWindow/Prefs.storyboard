@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="a38-tS-6xW">
+            <objects>
+                <windowController id="1GX-aa-Nmm" customClass="PrefsWindowController" customModule="MacSunnySender" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ffj-lZ-8rr">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+                        <connections>
+                            <outlet property="delegate" destination="1GX-aa-Nmm" id="V3C-Mf-nC5"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="xIL-uO-5wA" kind="relationship" relationship="window.shadowedContentViewController" id="Hzt-Ld-Ep4"/>
+                    </connections>
+                </windowController>
+                <customObject id="c9r-8x-K2X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="155"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VnD-5u-gpx">
+            <objects>
+                <viewController id="xIL-uO-5wA" sceneMemberID="viewController">
+                    <view key="view" id="M2n-lo-fRJ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="Sub-eS-1pT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286" y="155"/>
+        </scene>
+    </scenes>
+</document>
