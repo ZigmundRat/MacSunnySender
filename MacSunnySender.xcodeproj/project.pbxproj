@@ -14,6 +14,7 @@
 		DC5D86471F50B02F004FEF58 /* SQLite.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB642B1F50AA17005C66B6 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC5D864D1F50BD14004FEF58 /* JVSQLiteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */; };
 		DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */ = {isa = PBXBuildFile; fileRef = DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */; };
+		DC64C8091F65D45500D9C377 /* SampleData in Resources */ = {isa = PBXBuildFile; fileRef = DC64C7FD1F65D45500D9C377 /* SampleData */; };
 		DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */; };
 		DC84666B1F5B33A500A98140 /* yasdiInstallNames.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */; };
 		DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */; };
@@ -49,6 +50,7 @@
 		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
 		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
 		DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0B1A91F48E313006A867E /* EmailClient.swift */; };
+		DCE6C6EB1F687375003D719B /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6C6EA1F687375003D719B /* PrefsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +221,7 @@
 		DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MacSunnySenderData.sqlite; sourceTree = "<group>"; };
 		DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVSQLiteRecord.swift; sourceTree = "<group>"; };
 		DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Schermafbeelding 2017-08-20 om 10.33.57.png"; sourceTree = SOURCE_ROOT; };
+		DC64C7FD1F65D45500D9C377 /* SampleData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SampleData; sourceTree = "<group>"; };
 		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
 		DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = yasdiInstallNames.xcconfig; sourceTree = "<group>"; };
 		DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacSunnySender-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -254,6 +257,7 @@
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
 		DCE0B1A91F48E313006A867E /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
+		DCE6C6EA1F687375003D719B /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +287,7 @@
 				DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */,
 				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
 				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
+				DC9CD37A1F632E0400C993B0 /* Model */,
 			);
 			path = MainWindow;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			children = (
 				DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */,
 				DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */,
+				DCE6C6EA1F687375003D719B /* PrefsViewController.swift */,
 			);
 			path = PrefsWindow;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */,
 				DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
+				DC64C7FD1F65D45500D9C377 /* SampleData */,
 				DC9CD3791F632DA000C993B0 /* JVCocoa */,
 				DC9FC2121F38E5FD0000A6DD /* Products */,
 				DCAB5E131F50A53E005C66B6 /* Frameworks */,
@@ -355,7 +362,6 @@
 				DCE0B1A91F48E313006A867E /* EmailClient.swift */,
 				DC9CD3781F632D3000C993B0 /* PrefsWindow */,
 				DC9CD3771F632D2100C993B0 /* MainWindow */,
-				DC9CD37A1F632E0400C993B0 /* Model */,
 				DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */,
 				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
 				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
@@ -579,6 +585,7 @@
 				DC9FC21E1F38E5FD0000A6DD /* Main.storyboard in Resources */,
 				DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */,
 				DC9CD3761F6329EB00C993B0 /* Prefs.storyboard in Resources */,
+				DC64C8091F65D45500D9C377 /* SampleData in Resources */,
 				DC84666B1F5B33A500A98140 /* yasdiInstallNames.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,6 +604,7 @@
 				DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */,
 				DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */,
 				DCB282F81F390F6D00E66CA1 /* ModelClasses.swift in Sources */,
+				DCE6C6EB1F687375003D719B /* PrefsViewController.swift in Sources */,
 				DC1C2ED11F58A6C10096AA10 /* JVFullProtocolExtensions.swift in Sources */,
 				DC5D864D1F50BD14004FEF58 /* JVSQLiteRecord.swift in Sources */,
 				DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */,

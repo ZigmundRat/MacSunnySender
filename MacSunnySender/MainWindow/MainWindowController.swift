@@ -11,6 +11,7 @@ import Cocoa
 class MainWindowControler:NSWindowController{
     
     override func windowDidLoad(){
+        super.windowDidLoad()
         window?.delegate = self
     }
     

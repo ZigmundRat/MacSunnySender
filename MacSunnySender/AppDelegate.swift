@@ -12,7 +12,7 @@ import SQLite
 
 typealias Handle = DWORD
 
-let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from the preferences window
+let prefsController = PrefsWindowController()
 let MAXCSTRINGLENGTH:Int = 32
 let sunnyPortalClient = EmailClient.sharedInstance
 let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		// Insert code here to initialize your application
 		if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
-			SMAinverter.createInverters(maxNumberToSearch: maxNumberOfInvertersInPlant)
+			SMAinverter.createInverters(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
 		}
 		
 	}
@@ -48,7 +48,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		yasdiReset()
 		
 	}
-	
+    
+    
+    @IBAction func showPrefsWindow(sender:Any?){
+
+        PrefsWindowController.sharedInstance.showWindow(sender)
+
+    }
+    
+    
 }
 
 

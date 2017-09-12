@@ -50,34 +50,37 @@ class MainViewController: NSViewController{
 extension MainViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return inverter?.currentMeasurements?.count ?? 0
+        return inverter?.currentMeasurements?.count ?? 1
     }
     
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any?{
-        //    func tableView(_ tableView: NSTableView, dataCellFor tableColumn: NSTableColumn?, row: Int) -> NSCell?{
+        func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any?{
+//    func tableView(_ tableView: NSTableView, dataCellFor tableColumn: NSTableColumn?, row: Int) -> NSCell?{
+    
+        print("datasource builds cells for row \(row)")
+
         
         // Find the dataItem for the row
         guard let dataItem = inverter?.currentMeasurements?[row] else {
             return nil
         }
         
-        //        // Get the cell based on each column
-        //        if tableColumn == tableView.tableColumns[0] {
-        //            return NSCell(textCell:dataItem.name)
-        //        } else if tableColumn == tableView.tableColumns[1] {
-        //            return NSCell(textCell:String(dataItem.value))
-        //        }else if tableColumn == tableView.tableColumns[2] {
-        //            return NSCell(textCell:dataItem.unit)
-        //        }
+//        // Get the cell based on each column
+//        if tableColumn == tableView.tableColumns[0] {
+//            return NSCell(textCell:dataItem.name)
+//        } else if tableColumn == tableView.tableColumns[1] {
+//            return NSCell(textCell:String(dataItem.value))
+//        }else if tableColumn == tableView.tableColumns[2] {
+//            return NSCell(textCell:dataItem.unit)
+//        }
         
-        // Get the cell based on each column
-        if tableColumn == tableView.tableColumns[0] {
-            return dataItem.name
-        } else if tableColumn == tableView.tableColumns[1] {
-            return dataItem.value
-        }else if tableColumn == tableView.tableColumns[2] {
-            return dataItem.unit
-        }
+                // Get the cell based on each column
+                if tableColumn == tableView.tableColumns[0] {
+                    return dataItem.name
+                } else if tableColumn == tableView.tableColumns[1] {
+                    return dataItem.value
+                }else if tableColumn == tableView.tableColumns[2] {
+                    return dataItem.unit
+                }
         
         return nil
         

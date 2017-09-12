@@ -12,7 +12,6 @@ class SMAinverter{
     
     static var inverters:[SMAinverter] = []
     
-    
     var deviceInfo:SMAInverter!
     var parameterNumbers:[Int]! = []
     var channelNumbers:[Int]! = []
@@ -24,6 +23,9 @@ class SMAinverter{
     let timeFormatter = DateFormatter()
     
     var currentMeasurements:[SMAMeasurement]? = nil
+    
+    var mailWasSent:Bool = false
+    
     
     class func createInverters(maxNumberToSearch maxNumber:Int){
         if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
@@ -69,7 +71,7 @@ class SMAinverter{
     init(_ device:Handle){
         
         sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
-        dateFormatter.dateFormat = "yyyy-MM-dd" // Local date string
+        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
         dateFormatter.timeZone = TimeZone.current
         timeFormatter.dateFormat = "HH:mm:ss" // Local time string
         timeFormatter.timeZone = TimeZone.current
@@ -205,13 +207,13 @@ class SMAinverter{
     
     @objc private func readChannels(){
         
-        currentMeasurements = []
-        
         let systemTimeStamp = Date()
         let currentLocalHour = Calendar.current.component(Calendar.Component.hour, from: systemTimeStamp)
         
-        // Only record dat between 06:00 and 23:00
-        if (6...23) ~= currentLocalHour{
+        // Only record dat between 06:00 and 22:59
+        if (6...22) ~= currentLocalHour{
+            
+            currentMeasurements = []
             
             for channelNumber in channelNumbers{
                 
@@ -261,13 +263,27 @@ class SMAinverter{
                         unit: String(cString: unit)
                     )
                     
-                    currentMeasurements?.append(currentMeasurement)
-                    let _ = JVSQliteRecord(data:currentMeasurement, in:model).upsert()
+                    currentMeasurements?.append(currentMeasurement) // Will be displayed
+                    let _ = JVSQliteRecord(data:currentMeasurement, in:model).upsert()  // Is archived
                     
                 }
                 
             }
+                   print(currentMeasurements!)
+        }else if !mailWasSent && (currentLocalHour == 23){    // Starting at 23:00 send the dayly mail
             
+           mailWasSent = EmailClient.sharedInstance.sendDataToSunnyPortal(inverter: self)
+            
+        }else if mailWasSent && (currentLocalHour == 00){    // At 00:00 allow for a new dayly mail to be send again
+            
+            mailWasSent = false
+        
         }
+        
     }
+    
+    
+    
+    
+    
 }
