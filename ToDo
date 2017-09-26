@@ -1,8 +1,9 @@
+
 Test the tableviews-datasource protocol
 Use last rowID to switch to insert after update
 
 
-compose real data for the emailbody
+compose real data for the emailbody from the data returned by select statement
 1 hour =  10KB of data
 
 Install build solution on server

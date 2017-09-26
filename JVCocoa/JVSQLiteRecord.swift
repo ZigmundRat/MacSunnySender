@@ -7,18 +7,22 @@
 //
 
 import Foundation
-import SQLite
+import GRDB
+//import SQLite
 
 typealias ID = Int
+typealias DataBase = DatabaseQueue
 
-// And add some implementation
-class JVSQliteRecord{
+// This structure get initialized with a struct of some generic type and
+// mirrors that struct in the SQLite-database
+
+struct JVSQliteRecord<ModelType>{
     
-    let dataStruct:Any
-    let dataBase:Connection
+    let dataStruct:ModelType
+    let dataBase:DatabaseQueue
     var matchFields:[String]? = nil
     
-    init(data:Any, in dataBase:Connection){
+    init(data:ModelType, in dataBase:DataBase){
         self.dataStruct = data
         self.dataBase = dataBase
     }
@@ -29,14 +33,6 @@ class JVSQliteRecord{
         }
     }
     
-    private var lastRowID:ID{
-        get{
-            let sqlString = "SELECT seq FROM sqlite_sequence WHERE name=?"
-            let sqlPreparedStatement = try! dataBase.prepare(sqlString)
-            try! sqlPreparedStatement.run(typeAndTableName)
-            return 0
-        }
-    }
     
     private var sqlExpressions:(names:String, placeholders:String, pairs:String, values:[String], conditions:String){
         get{
@@ -75,34 +71,62 @@ class JVSQliteRecord{
     
     public func insert(){
         
-        try! dataBase.run(
-            "INSERT INTO \(typeAndTableName) (\(sqlExpressions.names)) VALUES (\(sqlExpressions.placeholders))",
-            sqlExpressions.values
-        )
+        let sqlString = "INSERT INTO \(typeAndTableName) (\(sqlExpressions.names)) VALUES (\(sqlExpressions.placeholders))"
+        
+        try! dataBase.inDatabase { db in
+            let sqlStatement = try db.makeUpdateStatement(sqlString)
+            try! sqlStatement.execute(arguments: StatementArguments(sqlExpressions.values))
+        }
+        
+        //        try! dataBase.run(
+        //            "INSERT INTO \(typeAndTableName) (\(sqlExpressions.names)) VALUES (\(sqlExpressions.placeholders))",
+        //            sqlExpressions.values
+        //        )
         
     }
     
-    public func update(matching exactMatches:[String]){
-        matchFields = exactMatches
-        try! dataBase.run(
-            "UPDATE \(typeAndTableName) SET \(sqlExpressions.pairs) WHERE \(sqlExpressions.conditions)",
-            sqlExpressions.values
-        )
+    
+    public mutating func update(matchFields:[String]){
+        
+        self.matchFields = matchFields
+        let sqlString = "UPDATE \(typeAndTableName) SET \(sqlExpressions.pairs) WHERE \(sqlExpressions.conditions)"
+        
+        try! dataBase.inDatabase { db in
+            let sqlStatement = try db.makeUpdateStatement(sqlString)
+            try! sqlStatement.execute(arguments: StatementArguments(sqlExpressions.values))
+        }
+        
+        //        try dataBase.execute(
+        //            "UPDATE \(typeAndTableName) SET \(sqlExpressions.pairs) WHERE \(sqlExpressions.conditions)",
+        //            sqlExpressions.values
+        //        )
         
     }
     
-    public func upsert(matching exactMatches:[String]? = nil){
+    public mutating func upsert(matchFields:[String]? = nil){
         
         // This an Update or Insert a.k.a an 'UpSert'
-        if exactMatches == nil{
+        if matchFields == nil{
             insert()
         }else{
-            update(matching:exactMatches!)
+            update(matchFields:matchFields!)
         }
         
     }
     
-    
+    public mutating func select()->[Row]?{
+        
+        self.matchFields = sqlExpressions.names.components(separatedBy:  ",")
+        let sqlString = "SELECT * FROM \(typeAndTableName) WHERE \(sqlExpressions.conditions)"
+        var recordsFound:[Row]? = nil
+        
+        try! dataBase.inDatabase { db in
+            let sqlStatement = try db.makeSelectStatement(sqlString)
+            recordsFound = try Row.fetchAll(sqlStatement)
+        }
+        
+        return recordsFound
+    }
 }
 
 

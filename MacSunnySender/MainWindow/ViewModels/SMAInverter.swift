@@ -1,5 +1,5 @@
 //
-//  SMAInverter.swift
+//  SMAInverter
 //  MacSunnySender
 //
 //  Created by Jan Verrept on 24/06/17.
@@ -8,31 +8,45 @@
 
 import Cocoa
 
-class SMAinverter{
+protocol InverterViewModel {
     
-    static var inverters:[SMAinverter] = []
+    var serial: Int?{get}
+    var number: Handle?{get}
+    var name: String?{get}
+    var type: String?{get}
     
-    var deviceInfo:SMAInverter!
-    var parameterNumbers:[Int]! = []
-    var channelNumbers:[Int]! = []
+    var currentMeasurements:[Measurement]?{get}
+}
+
+class SMAInverter: InverterViewModel{
     
-    var pollingTimer: Timer? = nil
+    public static var inverters:[SMAInverter] = []
+    public var model:Inverter!
     
-    let sqlTimeStampFormatter = DateFormatter()
-    let dateFormatter = DateFormatter()
-    let timeFormatter = DateFormatter()
+    var serial: Int?{return model.serial}
+    var number: Handle?{return model.number}
+    var name: String?{return model.name}
+    var type: String?{return model.type}
     
-    var currentMeasurements:[SMAMeasurement]? = nil
+    public var currentMeasurements:[Measurement]? = nil
     
-    var mailWasSent:Bool = false
-    
+    private var parameterNumbers:[Int]! = []
+    private var channelNumbers:[Int]! = []
+    private var pollingTimer: Timer! = nil
+    private let sqlTimeStampFormatter = DateFormatter()
+    private let dateFormatter = DateFormatter()
+    private let timeFormatter = DateFormatter()
     
     class func createInverters(maxNumberToSearch maxNumber:Int){
         if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
             for device in devices{
-                let newInverter = SMAinverter(device)
-                inverters.append(newInverter)
-                NSDocumentController.shared.addDocument(Document())
+                
+                let inverterModel = composeInverterModel(fromDevice:device)
+                let inverterViewModel = SMAInverter(model:inverterModel)
+                inverters.append(inverterViewModel)
+                
+                // Automaticly create a document for each inverter that was found
+                NSDocumentController.shared.addDocument(Document(inverter:inverterViewModel))
             }
         }
     }
@@ -68,33 +82,8 @@ class SMAinverter{
         return devices
     }
     
-    init(_ device:Handle){
-        
-        sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
-        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
-        dateFormatter.timeZone = TimeZone.current
-        timeFormatter.dateFormat = "HH:mm:ss" // Local time string
-        timeFormatter.timeZone = TimeZone.current
-        
-        setDeviceInfo(device)
-        findParameterNumbers(maxNumberToSearch:30)
-        findChannelNumbers(maxNumberToSearch:30)
-        
-        pollingTimer = Timer.scheduledTimer(timeInterval: 5,
-                                            target: self,
-                                            selector: #selector(self.readChannels),
-                                            userInfo: nil,
-                                            repeats: true
-        )
-        
-        print("✅ Inverter \(deviceInfo.name) found online")
-        
-        
-    }
     
-    
-    
-    private func setDeviceInfo(_ device:Handle){
+    class private func composeInverterModel(fromDevice deviceHandle:Handle)->Inverter{
         
         var deviceSN:DWORD = 2000814023
         var deviceName:String = "WR46A-01 SN:2000814023"
@@ -105,7 +94,7 @@ class SMAinverter{
         
         let deviceSNvar: UnsafeMutablePointer<DWORD> = UnsafeMutablePointer<DWORD>.allocate(capacity: 1)
         resultCode = errorCode
-        resultCode = GetDeviceSN(device,
+        resultCode = GetDeviceSN(deviceHandle,
                                  deviceSNvar)
         if resultCode != errorCode {
             deviceSN = deviceSNvar.pointee
@@ -113,7 +102,7 @@ class SMAinverter{
         
         let deviceNameVar: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
         resultCode = errorCode
-        resultCode = GetDeviceName(device,
+        resultCode = GetDeviceName(deviceHandle,
                                    deviceNameVar,
                                    Int32(MAXCSTRINGLENGTH))
         if resultCode != errorCode {
@@ -122,7 +111,7 @@ class SMAinverter{
         
         let deviceTypeVar: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
         resultCode = errorCode
-        resultCode = GetDeviceType(device,
+        resultCode = GetDeviceType(deviceHandle,
                                    deviceTypeVar,
                                    Int32(MAXCSTRINGLENGTH))
         if resultCode != errorCode {
@@ -130,17 +119,43 @@ class SMAinverter{
         }
         
         
-        deviceInfo = SMAInverter(
+        let inverterRecord = Inverter(
             serial: Int(deviceSN),
-            number: device,
+            number: deviceHandle,
             name: deviceName,
             type: deviceType
         )
         
-        let _ = JVSQliteRecord(data:deviceInfo!, in:model).upsert(matching: ["serial"])
+        var sqlRecord = JVSQliteRecord(data:inverterRecord, in:dataBaseQueue)
+        sqlRecord.upsert(matchFields: ["serial"])
         
+        return inverterRecord
     }
     
+    
+    init(model: Inverter){
+        
+        self.model = model
+        
+        sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
+        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
+        dateFormatter.timeZone = TimeZone.current
+        timeFormatter.dateFormat = "HH:mm:ss" // Local time string
+        timeFormatter.timeZone = TimeZone.current
+        
+        findParameterNumbers(maxNumberToSearch:30)
+        findChannelNumbers(maxNumberToSearch:30)
+        
+        pollingTimer = Timer.scheduledTimer(timeInterval: 5,
+                                            target: self,
+                                            selector: #selector(self.readChannels),
+                                            userInfo: nil,
+                                            repeats: true
+        )
+        
+        print("✅ Inverter \(name!) found online")
+        
+    }
     
     
     private func findParameterNumbers(maxNumberToSearch:Int){
@@ -148,7 +163,7 @@ class SMAinverter{
         let errorCode:DWORD = 0
         var resultCode:DWORD = errorCode
         
-        let device = deviceInfo.number
+        let device = model.number!
         var parameterHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
         let channelType = TChanType.init(1)
         
@@ -177,7 +192,7 @@ class SMAinverter{
         let errorCode:DWORD = 0
         var resultCode:DWORD = errorCode
         
-        let device = deviceInfo.number
+        let device = number!
         var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
         let channelType = TChanType.init(0)
         
@@ -218,7 +233,7 @@ class SMAinverter{
             for channelNumber in channelNumbers{
                 
                 var recordedTimeStamp = systemTimeStamp
-                let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), deviceInfo.number)
+                let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), number!)
                 if onlineTimeStamp > 0{
                     recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
                 }
@@ -236,7 +251,7 @@ class SMAinverter{
                 
                 if resultCode != errorCode {
                     
-                    let device = deviceInfo.number
+                    let device = model.number!
                     let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
                     let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
@@ -253,8 +268,8 @@ class SMAinverter{
                     let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
                     
-                    let currentMeasurement = SMAMeasurement(
-                        serial: deviceInfo.serial,
+                    let currentMeasurement = Measurement(
+                        serial: serial,
                         timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
                         date: dateFormatter.string(from: recordedTimeStamp),
                         time: timeFormatter.string(from: recordedTimeStamp),
@@ -264,25 +279,33 @@ class SMAinverter{
                     )
                     
                     currentMeasurements?.append(currentMeasurement) // Will be displayed
-                    let _ = JVSQliteRecord(data:currentMeasurement, in:model).upsert()  // Is archived
+                    var archivedRecord = JVSQliteRecord(data:currentMeasurement, in:dataBaseQueue)
+                    archivedRecord.upsert()
                     
                 }
                 
             }
-                   print(currentMeasurements!)
-        }else if !mailWasSent && (currentLocalHour == 23){    // Starting at 23:00 send the dayly mail
             
-           mailWasSent = EmailClient.sharedInstance.sendDataToSunnyPortal(inverter: self)
-            
-        }else if mailWasSent && (currentLocalHour == 00){    // At 00:00 allow for a new dayly mail to be send again
-            
-            mailWasSent = false
-        
         }
         
     }
     
-    
+    func dailySummary(){
+        
+        let searchRequest = Measurement(
+            serial: nil,
+            timeStamp: nil,
+            date: dateFormatter.string(from: Date()),
+            time: nil,
+            name: nil,
+            value: nil,
+            unit: nil
+        )
+        
+        var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
+        var dailyRecords = dailyRequest.select()
+        
+    }
     
     
     

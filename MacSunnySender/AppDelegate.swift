@@ -8,25 +8,25 @@
 
 
 import Cocoa
-import SQLite
+import GRDB
 
 typealias Handle = DWORD
+let MAXCSTRINGLENGTH:Int = 32
 
 let prefsController = PrefsWindowController()
-let MAXCSTRINGLENGTH:Int = 32
 let sunnyPortalClient = EmailClient.sharedInstance
-let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
-let model = try! Connection(dataFile!)
+
+private let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
+let dataBaseQueue = try! DatabaseQueue(path: dataFile!)
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		
-		
+        
 		// Insert code here to initialize your application
 		if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
-			SMAinverter.createInverters(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
+			SMAInverter.createInverters(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
 		}
 		
 	}
@@ -55,7 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         PrefsWindowController.sharedInstance.showWindow(sender)
 
     }
-    
     
 }
 

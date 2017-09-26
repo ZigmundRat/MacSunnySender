@@ -10,32 +10,37 @@ import Cocoa
 
 class Document: NSDocument {
     
-    var inverter:SMAinverter?{
-        get{
-            if let docNumber = NSDocumentController.shared.documents.index(of: self){
-                if SMAinverter.inverters.count-1 >= docNumber{
-                    return SMAinverter.inverters[docNumber]
-                }
-            }
-            return nil
+    var docNumber:Int!
+    var inverter:SMAInverter?
+    
+    // Designated initializer
+    init(inverter:SMAInverter?){
+        
+        self.docNumber = NSDocumentController.shared.documents.count
+        self.inverter = inverter
+        super.init()
+        
+    }
+    
+    convenience override init(){
+        
+        self.init(inverter:nil)
+        if (!SMAInverter.inverters.isEmpty) && (docNumber <= SMAInverter.inverters.lastIndex!){
+            self.inverter = SMAInverter.inverters[docNumber]
         }
+        
     }
     
     override var displayName: String!{
         get{
             if inverter != nil{
-                return String(describing: inverter!.deviceInfo.serial) 
+                return String(describing: inverter!.serial)
             }
-            return "Untitled"
+            return "Untitled \(docNumber!)"
         }
         set{
             super.displayName = newValue
         }
-    }
-    
-    override init() {
-        // Add your subclass-specific initialization here.
-        super.init()
     }
     
     override class var autosavesInPlace: Bool {
@@ -46,6 +51,9 @@ class Document: NSDocument {
         // Returns the Storyboard that contains your Document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as! NSWindowController
+        
+        
+        windowController.contentViewController?.representedObject = inverter
         self.addWindowController(windowController)
     }
     
