@@ -475,7 +475,7 @@
 		DC9CD3791F632DA000C993B0 /* JVCocoa */ = {
 			isa = PBXGroup;
 			children = (
-				DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */,
+				DC9E9C421F7B09F100D146C6 /* JVSQLite */,
 				DC1C2ED01F58A6C10096AA10 /* JVFullProtocolExtensions.swift */,
 				DC9E9C1D1F7AFBE700D146C6 /* JVArray.swift */,
 			);
@@ -490,6 +490,14 @@
 				DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DC9E9C421F7B09F100D146C6 /* JVSQLite */ = {
+			isa = PBXGroup;
+			children = (
+				DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */,
+			);
+			path = JVSQLite;
 			sourceTree = "<group>";
 		};
 		DC9FC2081F38E5FD0000A6DD = {
@@ -1027,10 +1035,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Third Party Code/YASDI\"/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.13;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1081,10 +1089,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.13;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
@@ -1106,8 +1114,10 @@
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/YASDI",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.13;
 				SWIFT_OBJC_BRIDGING_HEADER = "MacSunnySender-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1130,8 +1140,10 @@
 					"$(PROJECT_DIR)/Frameworks",
 					"$(PROJECT_DIR)/Frameworks/YASDI",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.13;
 				SWIFT_OBJC_BRIDGING_HEADER = "MacSunnySender-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};

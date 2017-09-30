@@ -1,5 +1,7 @@
 
+Test Database storage with new framework
 Test the tableviews-datasource protocol
+
 Use last rowID to switch to insert after update
 
 

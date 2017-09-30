@@ -9,6 +9,7 @@
 import Foundation
 
 struct Inverter{
+    
     var serial: Int?
     var number: Handle?
     var name: String?

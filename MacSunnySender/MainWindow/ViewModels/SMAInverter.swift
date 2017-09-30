@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import GRDB
 
 protocol InverterViewModel {
     
@@ -218,8 +219,6 @@ class SMAInverter: InverterViewModel{
         
     }
     
-    
-    
     @objc private func readChannels(){
         
         let systemTimeStamp = Date()
@@ -290,12 +289,44 @@ class SMAInverter: InverterViewModel{
         
     }
     
-    func dailySummary(){
+    public func saveCsvFile(forDate dateQueried: String){
+        
+        var CSVSource = """
+                SUNNY-MAIL
+                Version    1.2
+                Source    SDC
+                Date    08/20/2017
+                Language    EN
+        
+                Type    Serialnumber    Channel    Date    DailyValue    10:47:06    11:02:06
+        """
+        
+        let dataSeperator = ";"
+        
+        if let dataRows = searchData(forDate: Date()){
+            let columNamesUsed = ["serial","name","date","value","value","time"]
+            var dataString:String
+            
+            for dataRow in dataRows{
+                var dataStrings:[String] = []
+                
+                for columnName in columNamesUsed{
+                    dataString = NSString(data: dataRow.dataNoCopy(named: columnName)!, encoding: String.Encoding.utf8.rawValue)! as String
+                    dataStrings.append(dataString)
+                }
+                CSVSource += dataStrings.joined(separator: dataSeperator)
+            }
+        }
+        print(CSVSource) // replace with saved CSVFile
+        
+    }
+    
+    private func searchData(forDate reportDate:Date)->[Row]?{
         
         let searchRequest = Measurement(
             serial: nil,
             timeStamp: nil,
-            date: dateFormatter.string(from: Date()),
+            date: dateFormatter.string(from: reportDate),
             time: nil,
             name: nil,
             value: nil,
@@ -303,10 +334,9 @@ class SMAInverter: InverterViewModel{
         )
         
         var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
-        var dailyRecords = dailyRequest.select()
-        
+        let dailyRecords = dailyRequest.select()
+        return dailyRecords
     }
-    
     
     
 }
