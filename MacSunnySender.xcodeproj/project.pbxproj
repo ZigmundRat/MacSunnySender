@@ -9,18 +9,15 @@
 /* Begin PBXBuildFile section */
 		DC094BF01F75A0DF002CEF97 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC094B961F759454002CEF97 /* GRDB.framework */; };
 		DC094BF11F75A0DF002CEF97 /* GRDB.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC094B961F759454002CEF97 /* GRDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC1C2ED11F58A6C10096AA10 /* JVFullProtocolExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C2ED01F58A6C10096AA10 /* JVFullProtocolExtensions.swift */; };
 		DC5D86411F50AEA2004FEF58 /* MacSunnySenderData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */; };
 		DC5D86451F50AFAC004FEF58 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB642B1F50AA17005C66B6 /* SQLite.framework */; };
 		DC5D86471F50B02F004FEF58 /* SQLite.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB642B1F50AA17005C66B6 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC5D864D1F50BD14004FEF58 /* JVSQLiteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */; };
 		DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */ = {isa = PBXBuildFile; fileRef = DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */; };
 		DC64C8091F65D45500D9C377 /* SampleData in Resources */ = {isa = PBXBuildFile; fileRef = DC64C7FD1F65D45500D9C377 /* SampleData */; };
 		DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */; };
 		DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */; };
 		DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */; };
 		DC9CD3761F6329EB00C993B0 /* Prefs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */; };
-		DC9E9C1E1F7AFBE700D146C6 /* JVArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E9C1D1F7AFBE700D146C6 /* JVArray.swift */; };
 		DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */; };
 		DC9FC2171F38E5FD0000A6DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */; };
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
@@ -361,9 +358,7 @@
 /* Begin PBXFileReference section */
 		DC094B801F759454002CEF97 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = GRDBSwift/GRDB.xcodeproj; sourceTree = "<group>"; };
 		DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "multi-window-app_2x.png"; sourceTree = "<group>"; };
-		DC1C2ED01F58A6C10096AA10 /* JVFullProtocolExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVFullProtocolExtensions.swift; sourceTree = "<group>"; };
 		DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MacSunnySenderData.sqlite; sourceTree = "<group>"; };
-		DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVSQLiteRecord.swift; sourceTree = "<group>"; };
 		DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Schermafbeelding 2017-08-20 om 10.33.57.png"; sourceTree = SOURCE_ROOT; };
 		DC64C7FD1F65D45500D9C377 /* SampleData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SampleData; sourceTree = "<group>"; };
 		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
@@ -372,7 +367,6 @@
 		DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsWindowController.swift; sourceTree = "<group>"; };
 		DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prefs.storyboard; sourceTree = "<group>"; };
-		DC9E9C1D1F7AFBE700D146C6 /* JVArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVArray.swift; sourceTree = "<group>"; };
 		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -472,16 +466,6 @@
 			path = PrefsWindow;
 			sourceTree = "<group>";
 		};
-		DC9CD3791F632DA000C993B0 /* JVCocoa */ = {
-			isa = PBXGroup;
-			children = (
-				DC9E9C421F7B09F100D146C6 /* JVSQLite */,
-				DC1C2ED01F58A6C10096AA10 /* JVFullProtocolExtensions.swift */,
-				DC9E9C1D1F7AFBE700D146C6 /* JVArray.swift */,
-			);
-			path = JVCocoa;
-			sourceTree = "<group>";
-		};
 		DC9CD37A1F632E0400C993B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,14 +474,6 @@
 				DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		DC9E9C421F7B09F100D146C6 /* JVSQLite */ = {
-			isa = PBXGroup;
-			children = (
-				DC5D864C1F50BD14004FEF58 /* JVSQLiteRecord.swift */,
-			);
-			path = JVSQLite;
 			sourceTree = "<group>";
 		};
 		DC9FC2081F38E5FD0000A6DD = {
@@ -521,7 +497,6 @@
 				DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */,
 				DC9FC2131F38E5FD0000A6DD /* MacSunnySender */,
 				DC64C7FD1F65D45500D9C377 /* SampleData */,
-				DC9CD3791F632DA000C993B0 /* JVCocoa */,
 				DC9FC2121F38E5FD0000A6DD /* Products */,
 				DCAB5E131F50A53E005C66B6 /* Frameworks */,
 			);
@@ -926,9 +901,6 @@
 				DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */,
 				DCA39A561F6E561B00582DAB /* Measurement.swift in Sources */,
 				DCE6C6EB1F687375003D719B /* PrefsViewController.swift in Sources */,
-				DC1C2ED11F58A6C10096AA10 /* JVFullProtocolExtensions.swift in Sources */,
-				DC9E9C1E1F7AFBE700D146C6 /* JVArray.swift in Sources */,
-				DC5D864D1F50BD14004FEF58 /* JVSQLiteRecord.swift in Sources */,
 				DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */,
 				DCA39A541F6E55FB00582DAB /* Inverter.swift in Sources */,
 				DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */,

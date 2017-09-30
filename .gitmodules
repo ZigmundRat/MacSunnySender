@@ -4,3 +4,6 @@
 [submodule "Frameworks/GRDBSwift"]
 	path = Frameworks/GRDBSwift
 	url = https://github.com/groue/GRDB.swift.git
+[submodule "JVCocoa"]
+	path = JVCocoa
+	url = https://TheMisfit68@github.com/TheMisfit68/JVCocoa.git
