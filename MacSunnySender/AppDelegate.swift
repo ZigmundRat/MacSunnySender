@@ -19,6 +19,8 @@ let sunnyPortalClient = EmailClient.sharedInstance
 private let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
 let dataBaseQueue = try! DatabaseQueue(path: dataFile!)
 
+let debugger = JVDebugger.sharedInstance
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 	

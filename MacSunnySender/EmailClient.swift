@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class EmailClient{
+class EmailClient:Singleton{
     
     static let sharedInstance:EmailClient = EmailClient()
     
