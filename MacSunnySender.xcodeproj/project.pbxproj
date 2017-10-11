@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		DC094BF01F75A0DF002CEF97 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC094B961F759454002CEF97 /* GRDB.framework */; };
 		DC094BF11F75A0DF002CEF97 /* GRDB.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DC094B961F759454002CEF97 /* GRDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC40DB5A1F81905F008399EA /* JVDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC40DB591F81905F008399EA /* JVDebugger.swift */; };
-		DC5C8B081F8ADFF50031A72A /* OCGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC276131F88372B00A3FA50 /* OCGeometry.swift */; };
 		DC5C8B0A1F8AE7A50031A72A /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = DC5C8B091F8AE7A50031A72A /* ToDo */; };
 		DC5D86411F50AEA2004FEF58 /* MacSunnySenderData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */; };
 		DC5D86451F50AFAC004FEF58 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB642B1F50AA17005C66B6 /* SQLite.framework */; };
@@ -18,6 +16,22 @@
 		DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */ = {isa = PBXBuildFile; fileRef = DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */; };
 		DC64C8091F65D45500D9C377 /* SampleData in Resources */ = {isa = PBXBuildFile; fileRef = DC64C7FD1F65D45500D9C377 /* SampleData */; };
 		DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */; };
+		DC8019F11F8ED25C0065653A /* JVSQLiteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019CE1F8ED25B0065653A /* JVSQLiteRecord.swift */; };
+		DC8019F21F8ED25C0065653A /* JVSingleton protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019EB1F8ED25B0065653A /* JVSingleton protocol.swift */; };
+		DC8019F31F8ED25C0065653A /* JVArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019EC1F8ED25B0065653A /* JVArray.swift */; };
+		DC8019F41F8ED25C0065653A /* JVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019ED1F8ED25C0065653A /* JVView.swift */; };
+		DC8019F51F8ED25C0065653A /* JVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019EE1F8ED25C0065653A /* JVCalculator.swift */; };
+		DC8019F61F8ED25C0065653A /* JVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019EF1F8ED25C0065653A /* JVString.swift */; };
+		DC8019F71F8ED25C0065653A /* JVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019F01F8ED25C0065653A /* JVStack.swift */; };
+		DC8019FA1F8ED29C0065653A /* JVLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019F81F8ED29B0065653A /* JVLayoutConstraint.swift */; };
+		DC8019FB1F8ED29C0065653A /* JVRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019F91F8ED29C0065653A /* JVRegularExpression.swift */; };
+		DC8019FC1F8ED2F60065653A /* JVDebugger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5301F8ED22B00E23928 /* JVDebugger.swift */; };
+		DC8019FD1F8ED2FC0065653A /* JVBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5341F8ED22D00E23928 /* JVBool.swift */; };
+		DC8019FE1F8ED3050065653A /* JVFullExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5361F8ED22D00E23928 /* JVFullExtension.swift */; };
+		DC8019FF1F8ED3050065653A /* JVGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5351F8ED22D00E23928 /* JVGeometry.swift */; };
+		DC801A001F8ED3050065653A /* JVImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5331F8ED22C00E23928 /* JVImage.swift */; };
+		DC801A011F8ED3050065653A /* JVIntrospection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5311F8ED22C00E23928 /* JVIntrospection.swift */; };
+		DC801A021F8ED3050065653A /* JVWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5A5321F8ED22C00E23928 /* JVWindow.swift */; };
 		DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */; };
 		DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */; };
 		DC9CD3761F6329EB00C993B0 /* Prefs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */; };
@@ -51,14 +65,8 @@
 		DCB060021F498ADF00767FC7 /* WR46A-01.dti in Resources */ = {isa = PBXBuildFile; fileRef = DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */; };
 		DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F61F390F6D00E66CA1 /* SMADriver.swift */; };
 		DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */; };
-		DCC2760B1F881CBC00A3FA50 /* JVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC275ED1F881CBC00A3FA50 /* JVView.swift */; };
-		DCC2760D1F88350300A3FA50 /* JVImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2760C1F88350200A3FA50 /* JVImage.swift */; };
-		DCC2760F1F88352300A3FA50 /* JVWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC2760E1F88352300A3FA50 /* JVWindow.swift */; };
-		DCC2761B1F8839BE00A3FA50 /* JVLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC276121F88372B00A3FA50 /* JVLayoutConstraint.swift */; };
 		DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE0B1A91F48E313006A867E /* EmailClient.swift */; };
 		DCE6C6EB1F687375003D719B /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6C6EA1F687375003D719B /* PrefsViewController.swift */; };
-		DCF4BE421F802DAA0016A452 /* JVSQLiteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BC501F802DA90016A452 /* JVSQLiteRecord.swift */; };
-		DCF4BE431F802DAA0016A452 /* JVArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BC511F802DA90016A452 /* JVArray.swift */; };
 		DCF4BE6C1F802DAA0016A452 /* icon_controls_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BC951F802DA90016A452 /* icon_controls_6.png */; };
 		DCF4BE6D1F802DAA0016A452 /* icon_font_regular.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BC961F802DA90016A452 /* icon_font_regular.png */; };
 		DCF4BE6E1F802DAA0016A452 /* icon_arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BC971F802DA90016A452 /* icon_arrow_up.png */; };
@@ -424,14 +432,6 @@
 		DCF4BFD61F802DAA0016A452 /* 00-Read me first - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE011F802DAA0016A452 /* 00-Read me first - license.txt */; };
 		DCF4BFD81F802DAA0016A452 /* JVCocoa.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE071F802DAA0016A452 /* JVCocoa.xcconfig */; };
 		DCF4BFDB1F802DAA0016A452 /* Report Build Variables.sh in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE0C1F802DAA0016A452 /* Report Build Variables.sh */; };
-		DCF4BFDE1F802DAA0016A452 /* JVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE101F802DAA0016A452 /* JVCalculator.swift */; };
-		DCF4BFDF1F802DAA0016A452 /* JVBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE111F802DAA0016A452 /* JVBool.swift */; };
-		DCF4BFE01F802DAA0016A452 /* JVIntrospection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE121F802DAA0016A452 /* JVIntrospection.swift */; };
-		DCF4BFE21F802DAA0016A452 /* JVFullExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE141F802DAA0016A452 /* JVFullExtension.swift */; };
-		DCF4BFE51F802DAA0016A452 /* JVSingleton protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE171F802DAA0016A452 /* JVSingleton protocol.swift */; };
-		DCF4BFE61F802DAA0016A452 /* JVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE181F802DAA0016A452 /* JVString.swift */; };
-		DCF4BFE71F802DAA0016A452 /* JVRegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE191F802DAA0016A452 /* JVRegularExpression.swift */; };
-		DCF4BFE81F802DAA0016A452 /* JVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4BE1A1F802DAA0016A452 /* JVStack.swift */; };
 		DCF4C0051F803F8A0016A452 /* JVCocoaBasedProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DCF4C0041F803F8A0016A452 /* JVCocoaBasedProject.xcconfig */; };
 /* End PBXBuildFile section */
 
@@ -695,13 +695,6 @@
 			remoteGlobalIDString = 31B7D8EAEDCE4240B0DDC5E4;
 			remoteInfo = yasdishell;
 		};
-		DCF4BE351F802DAA0016A452 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCF4BE041F802DAA0016A452 /* OCCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C31657D419C0DE4F0051C0E1;
-			remoteInfo = OCCocoa;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -748,12 +741,20 @@
 /* Begin PBXFileReference section */
 		DC094B801F759454002CEF97 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = GRDBSwift/GRDB.xcodeproj; sourceTree = "<group>"; };
 		DC12788A1F4B713200305DF4 /* multi-window-app_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "multi-window-app_2x.png"; sourceTree = "<group>"; };
-		DC40DB591F81905F008399EA /* JVDebugger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVDebugger.swift; sourceTree = "<group>"; };
 		DC5C8B091F8AE7A50031A72A /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MacSunnySenderData.sqlite; sourceTree = "<group>"; };
 		DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Schermafbeelding 2017-08-20 om 10.33.57.png"; sourceTree = SOURCE_ROOT; };
 		DC64C7FD1F65D45500D9C377 /* SampleData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SampleData; sourceTree = "<group>"; };
 		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
+		DC8019CE1F8ED25B0065653A /* JVSQLiteRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVSQLiteRecord.swift; sourceTree = "<group>"; };
+		DC8019EB1F8ED25B0065653A /* JVSingleton protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JVSingleton protocol.swift"; sourceTree = "<group>"; };
+		DC8019EC1F8ED25B0065653A /* JVArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVArray.swift; sourceTree = "<group>"; };
+		DC8019ED1F8ED25C0065653A /* JVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVView.swift; sourceTree = "<group>"; };
+		DC8019EE1F8ED25C0065653A /* JVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVCalculator.swift; sourceTree = "<group>"; };
+		DC8019EF1F8ED25C0065653A /* JVString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVString.swift; sourceTree = "<group>"; };
+		DC8019F01F8ED25C0065653A /* JVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVStack.swift; sourceTree = "<group>"; };
+		DC8019F81F8ED29B0065653A /* JVLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVLayoutConstraint.swift; sourceTree = "<group>"; };
+		DC8019F91F8ED29C0065653A /* JVRegularExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVRegularExpression.swift; sourceTree = "<group>"; };
 		DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = yasdiInstallNames.xcconfig; sourceTree = "<group>"; };
 		DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacSunnySender-Bridging-Header.h"; sourceTree = "<group>"; };
 		DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -788,21 +789,19 @@
 		DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WR46A-01.dti"; sourceTree = "<group>"; };
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
-		DCC275ED1F881CBC00A3FA50 /* JVView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVView.swift; sourceTree = "<group>"; };
-		DCC2760C1F88350200A3FA50 /* JVImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVImage.swift; sourceTree = "<group>"; };
-		DCC2760E1F88352300A3FA50 /* JVWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVWindow.swift; sourceTree = "<group>"; };
-		DCC276121F88372B00A3FA50 /* JVLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVLayoutConstraint.swift; sourceTree = "<group>"; };
-		DCC276131F88372B00A3FA50 /* OCGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCGeometry.swift; sourceTree = "<group>"; };
 		DCC276141F88372B00A3FA50 /* OCManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCManagedObjectContext.swift; sourceTree = "<group>"; };
 		DCC276151F88372B00A3FA50 /* OCToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCToolbarItem.swift; sourceTree = "<group>"; };
 		DCC276171F88372B00A3FA50 /* OCXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCXMLParser.swift; sourceTree = "<group>"; };
 		DCC276181F88372B00A3FA50 /* OCSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSplitViewController.swift; sourceTree = "<group>"; };
+		DCC5A5301F8ED22B00E23928 /* JVDebugger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVDebugger.swift; sourceTree = "<group>"; };
+		DCC5A5311F8ED22C00E23928 /* JVIntrospection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVIntrospection.swift; sourceTree = "<group>"; };
+		DCC5A5321F8ED22C00E23928 /* JVWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVWindow.swift; sourceTree = "<group>"; };
+		DCC5A5331F8ED22C00E23928 /* JVImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVImage.swift; sourceTree = "<group>"; };
+		DCC5A5341F8ED22D00E23928 /* JVBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVBool.swift; sourceTree = "<group>"; };
+		DCC5A5351F8ED22D00E23928 /* JVGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVGeometry.swift; sourceTree = "<group>"; };
+		DCC5A5361F8ED22D00E23928 /* JVFullExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVFullExtension.swift; sourceTree = "<group>"; };
 		DCE0B1A91F48E313006A867E /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 		DCE6C6EA1F687375003D719B /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
-		DCF4BC501F802DA90016A452 /* JVSQLiteRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVSQLiteRecord.swift; sourceTree = "<group>"; };
-		DCF4BC511F802DA90016A452 /* JVArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVArray.swift; sourceTree = "<group>"; };
-		DCF4BC531F802DA90016A452 /* OCCollapsibleSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCollapsibleSplitView.h; sourceTree = "<group>"; };
-		DCF4BC541F802DA90016A452 /* OCCollapsibleSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCollapsibleSplitView.m; sourceTree = "<group>"; };
 		DCF4BC951F802DA90016A452 /* icon_controls_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_controls_6.png; sourceTree = "<group>"; };
 		DCF4BC961F802DA90016A452 /* icon_font_regular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_font_regular.png; sourceTree = "<group>"; };
 		DCF4BC971F802DA90016A452 /* icon_arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_arrow_up.png; sourceTree = "<group>"; };
@@ -1167,23 +1166,8 @@
 		DCF4BE001F802DAA0016A452 /* 165-glasses-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "165-glasses-3.png"; sourceTree = "<group>"; };
 		DCF4BE011F802DAA0016A452 /* 00-Read me first - license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "00-Read me first - license.txt"; sourceTree = "<group>"; };
 		DCF4BE021F802DAA0016A452 /* JVCocoa.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JVCocoa.playground; sourceTree = "<group>"; };
-		DCF4BE041F802DAA0016A452 /* OCCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OCCocoa.xcodeproj; sourceTree = "<group>"; };
 		DCF4BE071F802DAA0016A452 /* JVCocoa.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = JVCocoa.xcconfig; sourceTree = "<group>"; };
 		DCF4BE0C1F802DAA0016A452 /* Report Build Variables.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Report Build Variables.sh"; sourceTree = "<group>"; };
-		DCF4BE0E1F802DAA0016A452 /* OCXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCXMLParser.swift; sourceTree = "<group>"; };
-		DCF4BE101F802DAA0016A452 /* JVCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVCalculator.swift; sourceTree = "<group>"; };
-		DCF4BE111F802DAA0016A452 /* JVBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVBool.swift; sourceTree = "<group>"; };
-		DCF4BE121F802DAA0016A452 /* JVIntrospection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVIntrospection.swift; sourceTree = "<group>"; };
-		DCF4BE141F802DAA0016A452 /* JVFullExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVFullExtension.swift; sourceTree = "<group>"; };
-		DCF4BE151F802DAA0016A452 /* OCToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCToolbarItem.swift; sourceTree = "<group>"; };
-		DCF4BE171F802DAA0016A452 /* JVSingleton protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JVSingleton protocol.swift"; sourceTree = "<group>"; };
-		DCF4BE181F802DAA0016A452 /* JVString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVString.swift; sourceTree = "<group>"; };
-		DCF4BE191F802DAA0016A452 /* JVRegularExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVRegularExpression.swift; sourceTree = "<group>"; };
-		DCF4BE1A1F802DAA0016A452 /* JVStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JVStack.swift; sourceTree = "<group>"; };
-		DCF4BE1B1F802DAA0016A452 /* OCManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCManagedObjectContext.swift; sourceTree = "<group>"; };
-		DCF4BE1C1F802DAA0016A452 /* OCLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCLayoutConstraint.swift; sourceTree = "<group>"; };
-		DCF4BE201F802DAA0016A452 /* OCSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCSplitViewController.swift; sourceTree = "<group>"; };
-		DCF4BE221F802DAA0016A452 /* OCGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCGeometry.swift; sourceTree = "<group>"; };
 		DCF4C0041F803F8A0016A452 /* JVCocoaBasedProject.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = JVCocoaBasedProject.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1377,32 +1361,16 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
-		DCC276161F88372B00A3FA50 /* Extensions */ = {
+		DCC2761A1F88372B00A3FA50 /* Old code to migrate from OCCocoa */ = {
 			isa = PBXGroup;
 			children = (
 				DCC276141F88372B00A3FA50 /* OCManagedObjectContext.swift */,
 				DCC276151F88372B00A3FA50 /* OCToolbarItem.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		DCC276191F88372B00A3FA50 /* Subclasses & Delegates */ = {
-			isa = PBXGroup;
-			children = (
 				DCC276171F88372B00A3FA50 /* OCXMLParser.swift */,
 				DCC276181F88372B00A3FA50 /* OCSplitViewController.swift */,
 			);
-			name = "Subclasses & Delegates";
-			sourceTree = "<group>";
-		};
-		DCC2761A1F88372B00A3FA50 /* OCCocoa */ = {
-			isa = PBXGroup;
-			children = (
-				DCC276161F88372B00A3FA50 /* Extensions */,
-				DCC276191F88372B00A3FA50 /* Subclasses & Delegates */,
-			);
-			name = OCCocoa;
-			path = OCCocoa/OCCocoa;
+			name = "Old code to migrate from OCCocoa";
+			path = "OCCocoa/Old code to migrate from OCCocoa";
 			sourceTree = "<group>";
 		};
 		DCF4BC4E1F802DA90016A452 /* JVCocoa */ = {
@@ -1410,48 +1378,28 @@
 			children = (
 				DC5C8B091F8AE7A50031A72A /* ToDo */,
 				DCF4BE021F802DAA0016A452 /* JVCocoa.playground */,
-				DCF4BE121F802DAA0016A452 /* JVIntrospection.swift */,
-				DCF4BE171F802DAA0016A452 /* JVSingleton protocol.swift */,
-				DCF4BE101F802DAA0016A452 /* JVCalculator.swift */,
-				DCF4BE111F802DAA0016A452 /* JVBool.swift */,
-				DCF4BE141F802DAA0016A452 /* JVFullExtension.swift */,
-				DCF4BE191F802DAA0016A452 /* JVRegularExpression.swift */,
-				DCF4BE181F802DAA0016A452 /* JVString.swift */,
-				DC40DB591F81905F008399EA /* JVDebugger.swift */,
-				DCC275ED1F881CBC00A3FA50 /* JVView.swift */,
-				DCC276121F88372B00A3FA50 /* JVLayoutConstraint.swift */,
-				DCC2760C1F88350200A3FA50 /* JVImage.swift */,
-				DCC2760E1F88352300A3FA50 /* JVWindow.swift */,
-				DCF4BC501F802DA90016A452 /* JVSQLiteRecord.swift */,
-				DCF4BC511F802DA90016A452 /* JVArray.swift */,
-				DCF4BE1A1F802DAA0016A452 /* JVStack.swift */,
-				DCC276131F88372B00A3FA50 /* OCGeometry.swift */,
-				DCC2761A1F88372B00A3FA50 /* OCCocoa */,
+				DCC5A5341F8ED22D00E23928 /* JVBool.swift */,
+				DCC5A5301F8ED22B00E23928 /* JVDebugger.swift */,
+				DCC5A5361F8ED22D00E23928 /* JVFullExtension.swift */,
+				DCC5A5351F8ED22D00E23928 /* JVGeometry.swift */,
+				DCC5A5331F8ED22C00E23928 /* JVImage.swift */,
+				DCC5A5311F8ED22C00E23928 /* JVIntrospection.swift */,
+				DCC5A5321F8ED22C00E23928 /* JVWindow.swift */,
+				DC8019EC1F8ED25B0065653A /* JVArray.swift */,
+				DC8019EE1F8ED25C0065653A /* JVCalculator.swift */,
+				DC8019EB1F8ED25B0065653A /* JVSingleton protocol.swift */,
+				DC8019CE1F8ED25B0065653A /* JVSQLiteRecord.swift */,
+				DC8019F01F8ED25C0065653A /* JVStack.swift */,
+				DC8019EF1F8ED25C0065653A /* JVString.swift */,
+				DC8019ED1F8ED25C0065653A /* JVView.swift */,
+				DC8019F81F8ED29B0065653A /* JVLayoutConstraint.swift */,
+				DC8019F91F8ED29C0065653A /* JVRegularExpression.swift */,
+				DCC2761A1F88372B00A3FA50 /* Old code to migrate from OCCocoa */,
 				DCC276101F8835F200A3FA50 /* Artwork */,
 				DCF4C0031F803F0D0016A452 /* Standard Build Settings */,
 				DCF4C0021F803EB80016A452 /* BuildScripts */,
-				DCF4BC521F802DA90016A452 /* OCCocoaObjectiveC */,
-				DCF4BC571F802DA90016A452 /* OCCocoa */,
 			);
 			path = JVCocoa;
-			sourceTree = "<group>";
-		};
-		DCF4BC521F802DA90016A452 /* OCCocoaObjectiveC */ = {
-			isa = PBXGroup;
-			children = (
-				DCF4BC531F802DA90016A452 /* OCCollapsibleSplitView.h */,
-				DCF4BC541F802DA90016A452 /* OCCollapsibleSplitView.m */,
-			);
-			path = OCCocoaObjectiveC;
-			sourceTree = "<group>";
-		};
-		DCF4BC571F802DA90016A452 /* OCCocoa */ = {
-			isa = PBXGroup;
-			children = (
-				DCF4BE041F802DAA0016A452 /* OCCocoa.xcodeproj */,
-				DCF4BE0D1F802DAA0016A452 /* OCCocoa */,
-			);
-			path = OCCocoa;
 			sourceTree = "<group>";
 		};
 		DCF4BC941F802DA90016A452 /* twg_iphone_toolbar_icons */ = {
@@ -1839,27 +1787,6 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
-		DCF4BE051F802DAA0016A452 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DCF4BE361F802DAA0016A452 /* OCCocoa.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DCF4BE0D1F802DAA0016A452 /* OCCocoa */ = {
-			isa = PBXGroup;
-			children = (
-				DCF4BE0E1F802DAA0016A452 /* OCXMLParser.swift */,
-				DCF4BE151F802DAA0016A452 /* OCToolbarItem.swift */,
-				DCF4BE1B1F802DAA0016A452 /* OCManagedObjectContext.swift */,
-				DCF4BE1C1F802DAA0016A452 /* OCLayoutConstraint.swift */,
-				DCF4BE201F802DAA0016A452 /* OCSplitViewController.swift */,
-				DCF4BE221F802DAA0016A452 /* OCGeometry.swift */,
-			);
-			path = OCCocoa;
-			sourceTree = "<group>";
-		};
 		DCF4C0021F803EB80016A452 /* BuildScripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1942,10 +1869,6 @@
 				{
 					ProductGroup = DC094B811F759454002CEF97 /* Products */;
 					ProjectRef = DC094B801F759454002CEF97 /* GRDB.xcodeproj */;
-				},
-				{
-					ProductGroup = DCF4BE051F802DAA0016A452 /* Products */;
-					ProjectRef = DCF4BE041F802DAA0016A452 /* OCCocoa.xcodeproj */;
 				},
 				{
 					ProductGroup = DCAB641D1F50AA17005C66B6 /* Products */;
@@ -2176,13 +2099,6 @@
 			fileType = "compiled.mach-o.executable";
 			path = yasdishell;
 			remoteRef = DCAB64481F50AA24005C66B6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DCF4BE361F802DAA0016A452 /* OCCocoa.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OCCocoa.framework;
-			remoteRef = DCF4BE351F802DAA0016A452 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2576,33 +2492,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC2760B1F881CBC00A3FA50 /* JVView.swift in Sources */,
-				DCF4BE421F802DAA0016A452 /* JVSQLiteRecord.swift in Sources */,
+				DC8019F71F8ED25C0065653A /* JVStack.swift in Sources */,
+				DC8019F11F8ED25C0065653A /* JVSQLiteRecord.swift in Sources */,
+				DC8019FB1F8ED29C0065653A /* JVRegularExpression.swift in Sources */,
+				DC8019FC1F8ED2F60065653A /* JVDebugger.swift in Sources */,
 				DC9FC2171F38E5FD0000A6DD /* MainViewController.swift in Sources */,
-				DCF4BE431F802DAA0016A452 /* JVArray.swift in Sources */,
-				DCF4BFE21F802DAA0016A452 /* JVFullExtension.swift in Sources */,
-				DCC2760D1F88350300A3FA50 /* JVImage.swift in Sources */,
-				DCF4BFE71F802DAA0016A452 /* JVRegularExpression.swift in Sources */,
+				DC8019FD1F8ED2FC0065653A /* JVBool.swift in Sources */,
 				DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */,
 				DCB282F91F390F6D00E66CA1 /* SMADriver.swift in Sources */,
 				DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */,
-				DCC2761B1F8839BE00A3FA50 /* JVLayoutConstraint.swift in Sources */,
-				DCF4BFE01F802DAA0016A452 /* JVIntrospection.swift in Sources */,
+				DC8019F61F8ED25C0065653A /* JVString.swift in Sources */,
 				DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */,
 				DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */,
-				DCF4BFE61F802DAA0016A452 /* JVString.swift in Sources */,
-				DC5C8B081F8ADFF50031A72A /* OCGeometry.swift in Sources */,
-				DCF4BFE51F802DAA0016A452 /* JVSingleton protocol.swift in Sources */,
+				DC8019F51F8ED25C0065653A /* JVCalculator.swift in Sources */,
 				DCA39A561F6E561B00582DAB /* Measurement.swift in Sources */,
+				DC801A001F8ED3050065653A /* JVImage.swift in Sources */,
+				DC8019F41F8ED25C0065653A /* JVView.swift in Sources */,
 				DCE6C6EB1F687375003D719B /* PrefsViewController.swift in Sources */,
-				DC40DB5A1F81905F008399EA /* JVDebugger.swift in Sources */,
+				DC8019F31F8ED25C0065653A /* JVArray.swift in Sources */,
 				DCB282FA1F390F6D00E66CA1 /* SMAInverter.swift in Sources */,
-				DCF4BFDF1F802DAA0016A452 /* JVBool.swift in Sources */,
 				DCA39A541F6E55FB00582DAB /* Inverter.swift in Sources */,
-				DCF4BFE81F802DAA0016A452 /* JVStack.swift in Sources */,
-				DCC2760F1F88352300A3FA50 /* JVWindow.swift in Sources */,
+				DC8019FE1F8ED3050065653A /* JVFullExtension.swift in Sources */,
+				DC801A011F8ED3050065653A /* JVIntrospection.swift in Sources */,
+				DC8019FA1F8ED29C0065653A /* JVLayoutConstraint.swift in Sources */,
 				DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */,
-				DCF4BFDE1F802DAA0016A452 /* JVCalculator.swift in Sources */,
+				DC8019F21F8ED25C0065653A /* JVSingleton protocol.swift in Sources */,
+				DC8019FF1F8ED3050065653A /* JVGeometry.swift in Sources */,
+				DC801A021F8ED3050065653A /* JVWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
