@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Inverter{
+struct Inverter:JVSQliteRecordable{
     
     var serial: Int?
     var number: Handle?

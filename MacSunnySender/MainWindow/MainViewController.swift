@@ -27,8 +27,8 @@ class MainViewController: NSViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            // Do any additional setup after loading the view.
-            mainTable.dataSource = self
+        // Do any additional setup after loading the view.
+        mainTable.dataSource = self
     }
     
     override var representedObject: Any? {
@@ -49,9 +49,9 @@ extension MainViewController:NSTableViewDelegate, NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any?{
         
         // Find the dataItem for the row
-        guard let dataItem = inverter?.currentMeasurements?[row] else {
-            return nil
-        }
+        //        guard let dataItem = inverter?.currentMeasurements?[row] else {
+        //            return nil
+        //        }
         
         //        // Get the cell based on each column
         //        if tableColumn == tableView.tableColumns[0] {
@@ -63,13 +63,13 @@ extension MainViewController:NSTableViewDelegate, NSTableViewDataSource {
         //        }
         
         // Get the cell based on each column
-        if tableColumn == tableView.tableColumns[0] {
-            return dataItem.name
-        } else if tableColumn == tableView.tableColumns[1] {
-            return dataItem.value
-        }else if tableColumn == tableView.tableColumns[2] {
-            return dataItem.unit
-        }
+        //        if tableColumn == tableView.tableColumns[0] {
+        //            return dataItem.name
+        //        } else if tableColumn == tableView.tableColumns[1] {
+        //            return dataItem.value
+        //        }else if tableColumn == tableView.tableColumns[2] {
+        //            return dataItem.unit
+        //        }
         return nil
         
     }

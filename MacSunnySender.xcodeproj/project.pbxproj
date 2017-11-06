@@ -13,7 +13,6 @@
 		DC5D86411F50AEA2004FEF58 /* MacSunnySenderData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */; };
 		DC5D86451F50AFAC004FEF58 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAB642B1F50AA17005C66B6 /* SQLite.framework */; };
 		DC5D86471F50B02F004FEF58 /* SQLite.framework in Embed Libraries */ = {isa = PBXBuildFile; fileRef = DCAB642B1F50AA17005C66B6 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */ = {isa = PBXBuildFile; fileRef = DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */; };
 		DC64C8091F65D45500D9C377 /* SampleData in Resources */ = {isa = PBXBuildFile; fileRef = DC64C7FD1F65D45500D9C377 /* SampleData */; };
 		DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */; };
 		DC8019F11F8ED25C0065653A /* JVSQLiteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8019CE1F8ED25B0065653A /* JVSQLiteRecord.swift */; };
@@ -35,6 +34,8 @@
 		DC9CD3671F631B0B00C993B0 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */; };
 		DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */; };
 		DC9CD3761F6329EB00C993B0 /* Prefs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */; };
+		DC9CFCAC1F956316005513CC /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CFCAB1F956316005513CC /* Channel.swift */; };
+		DC9CFCAE1F965E71005513CC /* JVTypeCasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CFCAD1F965E71005513CC /* JVTypeCasting.swift */; };
 		DC9FC2151F38E5FD0000A6DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */; };
 		DC9FC2171F38E5FD0000A6DD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */; };
 		DC9FC2191F38E5FD0000A6DD /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9FC2181F38E5FD0000A6DD /* Document.swift */; };
@@ -760,13 +761,14 @@
 		DC9CD3661F631B0B00C993B0 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		DC9CD3731F63297B00C993B0 /* PrefsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsWindowController.swift; sourceTree = "<group>"; };
 		DC9CD3751F6329EB00C993B0 /* Prefs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prefs.storyboard; sourceTree = "<group>"; };
+		DC9CFCAB1F956316005513CC /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		DC9CFCAD1F965E71005513CC /* JVTypeCasting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVTypeCasting.swift; sourceTree = "<group>"; };
 		DC9FC2111F38E5FD0000A6DD /* MacSunnySender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSunnySender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9FC2161F38E5FD0000A6DD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DC9FC2181F38E5FD0000A6DD /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC9FC21D1F38E5FD0000A6DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DC9FC21F1F38E5FD0000A6DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSunnySender.entitlements; sourceTree = "<group>"; };
 		DC9FC2261F38E7540000A6DD /* AdaptedBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdaptedBuildSettings.xcconfig; sourceTree = "<group>"; };
 		DC9FC2281F38E7D50000A6DD /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
@@ -786,6 +788,7 @@
 		DCA8A6AE1F50AD6900CCC796 /* libyasdi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libyasdi.dylib; path = "../../../Third Party Code/YASDI/build-xcode/Debug/libyasdi.dylib"; sourceTree = "<group>"; };
 		DCAB641C1F50AA17005C66B6 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = SQLiteSwift/SQLite.xcodeproj; sourceTree = "<group>"; };
 		DCAB64341F50AA24005C66B6 /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = yasdi.xcodeproj; path = "../../../../Third Party Code/YASDI/build-xcode/yasdi.xcodeproj"; sourceTree = "<group>"; };
+		DCAE814E1F968F1500E73933 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WR46A-01.dti"; sourceTree = "<group>"; };
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
@@ -1241,6 +1244,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA39A531F6E55FB00582DAB /* Inverter.swift */,
+				DC9CFCAB1F956316005513CC /* Channel.swift */,
 				DCA39A551F6E561B00582DAB /* Measurement.swift */,
 				DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */,
 			);
@@ -1285,13 +1289,13 @@
 		DC9FC2131F38E5FD0000A6DD /* MacSunnySender */ = {
 			isa = PBXGroup;
 			children = (
+				DCAE814E1F968F1500E73933 /* Info.plist */,
 				DC9FC2141F38E5FD0000A6DD /* AppDelegate.swift */,
 				DCE0B1A91F48E313006A867E /* EmailClient.swift */,
 				DC9CD3781F632D3000C993B0 /* PrefsWindow */,
 				DC9CD3771F632D2100C993B0 /* MainWindow */,
 				DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */,
 				DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */,
-				DC9FC21F1F38E5FD0000A6DD /* Info.plist */,
 				DC9FC2201F38E5FD0000A6DD /* MacSunnySender.entitlements */,
 				DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */,
 				DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */,
@@ -1394,6 +1398,7 @@
 				DC8019ED1F8ED25C0065653A /* JVView.swift */,
 				DC8019F81F8ED29B0065653A /* JVLayoutConstraint.swift */,
 				DC8019F91F8ED29C0065653A /* JVRegularExpression.swift */,
+				DC9CFCAD1F965E71005513CC /* JVTypeCasting.swift */,
 				DCC2761A1F88372B00A3FA50 /* Old code to migrate from OCCocoa */,
 				DCC276101F8835F200A3FA50 /* Artwork */,
 				DCF4C0031F803F0D0016A452 /* Standard Build Settings */,
@@ -2292,7 +2297,6 @@
 				DCF4BEA61F802DAA0016A452 /* icon_folder_bookmark.png in Resources */,
 				DCF4BE871F802DAA0016A452 /* icon_paper_plane.png in Resources */,
 				DCF4BECB1F802DAA0016A452 /* icon_danger.png in Resources */,
-				DC60FB761F5A2AAE00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png in Resources */,
 				DCF4BEFC1F802DAA0016A452 /* icon_court.png in Resources */,
 				DCF4BFC01F802DAA0016A452 /* 93-thermometer.png in Resources */,
 				DCF4BF291F802DAA0016A452 /* 158-wrench-2.png in Resources */,
@@ -2504,9 +2508,11 @@
 				DC8019F61F8ED25C0065653A /* JVString.swift in Sources */,
 				DC9CD3741F63297B00C993B0 /* PrefsWindowController.swift in Sources */,
 				DCE0B1AA1F48E313006A867E /* EmailClient.swift in Sources */,
+				DC9CFCAE1F965E71005513CC /* JVTypeCasting.swift in Sources */,
 				DC8019F51F8ED25C0065653A /* JVCalculator.swift in Sources */,
 				DCA39A561F6E561B00582DAB /* Measurement.swift in Sources */,
 				DC801A001F8ED3050065653A /* JVImage.swift in Sources */,
+				DC9CFCAC1F956316005513CC /* Channel.swift in Sources */,
 				DC8019F41F8ED25C0065653A /* JVView.swift in Sources */,
 				DCE6C6EB1F687375003D719B /* PrefsViewController.swift in Sources */,
 				DC8019F31F8ED25C0065653A /* JVArray.swift in Sources */,

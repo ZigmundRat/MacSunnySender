@@ -19,6 +19,25 @@ protocol InverterViewModel {
     var currentMeasurements:[Measurement]?{get}
 }
 
+/// C-callback functions
+// Should always be declared global???
+var callBackFunctionForYasdiEvents:(TYASDIDetectionSub, UInt32, UInt32)->() = {
+    (event: TYASDIDetectionSub, deviceHandle: UInt32, param1: UInt32)->()  in
+    
+    switch event{
+    case YASDI_EVENT_DEVICE_ADDED:
+        debugger.log(debugLevel:.message ,"Device \(deviceHandle) added")
+    case YASDI_EVENT_DEVICE_REMOVED:
+        debugger.log(debugLevel:.message,"Device \(deviceHandle) removed")
+    case YASDI_EVENT_DEVICE_SEARCH_END:
+        debugger.log(debugLevel:.message,"No more devices found")
+    case YASDI_EVENT_DOWNLOAD_CHANLIST:
+        debugger.log(debugLevel:.message,"Channels downloaded")
+    default:
+        debugger.log(debugLevel:.error,"Unkwown event occured during async device detection")
+    }
+}
+
 class SMAInverter: InverterViewModel{
     
     public static var inverters:[SMAInverter] = []
@@ -38,12 +57,22 @@ class SMAInverter: InverterViewModel{
     private let dateFormatter = DateFormatter()
     private let timeFormatter = DateFormatter()
     
+    private let inverterID:Int? = nil
+    private let channelID:Int? = nil
+    private let measurementID:Int? = nil
+
+    class func handleAllYasdiEvents(){
+        yasdiMasterAddEventListener(&callBackFunctionForYasdiEvents, YASDI_EVENT_DEVICE_DETECTION)
+    }
+    
     class func createInverters(maxNumberToSearch maxNumber:Int){
         if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
             for device in devices{
                 
                 let inverterModel = composeInverterModel(fromDevice:device)
                 let inverterViewModel = SMAInverter(model:inverterModel)
+                inverterViewModel.inverterID = sqlRecord.lastPrimaryKey()
+
                 inverters.append(inverterViewModel)
                 
                 // Automaticly create a document for each inverter that was found
@@ -119,7 +148,6 @@ class SMAInverter: InverterViewModel{
             deviceType = String(cString: deviceTypeVar)
         }
         
-        
         let inverterRecord = Inverter(
             serial: Int(deviceSN),
             number: deviceHandle,
@@ -128,7 +156,7 @@ class SMAInverter: InverterViewModel{
         )
         
         var sqlRecord = JVSQliteRecord(data:inverterRecord, in:dataBaseQueue)
-        sqlRecord.upsert(matchFields: ["serial"])
+        _ = sqlRecord.changeOrCreateRecord(matchFields: ["serial"])
         
         return inverterRecord
     }
@@ -267,19 +295,25 @@ class SMAInverter: InverterViewModel{
                     let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
                     
+                    let currentChannel = Channel(
+                        inverterID: serial,
+                        name: String(cString: channelName),
+                        unit: String(cString: unit)
+                    )
+                    var channelRecord = JVSQliteRecord(data:currentChannel, in:dataBaseQueue)
+                    _ = channelRecord.changeOrCreateRecord()
+                    
                     let currentMeasurement = Measurement(
-                        serial: serial,
+                        channelID: serial,
                         timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
                         date: dateFormatter.string(from: recordedTimeStamp),
                         time: timeFormatter.string(from: recordedTimeStamp),
-                        name: String(cString: channelName),
-                        value: currentValue.pointee,
-                        unit: String(cString: unit)
+                        value: currentValue.pointee
                     )
                     
                     currentMeasurements?.append(currentMeasurement) // Will be displayed
-                    var archivedRecord = JVSQliteRecord(data:currentMeasurement, in:dataBaseQueue)
-                    archivedRecord.upsert()
+                    var measurementRecord = JVSQliteRecord(data:currentMeasurement, in:dataBaseQueue)
+                    _ = measurementRecord.createRecord()
                     
                 }
                 
@@ -324,17 +358,15 @@ class SMAInverter: InverterViewModel{
     private func searchData(forDate reportDate:Date)->[Row]?{
         
         let searchRequest = Measurement(
-            serial: nil,
+            channelID: nil,
             timeStamp: nil,
             date: dateFormatter.string(from: reportDate),
             time: nil,
-            name: nil,
-            value: nil,
-            unit: nil
+            value: nil
         )
         
         var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
-        let dailyRecords = dailyRequest.select()
+        let dailyRecords = dailyRequest.findRecords()
         return dailyRecords
     }
     
