@@ -431,9 +431,7 @@
 		DCF4BFD41F802DAA0016A452 /* 156-controlpad.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BDFF1F802DAA0016A452 /* 156-controlpad.png */; };
 		DCF4BFD51F802DAA0016A452 /* 165-glasses-3.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE001F802DAA0016A452 /* 165-glasses-3.png */; };
 		DCF4BFD61F802DAA0016A452 /* 00-Read me first - license.txt in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE011F802DAA0016A452 /* 00-Read me first - license.txt */; };
-		DCF4BFD81F802DAA0016A452 /* JVCocoa.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE071F802DAA0016A452 /* JVCocoa.xcconfig */; };
 		DCF4BFDB1F802DAA0016A452 /* Report Build Variables.sh in Resources */ = {isa = PBXBuildFile; fileRef = DCF4BE0C1F802DAA0016A452 /* Report Build Variables.sh */; };
-		DCF4C0051F803F8A0016A452 /* JVCocoaBasedProject.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DCF4C0041F803F8A0016A452 /* JVCocoaBasedProject.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1845,7 +1843,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = OneClick;
 				TargetAttributes = {
 					DC9FC2101F38E5FD0000A6DD = {
@@ -2190,7 +2188,6 @@
 				DCF4BEF71F802DAA0016A452 /* icon_window_lock.png in Resources */,
 				DCF4BECA1F802DAA0016A452 /* icon_information.png in Resources */,
 				DCF4BFA71F802DAA0016A452 /* 83-calendar.png in Resources */,
-				DCF4C0051F803F8A0016A452 /* JVCocoaBasedProject.xcconfig in Resources */,
 				DCF4BF7D1F802DAA0016A452 /* 145-persondot.png in Resources */,
 				DCF4BED61F802DAA0016A452 /* icon_bulb_on.png in Resources */,
 				DCF4BEE41F802DAA0016A452 /* icon_wifi.png in Resources */,
@@ -2251,7 +2248,6 @@
 				DCF4BFD01F802DAA0016A452 /* 153-guitar.png in Resources */,
 				DCF4BEDB1F802DAA0016A452 /* icon_bulb_off.png in Resources */,
 				DCF4BF841F802DAA0016A452 /* 82-dog-paw.png in Resources */,
-				DCF4BFD81F802DAA0016A452 /* JVCocoa.xcconfig in Resources */,
 				DCF4BE8B1F802DAA0016A452 /* icon_controls_3.png in Resources */,
 				DCF4BF511F802DAA0016A452 /* 71-compass.png in Resources */,
 				DCF4BF241F802DAA0016A452 /* 164-glasses-2.png in Resources */,
@@ -2630,7 +2626,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../Third Party Code/YASDI\"/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -2710,7 +2706,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.13;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "MacSunnySender-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -2736,7 +2732,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = be.oneclick.MacSunnySender;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.13;
+				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "MacSunnySender-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
