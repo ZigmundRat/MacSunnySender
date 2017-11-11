@@ -6,54 +6,69 @@
 //  Copyright © 2017 OneClick. All rights reserved.
 //
 
+
 import Cocoa
-import SQLite
+import GRDB
 
 typealias Handle = DWORD
-
-let maxNumberOfInvertersInPlant = 1 // Replace this integer with the number from the preferences window
 let MAXCSTRINGLENGTH:Int = 32
-let sunnyPortalClient = EmailClient.sharedInstance
-let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
-let model = try! Connection(dataFile!)
-let testDb = try! Connection(Bundle.main.path(forResource: "MacSunnySenderTestData", ofType: "sqlite")!)
 
+let prefsController = PrefsWindowController()
+let sunnyPortalClient = EmailClient.sharedInstance
+
+private let dataFile = Bundle.main.path(forResource: "MacSunnySenderData", ofType: "sqlite")
+let dataBaseQueue = try! DatabaseQueue(path: dataFile!)
+
+let debugger = JVDebugger.sharedInstance
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-	
-	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		
-		// Insert code here to initialize your application
-		if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
-			SMAinverter.createInverters(maxNumberToSearch: maxNumberOfInvertersInPlant)
-		}
-		
-	}
-	
-	func applicationWillTerminate(_ aNotification: Notification) {
-		
-		// Insert code here to tear down your application
-		SMADriver.unInstallDrivers()
-		yasdiMasterShutdown()
-		
-	}
-	
-	func reset() {
-		
-		//This function completely resets the software.
-		// Any currently detected devices are removed.
-		//The software is then in a condition much the same as when the function"yasdiMasterInitialize(...)" has just been executed.
-		
-		yasdiReset()
-		
-	}
-	
-	
-	
-	
-	
-	
+    
+    func doTempCodeTesting(){
+        //TODO: Insert code to test Here
+    }
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        // Insert code here to initialize your application
+        if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
+            
+            #if DEBUG
+                doTempCodeTesting()
+            #endif
+            
+            //TODO:Re-enable async device detection
+            //SMAInverter.handleAllYasdiEvents()
+            SMAInverter.createInverters(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
+        }
+        
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
+        
+        // Insert code here to tear down your application
+        SMADriver.unInstallDrivers()
+        yasdiMasterShutdown()
+        
+    }
+    
+    func reset() {
+        
+        //This function completely resets the software.
+        // Any currently detected devices are removed.
+        //The software is then in a condition much the same as when the function"yasdiMasterInitialize(...)" has just been executed.
+        
+        yasdiReset()
+        
+    }
+    
+    
+    @IBAction func showPrefsWindow(sender:Any?){
+        
+        PrefsWindowController.sharedInstance.showWindow(sender)
+        
+    }
+    
 }
 
 

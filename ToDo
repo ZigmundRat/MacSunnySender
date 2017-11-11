@@ -1,15 +1,15 @@
-replace sqliteClass with protocol
-Implement UPSET from within protocol
-remove testdb from code and project after testing
 
 
-Install temp solution on server
 
-Add tableview with bindings
+Test Database storage with new framework
+Test the tableviews-datasource protocol
 
-compose real data for the emailbody
-
-Add the icon
-add proper gitconfigure file
-
+compose real data for the emailbody from the data returned by select statement
 1 hour =  10KB of data
+
+Install build solution on server
+
+Re-enable async device detection
+
+
+

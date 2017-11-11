@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="1GX-aa-Nmm">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13189.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="a38-tS-6xW">
+            <objects>
+                <windowController storyboardIdentifier="PrefsWindowController" showSeguePresentationStyle="single" id="1GX-aa-Nmm" customClass="PrefsWindowController" customModule="MacSunnySender" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" identifier="prefsWindowController" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="ffj-lZ-8rr">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+                        <connections>
+                            <outlet property="delegate" destination="1GX-aa-Nmm" id="V3C-Mf-nC5"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="xIL-uO-5wA" kind="relationship" relationship="window.shadowedContentViewController" id="Hzt-Ld-Ep4"/>
+                    </connections>
+                </windowController>
+                <customObject id="c9r-8x-K2X" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="155"/>
+        </scene>
+        <!--Prefs View Controller-->
+        <scene sceneID="VnD-5u-gpx">
+            <objects>
+                <viewController id="xIL-uO-5wA" customClass="PrefsViewController" customModule="MacSunnySender" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="M2n-lo-fRJ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-JC-9Jb">
+                                <rect key="frame" x="20" y="230" width="108" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Plant name" id="2YH-Pg-xfA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v52-Ve-Kpj">
+                                <rect key="frame" x="178" y="197" width="118" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="8of-zD-tFK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-7r-vym">
+                                <rect key="frame" x="20" y="200" width="152" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Max number of inverters" id="JEP-g1-QTI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFo-zG-Sz6">
+                                <rect key="frame" x="382" y="18" width="78" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="roundTextured" title="Ok" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gJz-2m-Cqg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closePrefsWindow:" target="xIL-uO-5wA" id="ZYe-tE-z92"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lc9-Ww-PHN">
+                                <rect key="frame" x="178" y="227" width="118" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="AUq-Yc-0Qu">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="numberOfInvertersField" destination="v52-Ve-Kpj" id="U0q-9r-Kwp"/>
+                        <outlet property="plantIdentifierField" destination="lc9-Ww-PHN" id="r27-cp-Of2"/>
+                    </connections>
+                </viewController>
+                <customObject id="Sub-eS-1pT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286" y="155"/>
+        </scene>
+    </scenes>
+</document>
