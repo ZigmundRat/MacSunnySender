@@ -26,15 +26,15 @@ var callBackFunctionForYasdiEvents:(TYASDIDetectionSub, UInt32, UInt32)->() = {
     
     switch event{
     case YASDI_EVENT_DEVICE_ADDED:
-        debugger.log(debugLevel:.message ,"Device \(deviceHandle) added")
+        debugger.log(debugLevel:.Message ,"Device \(deviceHandle) added")
     case YASDI_EVENT_DEVICE_REMOVED:
-        debugger.log(debugLevel:.message,"Device \(deviceHandle) removed")
+        debugger.log(debugLevel:.Message,"Device \(deviceHandle) removed")
     case YASDI_EVENT_DEVICE_SEARCH_END:
-        debugger.log(debugLevel:.message,"No more devices found")
+        debugger.log(debugLevel:.Message,"No more devices found")
     case YASDI_EVENT_DOWNLOAD_CHANLIST:
-        debugger.log(debugLevel:.message,"Channels downloaded")
+        debugger.log(debugLevel:.Message,"Channels downloaded")
     default:
-        debugger.log(debugLevel:.error,"Unkwown event occured during async device detection")
+        debugger.log(debugLevel:.Error,"Unkwown event occured during async device detection")
     }
 }
 
@@ -57,7 +57,7 @@ class SMAInverter: InverterViewModel{
     private let dateFormatter = DateFormatter()
     private let timeFormatter = DateFormatter()
     
-    private let inverterID:Int? = nil
+    private var inverterID:Int? = nil
     private let channelID:Int? = nil
     private let measurementID:Int? = nil
 
@@ -71,8 +71,9 @@ class SMAInverter: InverterViewModel{
                 
                 let inverterModel = composeInverterModel(fromDevice:device)
                 let inverterViewModel = SMAInverter(model:inverterModel)
+                var sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
                 inverterViewModel.inverterID = sqlRecord.lastPrimaryKey()
-
+                
                 inverters.append(inverterViewModel)
                 
                 // Automaticly create a document for each inverter that was found
@@ -155,7 +156,7 @@ class SMAInverter: InverterViewModel{
             type: deviceType
         )
         
-        var sqlRecord = JVSQliteRecord(data:inverterRecord, in:dataBaseQueue)
+        var sqlRecord = JVSQliteRecord(data: inverterRecord, in: dataBaseQueue)
         _ = sqlRecord.changeOrCreateRecord(matchFields: ["serial"])
         
         return inverterRecord

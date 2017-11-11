@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Channel:JVSQliteRecordable{
+struct Channel{
     var inverterID: Int? = nil
     var name: String? = nil
     var unit: String? = nil

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Measurement:JVSQliteRecordable{
+struct Measurement{
     var channelID:Int? = nil
     var timeStamp:String? = nil
     var date: String? = nil
