@@ -71,8 +71,8 @@ class SMAInverter: InverterViewModel{
                 
                 let inverterModel = composeInverterModel(fromDevice:device)
                 let inverterViewModel = SMAInverter(model:inverterModel)
-                var sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
-                inverterViewModel.inverterID = sqlRecord.lastPrimaryKey()
+                let  sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
+                inverterViewModel.inverterID = sqlRecord.newPrimaryKey
                 
                 inverters.append(inverterViewModel)
                 

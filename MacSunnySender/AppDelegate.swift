@@ -26,6 +26,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func doTempCodeTesting(){
         //TODO: Insert code to test Here
+        
+        
+        func searchData(forDate reportDate:Date)->[Row]?{
+            
+            let searchRequest = Measurement(
+                channelID: nil,
+                timeStamp: nil,
+                date: "12-11-2017",
+                time: nil,
+                value: nil
+            )
+            
+            var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
+            let dailyRecords = dailyRequest.findRecords()
+            return dailyRecords
+        }
+        
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
