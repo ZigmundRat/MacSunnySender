@@ -9,6 +9,7 @@
 import Foundation
 
 struct Measurement{
+    var measurementID: Int? = nil
     var channelID:Int? = nil
     var timeStamp:String? = nil
     var date: String? = nil

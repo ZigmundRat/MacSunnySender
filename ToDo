@@ -1,13 +1,17 @@
 
-Make inverterID match serial or other way around
 
-Test Database storage with new framework
+
+test SQL with measurements table
+Install build solution on server
+
+optimze sqlexpressins so that they are changed only as needed
+
+
+
 Test the tableviews-datasource protocol
 
 compose real data for the emailbody from the data returned by select statement
 1 hour =  10KB of data
-
-Install build solution on server
 
 Re-enable async device detection
 

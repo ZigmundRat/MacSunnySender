@@ -31,6 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         func searchData(forDate reportDate:Date)->[Row]?{
             
             let searchRequest = Measurement(
+                measurementID: nil,
                 channelID: nil,
                 timeStamp: nil,
                 date: "12-11-2017",
@@ -46,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+                
         // Insert code here to initialize your application
         if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
             

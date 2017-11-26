@@ -43,7 +43,7 @@ class MainViewController: NSViewController{
 extension MainViewController:NSTableViewDelegate, NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return inverter?.currentMeasurements?.count ?? 1
+        return inverter?.measurementValues?.count ?? 1
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any?{
