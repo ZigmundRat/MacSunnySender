@@ -4,10 +4,6 @@
 test SQL with measurements table
 Install build solution on server
 
-optimze sqlexpressins so that they are changed only as needed
-
-
-
 Test the tableviews-datasource protocol
 
 compose real data for the emailbody from the data returned by select statement
