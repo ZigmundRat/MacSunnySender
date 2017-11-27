@@ -34,13 +34,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 measurementID: nil,
                 channelID: nil,
                 timeStamp: nil,
-                date: "12-11-2017",
+                date: "01-12-2017",
                 time: nil,
                 value: nil
             )
             
             var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
             let dailyRecords = dailyRequest.findRecords()
+            
+            debugger.drawSeperatorInConsole()
+            debugger.log(debugLevel: .Succes, dailyRecords)
+            
             return dailyRecords
         }
         

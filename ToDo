@@ -1,12 +1,11 @@
 
+compose real data for the emailbody from the data returned by select statement
 
-
-test SQL with measurements table
+test SQL with measurements table (over the weekend)
 Install build solution on server
 
 Test the tableviews-datasource protocol
 
-compose real data for the emailbody from the data returned by select statement
 1 hour =  10KB of data
 
 Re-enable async device detection
