@@ -1,5 +1,6 @@
 
 compose real data for the emailbody from the data returned by select statement
+mail is composed from valueColumns 15 minutes apart
 
 test SQL with measurements table (over the weekend)
 Install build solution on server

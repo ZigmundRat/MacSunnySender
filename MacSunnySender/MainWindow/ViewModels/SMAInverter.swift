@@ -181,8 +181,8 @@ class SMAInverter: InverterViewModel{
         // Read all channels just once
         readChannels(maxNumberToSearch: 30, channelType: .allChannels)
         
-        // Keep reading all spotvalues at a fixed time interval
-        pollingTimer = Timer.scheduledTimer(timeInterval: 5,
+        // Sample spotvalues at a fixed time interval (30seconds here)
+        pollingTimer = Timer.scheduledTimer(timeInterval: 30,
                                             target: self,
                                             selector: #selector(self.readValues),
                                             userInfo: ChannelsType.spotChannels,
@@ -389,7 +389,7 @@ class SMAInverter: InverterViewModel{
                 SUNNY-MAIL
                 Version    1.2
                 Source    SDC
-                Date    08/20/2017
+                Date    01/12/2017
                 Language    EN
         
                 Type    Serialnumber    Channel    Date    DailyValue    10:47:06    11:02:06
@@ -398,7 +398,7 @@ class SMAInverter: InverterViewModel{
         let dataSeperator = ";"
         
         if let dataRows = searchData(forDate: Date()){
-            let columNamesUsed = ["serial","name","date","value","value","time"]
+            let columNamesUsed = ["inverter.type","inverter.serial","channel.name","measurement.date","measurement.dailyvalue","measurement.startValue","measurement.endValue"]
             var dataString:String
             
             for dataRow in dataRows{
@@ -432,6 +432,21 @@ class SMAInverter: InverterViewModel{
         
         var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
         let dailyRecords = dailyRequest.findRecords()
+        
+        if let startTime = dateFormatter.date(from: (dailyRecords?.first!["time"])!),
+        let endTime = dateFormatter.date(from: (dailyRecords?.last!["time"])!),
+        let interval = dateFormatter.date(from: "00:15:00"){
+        
+
+            var time = startTime
+            while time <= endTime{
+                
+                time = Calendar.current.date(byAdding:interval., to: time, wrappingComponents: false)
+
+            }
+        
+        }
+    
         return dailyRecords
     }
     
