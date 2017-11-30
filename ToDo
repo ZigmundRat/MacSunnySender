@@ -1,13 +1,16 @@
+Install build solution on server
 
 compose real data for the emailbody from the data returned by select statement
-mail is composed from valueColumns 15 minutes apart
+(mail is composed from valueColumns 15 minutes apart)
 
-test SQL with measurements table (over the weekend)
-Install build solution on server
+check 1 hour =  10KB of data (new start at 11:25 at 561 KB)
+
+
+
+
 
 Test the tableviews-datasource protocol
 
-1 hour =  10KB of data
 
 Re-enable async device detection
 
