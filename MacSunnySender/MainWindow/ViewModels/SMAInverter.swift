@@ -238,11 +238,11 @@ class SMAInverter: InverterViewModel{
                         // Create the model
                         var channelRecord = Channel(
                             channelID: nil,
-                            inverterID: model.inverterID,
                             type: Int(typeToRead.rawValue),
                             number: channelNumber,
                             name: String(cString: channelName),
-                            unit: String(cString: unit)
+                            unit: String(cString: unit),
+                            inverterID: model.inverterID
                         )
                         
                         // Archive in SQL and
@@ -327,6 +327,8 @@ class SMAInverter: InverterViewModel{
                         recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
                     }
                     
+                    var currentValues:[Measurement]
+                    
                     let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
                     let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
@@ -347,11 +349,12 @@ class SMAInverter: InverterViewModel{
                         // Create the model
                         var measurementRecord = Measurement(
                             measurementID: nil,
-                            channelID: channel.channelID,
+                            samplingTime: timeFormatter.string(from: systemTimeStamp),
                             timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
                             date: dateFormatter.string(from: recordedTimeStamp),
                             time: timeFormatter.string(from: recordedTimeStamp),
-                            value: currentValue.pointee
+                            value: currentValue.pointee,
+                            channelID: channel.channelID
                         )
                         
                         // Archive in SQL and
@@ -402,16 +405,14 @@ class SMAInverter: InverterViewModel{
         let dataSeperator = ";"
         
         if let dailyRecords = searchData(forDate: Date()){
-        let columNamesUsed = ["inverter.type","inverter.serial","channel.name","measurement.date","measurement.dailyvalue","measurement.startValue","measurement.endValue"]
+        let columNamesToReport = ["Type","SerialNumber","Channel","Date","DailyValue","valueColumns"]
             
-            var recordsToReport:[Row] = []
-
-            if let firstRecordedTime = dateFormatter.date(from: (dailyRecords.first!["time"])!){
+            if let firstRecordedTime = dateFormatter.date(from: (dailyRecords.first!["samplingTime"])!){
             
                 var timeToReport = firstRecordedTime
                 
                 for record in dailyRecords{
-                    let recordedTime = dateFormatter.date(from: (record["time"])!)
+                    let recordedTime = dateFormatter.date(from: (record["samplingTime"])!)
                     
                     if recordedTime?.compare(timeToReport) == ComparisonResult.orderedAscending{
                         // Not there yet
@@ -446,11 +447,12 @@ class SMAInverter: InverterViewModel{
         
         let searchRequest = Measurement(
             measurementID: nil,
-            channelID: nil,
+            samplingTime: nil,
             timeStamp: nil,
             date: dateFormatter.string(from: reportDate),
             time: nil,
-            value: nil
+            value: nil,
+            channelID: nil
         )
         
         var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
