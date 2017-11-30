@@ -9,7 +9,10 @@
 import Foundation
 
 struct Channel{
-    var inverterID: Int? = nil
+    var channelID: Int? = nil
+    var type: Int? = nil
+    var number:Int? = nil
     var name: String? = nil
     var unit: String? = nil
+    var inverterID: Int? = nil
 }

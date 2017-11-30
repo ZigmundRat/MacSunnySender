@@ -16,7 +16,10 @@ protocol InverterViewModel {
     var name: String?{get}
     var type: String?{get}
     
-    var currentMeasurements:[Measurement]?{get}
+    var measurementValues:[Measurement]?{get}
+    var parameterValues:[Measurement]?{get}
+    var testValues:[Measurement]?{get}
+    
 }
 
 /// C-callback functions
@@ -40,6 +43,13 @@ var callBackFunctionForYasdiEvents:(TYASDIDetectionSub, UInt32, UInt32)->() = {
 
 class SMAInverter: InverterViewModel{
     
+    enum ChannelsType:UInt32{
+        case spotChannels
+        case parameterChannels
+        case testChannels
+        case allChannels
+    }
+    
     public static var inverters:[SMAInverter] = []
     public var model:Inverter!
     
@@ -48,19 +58,17 @@ class SMAInverter: InverterViewModel{
     var name: String?{return model.name}
     var type: String?{return model.type}
     
-    public var currentMeasurements:[Measurement]? = nil
+    public var measurementValues:[Measurement]? = nil // These values will eventually be displayed by the MainViewcontroller
+    public var parameterValues:[Measurement]? = nil // These values will eventually be displayed by the parameterViewcontroller
+    public var testValues:[Measurement]? = nil // These values will not be displayed for now
     
-    private var parameterNumbers:[Int]! = []
-    private var channelNumbers:[Int]! = []
     private var pollingTimer: Timer! = nil
-    private let sqlTimeStampFormatter = DateFormatter()
-    private let dateFormatter = DateFormatter()
-    private let timeFormatter = DateFormatter()
     
-    private var inverterID:Int? = nil
-    private let channelID:Int? = nil
-    private let measurementID:Int? = nil
-
+    typealias ID = Int
+    private var spotChannels:[Channel] = []
+    private var parameterChannels:[Channel] = []
+    private var testChannels:[Channel] = []
+    
     class func handleAllYasdiEvents(){
         yasdiMasterAddEventListener(&callBackFunctionForYasdiEvents, YASDI_EVENT_DEVICE_DETECTION)
     }
@@ -69,12 +77,17 @@ class SMAInverter: InverterViewModel{
         if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
             for device in devices{
                 
-                let inverterModel = composeInverterModel(fromDevice:device)
-                let inverterViewModel = SMAInverter(model:inverterModel)
-                var sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
-                inverterViewModel.inverterID = sqlRecord.lastPrimaryKey()
+                var inverterModel = composeInverterModel(fromDevice:device)
                 
+                // Archive in SQL and
+                // complete the model-class with the PK from the SQlrecord
+                var  sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
+                let changedSQLRecords = sqlRecord.changeOrCreateRecord(matchFields: ["serial"])
+                inverterModel.inverterID = changedSQLRecords?.first?[0]
+                
+                let inverterViewModel = SMAInverter(model:inverterModel)
                 inverters.append(inverterViewModel)
+                
                 
                 // Automaticly create a document for each inverter that was found
                 NSDocumentController.shared.addDocument(Document(inverter:inverterViewModel))
@@ -150,14 +163,12 @@ class SMAInverter: InverterViewModel{
         }
         
         let inverterRecord = Inverter(
+            inverterID: nil,
             serial: Int(deviceSN),
             number: deviceHandle,
             name: deviceName,
             type: deviceType
         )
-        
-        var sqlRecord = JVSQliteRecord(data: inverterRecord, in: dataBaseQueue)
-        _ = sqlRecord.changeOrCreateRecord(matchFields: ["serial"])
         
         return inverterRecord
     }
@@ -167,19 +178,14 @@ class SMAInverter: InverterViewModel{
         
         self.model = model
         
-        sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
-        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
-        dateFormatter.timeZone = TimeZone.current
-        timeFormatter.dateFormat = "HH:mm:ss" // Local time string
-        timeFormatter.timeZone = TimeZone.current
+        // Read all channels just once
+        readChannels(maxNumberToSearch: 30, channelType: .allChannels)
         
-        findParameterNumbers(maxNumberToSearch:30)
-        findChannelNumbers(maxNumberToSearch:30)
-        
-        pollingTimer = Timer.scheduledTimer(timeInterval: 5,
+        // Sample spotvalues at a fixed time interval (30seconds here)
+        pollingTimer = Timer.scheduledTimer(timeInterval: 30,
                                             target: self,
-                                            selector: #selector(self.readChannels),
-                                            userInfo: nil,
+                                            selector: #selector(self.readValues),
+                                            userInfo: ChannelsType.spotChannels,
                                             repeats: true
         )
         
@@ -188,67 +194,103 @@ class SMAInverter: InverterViewModel{
     }
     
     
-    private func findParameterNumbers(maxNumberToSearch:Int){
+    private func readChannels(maxNumberToSearch:Int, channelType:ChannelsType = .allChannels){
         
-        let errorCode:DWORD = 0
-        var resultCode:DWORD = errorCode
-        
-        let device = model.number!
-        var parameterHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
-        let channelType = TChanType.init(1)
-        
-        resultCode = GetChannelHandlesEx(device,
-                                         parameterHandles,
-                                         DWORD(maxNumberToSearch),
-                                         channelType
-        )
-        
-        if resultCode != errorCode {
-            
-            // convert to a swift array of parameterNumbers
-            let numberOfParameters = resultCode
-            for _ in 0..<numberOfParameters{
-                parameterNumbers.append(Int(parameterHandles.pointee))
-                parameterHandles = parameterHandles.advanced(by: 1)
-            }
-            
-        }else{
-            parameterNumbers = []
+        var channelTypesToRead = [channelType]
+        if channelType == .allChannels{
+            channelTypesToRead = [ChannelsType.spotChannels, ChannelsType.parameterChannels, ChannelsType.testChannels]
         }
+        for typeToRead in channelTypesToRead{
+            
+            let errorCode:DWORD = 0
+            var resultCode:DWORD = errorCode
+            var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
+            
+            resultCode = GetChannelHandlesEx(number!,
+                                             channelHandles,
+                                             DWORD(maxNumberToSearch),
+                                             TChanType(typeToRead.rawValue)
+            )
+            
+            if resultCode != errorCode {
+                let numberOfChannels = resultCode
+                
+                
+                for _ in 0..<numberOfChannels{
+                    
+                    let channelNumber = Int(channelHandles.pointee)
+                    
+                    let errorCode:Int32 = -1
+                    var resultCode:Int32 = errorCode
+                    
+                    let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+                    resultCode = GetChannelName(
+                        DWORD(channelNumber),
+                        channelName,
+                        DWORD(MAXCSTRINGLENGTH)
+                    )
+                    
+                    if resultCode != errorCode {
+                        
+                        let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
+                        GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
+                        
+                        // Create the model
+                        var channelRecord = Channel(
+                            channelID: nil,
+                            type: Int(typeToRead.rawValue),
+                            number: channelNumber,
+                            name: String(cString: channelName),
+                            unit: String(cString: unit),
+                            inverterID: model.inverterID
+                        )
+                        
+                        // Archive in SQL and
+                        // complete the model-class with the PK from the SQlrecord
+                        var sqlRecord = JVSQliteRecord(data:channelRecord, in:dataBaseQueue)
+                        let changedSQLRecords = sqlRecord.changeOrCreateRecord(matchFields:["type","name"])
+                        channelRecord.channelID = changedSQLRecords?.first?[0]
+                        
+                        // Divide all channels found by their channeltype
+                        switch typeToRead{
+                        case .spotChannels:
+                            spotChannels.append(channelRecord)
+                        case .parameterChannels:
+                            parameterChannels.append(channelRecord)
+                        case .testChannels:
+                            testChannels.append(channelRecord)
+                        default:
+                            break
+                        }
+                    }
+                    
+                    
+                    
+                    channelHandles = channelHandles.advanced(by: 1)
+                }
+                
+                
+                
+            }
+        }
+        
     }
     
-    private func findChannelNumbers(maxNumberToSearch:Int){
+    // Callbackfunction for the timer
+    @objc private func readValues(timer:Timer){
         
-        let errorCode:DWORD = 0
-        var resultCode:DWORD = errorCode
+        let channelType = timer.userInfo as! ChannelsType
         
-        let device = number!
-        var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
-        let channelType = TChanType.init(0)
+        let sqlTimeStampFormatter = DateFormatter()
+        sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
         
-        resultCode = GetChannelHandlesEx(device,
-                                         channelHandles,
-                                         DWORD(maxNumberToSearch),
-                                         channelType
-        )
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
         
-        if resultCode != errorCode {
-            
-            // convert to a swift array of parameterNumbers
-            let numberOfChannels = resultCode
-            
-            for _ in 0..<numberOfChannels{
-                channelNumbers.append(Int(channelHandles.pointee))
-                channelHandles = channelHandles.advanced(by: 1)
-            }
-            
-        }else{
-            channelNumbers = []
-        }
-        
-    }
-    
-    @objc private func readChannels(){
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeZone = TimeZone.current
+        timeFormatter.dateFormat = "HH:mm:ss" // Local time string
         
         let systemTimeStamp = Date()
         let currentLocalHour = Calendar.current.component(Calendar.Component.hour, from: systemTimeStamp)
@@ -256,81 +298,103 @@ class SMAInverter: InverterViewModel{
         // Only record dat between 06:00 and 22:59
         if (6...22) ~= currentLocalHour{
             
-            currentMeasurements = []
-            
-            for channelNumber in channelNumbers{
+            var channelTypesToRead = [channelType]
+            if channelType == .allChannels{
+                channelTypesToRead = [ChannelsType.allChannels, ChannelsType.parameterChannels, ChannelsType.testChannels]
+            }
+            for typeToRead in channelTypesToRead{
                 
-                var recordedTimeStamp = systemTimeStamp
-                let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), number!)
-                if onlineTimeStamp > 0{
-                    recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
+                let channelsToRead:[Channel]
+                switch  typeToRead{
+                case .spotChannels:
+                    channelsToRead = spotChannels
+                case .parameterChannels:
+                    channelsToRead = parameterChannels
+                case .testChannels:
+                    channelsToRead = testChannels
+                default:
+                    channelsToRead = spotChannels + parameterChannels + testChannels
                 }
                 
-                let errorCode:Int32 = -1
-                var resultCode:Int32 = errorCode
+                var currentValues:[Measurement] = []
                 
-                let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-                
-                resultCode = GetChannelName(
-                    DWORD(channelNumber),
-                    channelName,
-                    DWORD(MAXCSTRINGLENGTH)
-                )
-                
-                if resultCode != errorCode {
+                for channel in channelsToRead{
+                    let channelNumber = channel.number!
                     
-                    let device = model.number!
+                    var recordedTimeStamp = systemTimeStamp
+                    let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), number!)
+                    if onlineTimeStamp > 0{
+                        recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
+                    }
+                    
                     let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
                     let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
                     
-                    GetChannelValue(Handle(channelNumber),
-                                    device,
-                                    currentValue,
-                                    currentValueAsText,
-                                    DWORD(MAXCSTRINGLENGTH),
-                                    maxChannelAgeInSeconds
+                    let errorCode:Int32 = -1
+                    var  resultCode:Int32 = errorCode
+                    
+                    resultCode = GetChannelValue(Handle(channelNumber),
+                                                 number!,
+                                                 currentValue,
+                                                 currentValueAsText,
+                                                 DWORD(MAXCSTRINGLENGTH),
+                                                 maxChannelAgeInSeconds
                     )
                     
+                    if resultCode != errorCode {
+                        
+                        // Create the model
+                        var measurementRecord = Measurement(
+                            measurementID: nil,
+                            samplingTime: timeFormatter.string(from: systemTimeStamp),
+                            timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
+                            date: dateFormatter.string(from: recordedTimeStamp),
+                            time: timeFormatter.string(from: recordedTimeStamp),
+                            value: currentValue.pointee,
+                            channelID: channel.channelID
+                        )
+                        
+                        // Archive in SQL and
+                        // complete the model-class with the PK from the SQlrecord
+                        var sqlRecord = JVSQliteRecord(data:measurementRecord, in:dataBaseQueue)
+                        let changedSQLRecords = sqlRecord.createRecord()
+                        measurementRecord.channelID = changedSQLRecords?.first?[0]
+                        
+                        currentValues.append(measurementRecord)
+                        
+                    }
                     
-                    let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-                    GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
-                    
-                    let currentChannel = Channel(
-                        inverterID: serial,
-                        name: String(cString: channelName),
-                        unit: String(cString: unit)
-                    )
-                    var channelRecord = JVSQliteRecord(data:currentChannel, in:dataBaseQueue)
-                    _ = channelRecord.changeOrCreateRecord()
-                    
-                    let currentMeasurement = Measurement(
-                        channelID: serial,
-                        timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
-                        date: dateFormatter.string(from: recordedTimeStamp),
-                        time: timeFormatter.string(from: recordedTimeStamp),
-                        value: currentValue.pointee
-                    )
-                    
-                    currentMeasurements?.append(currentMeasurement) // Will be displayed
-                    var measurementRecord = JVSQliteRecord(data:currentMeasurement, in:dataBaseQueue)
-                    _ = measurementRecord.createRecord()
-                    
+                }
+                
+                // Divide all channels found, by channeltype
+                switch  typeToRead{
+                case .spotChannels:
+                    measurementValues = currentValues
+                case .parameterChannels:
+                    parameterValues = currentValues
+                case .testChannels:
+                    testValues = currentValues
+                default:
+                    break
                 }
                 
             }
             
         }
-        
     }
     
     public func saveCsvFile(forDate dateQueried: String){
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
         
         var CSVSource = """
                 SUNNY-MAIL
                 Version    1.2
                 Source    SDC
-                Date    08/20/2017
+                Date    01/12/2017
                 Language    EN
         
                 Type    Serialnumber    Channel    Date    DailyValue    10:47:06    11:02:06
@@ -338,18 +402,35 @@ class SMAInverter: InverterViewModel{
         
         let dataSeperator = ";"
         
-        if let dataRows = searchData(forDate: Date()){
-            let columNamesUsed = ["serial","name","date","value","value","time"]
-            var dataString:String
+        if let dailyRecords = searchData(forDate: Date()){
+        let columNamesToReport = ["Type","SerialNumber","Channel","Date","DailyValue","valueColumns"]
             
-            for dataRow in dataRows{
-                var dataStrings:[String] = []
+            if let firstRecordedTime = dateFormatter.date(from: (dailyRecords.first!["samplingTime"])!){
+            
+                var timeToReport = firstRecordedTime
                 
-                for columnName in columNamesUsed{
-                    dataString = NSString(data: dataRow.dataNoCopy(named: columnName)!, encoding: String.Encoding.utf8.rawValue)! as String
-                    dataStrings.append(dataString)
+                for record in dailyRecords{
+                    let recordedTime = dateFormatter.date(from: (record["samplingTime"])!)
+                    
+                    if recordedTime?.compare(timeToReport) == ComparisonResult.orderedAscending{
+                        // Not there yet
+                    }else if recordedTime?.compare(timeToReport) == ComparisonResult.orderedDescending{
+                        // Shooting past the interval, point to the next higher interval
+                        while recordedTime?.compare(timeToReport) == ComparisonResult.orderedDescending{
+                            timeToReport = timeToReport.addingTimeInterval(15*60)
+                        }
+                        // and give it a second shot
+                        if recordedTime?.compare(timeToReport) == ComparisonResult.orderedSame{
+                           // recordsToReport.append(record)
+                        }
+                    }else{
+                        // When it was recorded at the exact time-interval
+                        // Put the record in the report
+                       // recordsToReport.append(record)
+                    }
+                    
                 }
-                CSVSource += dataStrings.joined(separator: dataSeperator)
+                
             }
         }
         print(CSVSource) // replace with saved CSVFile
@@ -358,17 +439,23 @@ class SMAInverter: InverterViewModel{
     
     private func searchData(forDate reportDate:Date)->[Row]?{
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
+        
         let searchRequest = Measurement(
-            channelID: nil,
+            measurementID: nil,
+            samplingTime: nil,
             timeStamp: nil,
             date: dateFormatter.string(from: reportDate),
             time: nil,
-            value: nil
+            value: nil,
+            channelID: nil
         )
         
         var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
-        let dailyRecords = dailyRequest.findRecords()
-        return dailyRecords
+        
+        return dailyRequest.findRecords()
     }
     
     

@@ -10,6 +10,7 @@ import Foundation
 
 struct Inverter{
     
+    var inverterID: Int?
     var serial: Int?
     var number: Handle?
     var name: String?

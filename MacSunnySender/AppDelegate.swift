@@ -25,11 +25,16 @@ let debugger = JVDebugger.sharedInstance
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func doTempCodeTesting(){
+       
+        
         //TODO: Insert code to test Here
+        
+    
+        
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        
+                
         // Insert code here to initialize your application
         if SMADriver.installDrivers(configFile: "YasdiConfigFile.ini"){
             
