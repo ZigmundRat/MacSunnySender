@@ -10,9 +10,10 @@ import Foundation
 
 struct Measurement{
     var measurementID: Int? = nil
-    var channelID:Int? = nil
+    var samplingTime:String? = nil
     var timeStamp:String? = nil
     var date: String? = nil
     var time: String? = nil
     var value: Double? = nil
+    var channelID:Int? = nil
 }
