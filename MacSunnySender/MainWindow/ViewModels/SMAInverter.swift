@@ -327,8 +327,6 @@ class SMAInverter: InverterViewModel{
                         recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
                     }
                     
-                    var currentValues:[Measurement]
-                    
                     let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
                     let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
@@ -423,12 +421,12 @@ class SMAInverter: InverterViewModel{
                         }
                         // and give it a second shot
                         if recordedTime?.compare(timeToReport) == ComparisonResult.orderedSame{
-                            recordsToReport.append(record)
+                           // recordsToReport.append(record)
                         }
                     }else{
                         // When it was recorded at the exact time-interval
                         // Put the record in the report
-                        recordsToReport.append(record)
+                       // recordsToReport.append(record)
                     }
                     
                 }

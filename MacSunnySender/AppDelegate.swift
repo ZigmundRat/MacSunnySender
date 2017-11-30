@@ -25,28 +25,11 @@ let debugger = JVDebugger.sharedInstance
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func doTempCodeTesting(){
+       
+        
         //TODO: Insert code to test Here
         
-        
-        func searchData(forDate reportDate:Date)->[Row]?{
-            
-            let searchRequest = Measurement(
-                measurementID: nil,
-                channelID: nil,
-                timeStamp: nil,
-                date: "01-12-2017",
-                time: nil,
-                value: nil
-            )
-            
-            var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
-            let dailyRecords = dailyRequest.findRecords()
-            
-            debugger.drawSeperatorInConsole()
-            debugger.log(debugLevel: .Succes, dailyRecords)
-            
-            return dailyRecords
-        }
+    
         
     }
     
