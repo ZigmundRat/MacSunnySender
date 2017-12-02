@@ -334,6 +334,8 @@ class SMAInverter: InverterViewModel{
                     let errorCode:Int32 = -1
                     var  resultCode:Int32 = errorCode
                     
+                    
+                    print("Reading channel \(channelNumber)")
                     resultCode = GetChannelValue(Handle(channelNumber),
                                                  number!,
                                                  currentValue,
@@ -341,6 +343,8 @@ class SMAInverter: InverterViewModel{
                                                  DWORD(MAXCSTRINGLENGTH),
                                                  maxChannelAgeInSeconds
                     )
+                    
+                    
                     
                     if resultCode != errorCode {
                         
@@ -363,6 +367,8 @@ class SMAInverter: InverterViewModel{
                         
                         currentValues.append(measurementRecord)
                         
+                    }else{
+                        print("Failed To read channel \(channelNumber)")
                     }
                     
                 }

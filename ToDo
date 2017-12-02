@@ -1,18 +1,14 @@
-Install build solution on server
+check 1 hour =  10KB of data (new start at 11:07 at 561 KB)
 
 compose real data for the emailbody from the data returned by select statement
 (mail is composed from valueColumns 15 minutes apart)
 
-check 1 hour =  10KB of data (new start at 11:25 at 561 KB)
-
-
-
-
+cache inverter- and channel info
 
 Test the tableviews-datasource protocol
 
-
 Re-enable async device detection
+Build a release version
 
 
 
