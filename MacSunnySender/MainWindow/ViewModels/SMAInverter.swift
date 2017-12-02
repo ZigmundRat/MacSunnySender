@@ -99,23 +99,18 @@ class SMAInverter: InverterViewModel{
         
         var devices:[Handle]? = nil
         
-        let errorCode:Int32 = -1
-        var resultCode:Int32 = errorCode
-        
-        resultCode = DoStartDeviceDetection(CInt(maxNumber), 1);
-        
-        if resultCode != errorCode {
+        var yasdiResultCode:Int32 = -1
+        yasdiResultCode = DoStartDeviceDetection(CInt(maxNumber), 1);
+        if yasdiResultCode > -1 {
             
-            let errorCode:DWORD = 0
-            var resultCode:DWORD = errorCode
-            
+            var yasdiResultCode:DWORD = 0
             let deviceHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity:maxNumber)
-            resultCode = GetDeviceHandles(deviceHandles, DWORD(maxNumber))
-            if resultCode != errorCode {
+            yasdiResultCode = GetDeviceHandles(deviceHandles, DWORD(maxNumber))
+            if yasdiResultCode > 0 {
                 
                 // convert to a swift array of devicehandles
                 devices = []
-                let numberOfDevices = resultCode
+                let numberOfDevices = yasdiResultCode
                 for _ in 0..<numberOfDevices{
                     devices!.append(deviceHandles.pointee)
                     _ = deviceHandles.advanced(by: 1)
@@ -132,33 +127,28 @@ class SMAInverter: InverterViewModel{
         var deviceSN:DWORD = 2000814023
         var deviceName:String = "WR46A-01 SN:2000814023"
         var deviceType:String = "WR46A-01"
-        
-        let errorCode:Int32 = -1
-        var resultCode:Int32 = errorCode
-        
+
+        var yasdiResultCode:Int32 = -1
         let deviceSNvar: UnsafeMutablePointer<DWORD> = UnsafeMutablePointer<DWORD>.allocate(capacity: 1)
-        resultCode = errorCode
-        resultCode = GetDeviceSN(deviceHandle,
+        yasdiResultCode = GetDeviceSN(deviceHandle,
                                  deviceSNvar)
-        if resultCode != errorCode {
+        if yasdiResultCode > -1 {
             deviceSN = deviceSNvar.pointee
         }
         
         let deviceNameVar: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-        resultCode = errorCode
-        resultCode = GetDeviceName(deviceHandle,
+        yasdiResultCode = GetDeviceName(deviceHandle,
                                    deviceNameVar,
                                    Int32(MAXCSTRINGLENGTH))
-        if resultCode != errorCode {
+        if yasdiResultCode > -1 {
             deviceName = String(cString:deviceNameVar)
         }
         
         let deviceTypeVar: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-        resultCode = errorCode
-        resultCode = GetDeviceType(deviceHandle,
+        yasdiResultCode = GetDeviceType(deviceHandle,
                                    deviceTypeVar,
                                    Int32(MAXCSTRINGLENGTH))
-        if resultCode != errorCode {
+        if yasdiResultCode > -1 {
             deviceType = String(cString: deviceTypeVar)
         }
         
@@ -200,68 +190,83 @@ class SMAInverter: InverterViewModel{
         if channelType == .allChannels{
             channelTypesToRead = [ChannelsType.spotChannels, ChannelsType.parameterChannels, ChannelsType.testChannels]
         }
+        
         for typeToRead in channelTypesToRead{
             
-            let errorCode:DWORD = 0
-            var resultCode:DWORD = errorCode
-            var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
+            let channelsForInverter = Channel(
+                channelID: nil,
+                type: Int(typeToRead.rawValue),
+                number: nil,
+                name: nil,
+                unit: nil,
+                inverterID: model.inverterID
+            )
+            var  findRequest = JVSQliteRecord(data:channelsForInverter, in:dataBaseQueue)
+            let  numberOfArchivedChannels = findRequest.findRecords()?.count ?? 0
             
-            resultCode = GetChannelHandlesEx(number!,
+            var yasdiResultCode:DWORD = 0
+            var channelHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity: maxNumberToSearch)
+            yasdiResultCode = GetChannelHandlesEx(number!,
                                              channelHandles,
                                              DWORD(maxNumberToSearch),
                                              TChanType(typeToRead.rawValue)
             )
             
-            if resultCode != errorCode {
-                let numberOfChannels = resultCode
-                
+            if (yasdiResultCode > 0) && (yasdiResultCode > numberOfArchivedChannels){
+                let numberOfChannels = yasdiResultCode
                 
                 for _ in 0..<numberOfChannels{
                     
                     let channelNumber = Int(channelHandles.pointee)
                     
-                    let errorCode:Int32 = -1
-                    var resultCode:Int32 = errorCode
-                    
+                    var yasdiResultCode:Int32 = -1
                     let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-                    resultCode = GetChannelName(
+                    yasdiResultCode = GetChannelName(
                         DWORD(channelNumber),
                         channelName,
                         DWORD(MAXCSTRINGLENGTH)
                     )
                     
-                    if resultCode != errorCode {
+                    if yasdiResultCode > -1 {
                         
                         let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
-                        GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
+                        yasdiResultCode = GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
                         
-                        // Create the model
-                        var channelRecord = Channel(
-                            channelID: nil,
-                            type: Int(typeToRead.rawValue),
-                            number: channelNumber,
-                            name: String(cString: channelName),
-                            unit: String(cString: unit),
-                            inverterID: model.inverterID
-                        )
-                        
-                        // Archive in SQL and
-                        // complete the model-class with the PK from the SQlrecord
-                        var sqlRecord = JVSQliteRecord(data:channelRecord, in:dataBaseQueue)
-                        let changedSQLRecords = sqlRecord.changeOrCreateRecord(matchFields:["type","name"])
-                        channelRecord.channelID = changedSQLRecords?.first?[0]
-                        
-                        // Divide all channels found by their channeltype
-                        switch typeToRead{
-                        case .spotChannels:
-                            spotChannels.append(channelRecord)
-                        case .parameterChannels:
-                            parameterChannels.append(channelRecord)
-                        case .testChannels:
-                            testChannels.append(channelRecord)
-                        default:
-                            break
+                        if yasdiResultCode > -1 {
+                            
+                            // Create the model
+                            var channelRecord = Channel(
+                                channelID: nil,
+                                type: Int(typeToRead.rawValue),
+                                number: channelNumber,
+                                name: String(cString: channelName),
+                                unit: String(cString: unit),
+                                inverterID: model.inverterID
+                            )
+                            
+                            // Archive in SQL and
+                            // complete the model-class with the PK from the SQlrecord
+                            var sqlRecord = JVSQliteRecord(data:channelRecord, in:dataBaseQueue)
+                            let changedSQLRecords = sqlRecord.changeOrCreateRecord(matchFields:["inverterID","type","name"])
+                            channelRecord.channelID = changedSQLRecords?.first?[0]
+                            
+                            // Divide all channels found by their channeltype
+                            switch typeToRead{
+                            case .spotChannels:
+                                spotChannels.append(channelRecord)
+                            case .parameterChannels:
+                                parameterChannels.append(channelRecord)
+                            case .testChannels:
+                                testChannels.append(channelRecord)
+                            default:
+                                break
+                            }
+                        }else{
+                            debugger.log(debugLevel: .Error, "Error reading the unit of channel \(String(cString: channelName))")
                         }
+                        
+                    }else{
+                        debugger.log(debugLevel: .Error, "Error reading name of channel with number \(channelNumber)")
                     }
                     
                     
@@ -271,6 +276,8 @@ class SMAInverter: InverterViewModel{
                 
                 
                 
+            }else{
+                debugger.log(debugLevel: .Error, "Error while searching for channels of type \(typeToRead)")
             }
         }
         
@@ -320,33 +327,30 @@ class SMAInverter: InverterViewModel{
                 
                 for channel in channelsToRead{
                     let channelNumber = channel.number!
+    
                     
                     var recordedTimeStamp = systemTimeStamp
                     let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), number!)
                     if onlineTimeStamp > 0{
                         recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
+                    }else{
+                        debugger.log(debugLevel: .Error, "Error reading timestamp of channel number \(channelNumber)")
                     }
                     
                     let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
                     let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
                     
-                    let errorCode:Int32 = -1
-                    var  resultCode:Int32 = errorCode
-                    
-                    
-                    print("Reading channel \(channelNumber)")
-                    resultCode = GetChannelValue(Handle(channelNumber),
+                    let  yasdiResultCode:Int32 = GetChannelValue(Handle(channelNumber),
                                                  number!,
                                                  currentValue,
                                                  currentValueAsText,
                                                  DWORD(MAXCSTRINGLENGTH),
-                                                 maxChannelAgeInSeconds
-                    )
+                                                 maxChannelAgeInSeconds)
                     
                     
                     
-                    if resultCode != errorCode {
+                    if yasdiResultCode > -1 {
                         
                         // Create the model
                         var measurementRecord = Measurement(
@@ -368,7 +372,24 @@ class SMAInverter: InverterViewModel{
                         currentValues.append(measurementRecord)
                         
                     }else{
-                        print("Failed To read channel \(channelNumber)")
+                        
+                        var errorType:String
+                        switch yasdiResultCode {
+                        case -1:
+                            errorType = "Invalid handle"
+                        case -2:
+                            errorType = "YASDI shutdown"
+                        case -3:
+                            errorType = "Timeout"
+                        case -4:
+                            errorType = "Invalid value"
+                        case -5:
+                            errorType = "Permissions"
+                        default:
+                            errorType = "Unknown"
+                        }
+                        debugger.log(debugLevel: .Error, "\(errorType)-error while reading value of channel number \(channelNumber)")
+
                     }
                     
                 }
@@ -409,10 +430,10 @@ class SMAInverter: InverterViewModel{
         let dataSeperator = ";"
         
         if let dailyRecords = searchData(forDate: Date()){
-        let columNamesToReport = ["Type","SerialNumber","Channel","Date","DailyValue","valueColumns"]
+            let columNamesToReport = ["Type","SerialNumber","Channel","Date","DailyValue","valueColumns"]
             
             if let firstRecordedTime = dateFormatter.date(from: (dailyRecords.first!["samplingTime"])!){
-            
+                
                 var timeToReport = firstRecordedTime
                 
                 for record in dailyRecords{
@@ -427,12 +448,12 @@ class SMAInverter: InverterViewModel{
                         }
                         // and give it a second shot
                         if recordedTime?.compare(timeToReport) == ComparisonResult.orderedSame{
-                           // recordsToReport.append(record)
+                            // recordsToReport.append(record)
                         }
                     }else{
                         // When it was recorded at the exact time-interval
                         // Put the record in the report
-                       // recordsToReport.append(record)
+                        // recordsToReport.append(record)
                     }
                     
                 }
