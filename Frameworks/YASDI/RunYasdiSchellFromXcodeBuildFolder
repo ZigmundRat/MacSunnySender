@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Set the root folder to the parent folder of this script,
+cd "$(dirname "$0")"
+rootDir=$PWD
+
+# Define every path needed
+builtDirXcode="$rootDir"/build-xcode/Debug
+
+cp "$rootDir"/YasdiConfigFile.ini "$builtDirXcode"/yasdi.ini
+
+cd "$builtDirXcode"
+./yasdishell yasdi.ini

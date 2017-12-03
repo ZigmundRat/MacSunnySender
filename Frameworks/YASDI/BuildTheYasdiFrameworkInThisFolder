@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Set the root folder to the parent folder of this script,
+cd "$(dirname "$0")"
+rootDir=$PWD
+
+# Define every path needed
+sourceDir="$rootDir"/yasdi-1/projects/generic-cmake
+builtDirGCC="$rootDir"/build-gcc
+builtDirXcode="$rootDir"/build-xcode
+
+
+# Perform a standard build and install as suggested by SMA
+# cd $rootDir
+# rm -rf "$builtDirGCC" # Remove old buildfolder first
+#
+# mkdir "$builtDirGCC"
+# cd "$builtDirGCC"
+# cmake "$sourceDir"
+# make
+# sudo make install
+
+
+
+# Generate an XCode compatible project
+cd $rootDir
+rm -rf "$builtDirXcode" # Remove old buildfolder first
+
+mkdir "$builtDirXcode"
+cd "$builtDirXcode"
+mkdir "Debug"
+mkdir "Release"
+cmake "$sourceDir" -G "Xcode"
