@@ -1,0 +1,9 @@
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/install.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/yasdishell.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/yasdi_drv_ip.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/yasdimaster.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/yasdi_drv_serial.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/RUN_TESTS.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/yasdi.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/ALL_BUILD.dir
+/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeFiles/ZERO_CHECK.dir
