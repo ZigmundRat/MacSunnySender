@@ -1,0 +1,2009 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F80140F178D743F0B77C2E34 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				AAAB9CBAC4214CE9AAFE3DC8 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		43D28A2F7D384E9AA653DB37 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C2A05B8EC1E84F249501E705 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				39FA15ADD8B24E8C862361A2 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				FB08BD9D69E8441C9B3BC122 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		73B3C9000FE54A9385B601D5 /* RUN_TESTS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 86DEE792C1234544B3304627 /* Build configuration list for PBXAggregateTarget "RUN_TESTS" */;
+			buildPhases = (
+				B0D078BEED3047EC9DD739BD /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+			);
+			name = RUN_TESTS;
+			productName = RUN_TESTS;
+		};
+		F66C2A9E14E64D8A9A1CF589 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 46C7EF98B174425E8B3118F1 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				914B876857DD442B9BB615D0 /* CMake Rules */,
+			);
+			dependencies = (
+				320E12AB69C64E589FB4A7A4 /* PBXTargetDependency */,
+				390AE2BD34154FED967354E7 /* PBXTargetDependency */,
+				1E6C3607DA214BCF88D6ED7C /* PBXTargetDependency */,
+				751F2B3F3CAF4F90990D9749 /* PBXTargetDependency */,
+				EDC1FFBD79A445C2B967A87C /* PBXTargetDependency */,
+				B26542A6A6644989A6303DBC /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0167BEBD39CF42138E8CC234 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/main.c */ = {isa = PBXBuildFile; fileRef = A277264C3C794551952D8347 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/main.c */; };
+		01F4480BE37246478C6ADB15 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/getini.c */ = {isa = PBXBuildFile; fileRef = D9CD6D9A631C4C948ECFFB23 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/getini.c */; };
+		020FE5FD5C7343D6898C1E11 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/chanvalrepo.c */ = {isa = PBXBuildFile; fileRef = 50F50D89949E451B82B1DE05 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/chanvalrepo.c */; };
+		0759E5A0B9024526991648C6 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/sunnynet.c */ = {isa = PBXBuildFile; fileRef = B3579BFC506F4F2FB49154E0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/sunnynet.c */; };
+		0C2B5DF08C4E41279BF5EC11 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.h */ = {isa = PBXBuildFile; fileRef = C64D70796C5C4225927A2946 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.h */; };
+		0DAB97449FD145819024B96D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 4D9AFB4588AE49248926B8CC /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */; };
+		0EF8B1CAB1B9457587BD73E7 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 0D06F37F5FBC418D8937E4C0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */; };
+		1803DE7820D44A55861F6BF0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/mempool.c */ = {isa = PBXBuildFile; fileRef = 067C5A86E2614BAC959F306F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/mempool.c */; };
+		18D17042E0DE47A8A4DBB199 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statereadchan.c */ = {isa = PBXBuildFile; fileRef = 3FE0C9BC501B423D9519D608 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statereadchan.c */; };
+		1EC9E28853FC49C496B192AB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/repository.c */ = {isa = PBXBuildFile; fileRef = 0DD35FC5A62948618D6BA02A /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/repository.c */; };
+		20A70A51752C4F5B9C14F033 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/statistic_writer.c */ = {isa = PBXBuildFile; fileRef = CEC2D8FD7A614249872D0529 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/statistic_writer.c */; };
+		40F17C9452F6425D840A26E4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netdevice.c */ = {isa = PBXBuildFile; fileRef = 3F8B86D8BD4243AD8CC492CE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netdevice.c */; };
+		429F8C7603504FE8B6DD22FB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 0BB56AF7391E413FBCBEC7E8 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */; };
+		561B4B353AFE4C4AA7C85FFF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/objman.c */ = {isa = PBXBuildFile; fileRef = D792CF6E2E6147D49935DB1E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/objman.c */; };
+		587D95CD8466490E8094CC2D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/timer.c */ = {isa = PBXBuildFile; fileRef = CEE63370BEA94D929E16EE14 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/timer.c */; };
+		65FD51D2F7B44B74993CD8FC /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minmap.c */ = {isa = PBXBuildFile; fileRef = 28A8B0182CC246DA8BBD5F2F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minmap.c */; };
+		6AABFC1CA3F4485E928EFBB6 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/iorequest.c */ = {isa = PBXBuildFile; fileRef = 41CFC8FB66AD44CF8CE051B0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/iorequest.c */; };
+		6E1B91D86EB6438A9F9C472B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/scheduler.c */ = {isa = PBXBuildFile; fileRef = 5C9F4CD00518463892A1DF44 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/scheduler.c */; };
+		77F69C4B366D48468FD738A4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minqueue.c */ = {isa = PBXBuildFile; fileRef = 743F40272C524A8DB3E18CFF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minqueue.c */; };
+		7EA8B20FEC3B4663AE2FA404 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/shell/CommonShellUIMain.c */ = {isa = PBXBuildFile; fileRef = 8383C426DF77442B85E18217 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/shell/CommonShellUIMain.c */; };
+		82BD8CC58DC24E5F9AF7410D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/ip_generic.c */ = {isa = PBXBuildFile; fileRef = 91EEF1DBAC914966A044536F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/ip_generic.c */; };
+		85A38B35D8BE488FA54CD808 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.h */ = {isa = PBXBuildFile; fileRef = 500381A76DC1471A82CA439E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.h */; };
+		86C6765A0F00494D903D9797 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/ysecurity.c */ = {isa = PBXBuildFile; fileRef = FA756AA58D1246CD9606F6ED /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/ysecurity.c */; };
+		87DF854265D641F1A80A96EE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/plant.c */ = {isa = PBXBuildFile; fileRef = 64F0C8DE7AEC4669A247FD5B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/plant.c */; };
+		8EA38973951E4BAF9FB52A8D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/byteorder.c */ = {isa = PBXBuildFile; fileRef = 79146ED25A484DE088DB27CD /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/byteorder.c */; };
+		9BD8E608F72740449713ACEF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/mastercmd.c */ = {isa = PBXBuildFile; fileRef = 7AE5919DB1184B109A29C231 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/mastercmd.c */; };
+		9E9776CFD7544904AB0A8016 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/include/os.h */ = {isa = PBXBuildFile; fileRef = A51AFF3C8CAD4D08937E335D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/include/os.h */; };
+		A265E78224264E7BA21D7B5C /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/router.c */ = {isa = PBXBuildFile; fileRef = 76006050C21440DFAFAE1B63 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/router.c */; };
+		BE6591EE8DB6471E99EF05FE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/os/os_linux.c */ = {isa = PBXBuildFile; fileRef = 501FEAA6EE8D49C096789AB3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/os/os_linux.c */; };
+		BFA791A0E3774FB39AAEC31E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/smadef.h */ = {isa = PBXBuildFile; fileRef = C5A0CBB47663422EAF911D2F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/smadef.h */; };
+		C678092B318A4B1EAB67E6BD /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statewritechan.c */ = {isa = PBXBuildFile; fileRef = 0CAB4BA1212144BEAAA8B399 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statewritechan.c */; };
+		CB3FF230221D49A3AD087E39 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/tools.c */ = {isa = PBXBuildFile; fileRef = 7E968A0D30C8418E96FCE076 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/tools.c */; };
+		CE4CA81C3AF04B4AB87FC73C /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/netpacket.c */ = {isa = PBXBuildFile; fileRef = 81ED647CAF804159BC64F4DE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/netpacket.c */; };
+		D28C7672B6E04B2FB6C70E06 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateconfig.c */ = {isa = PBXBuildFile; fileRef = 68D4CD902BB94BBAA577640E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateconfig.c */; };
+		D5C98A69E38541A5BD46EBA4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/fractionizer.c */ = {isa = PBXBuildFile; fileRef = 296C0D7CB99C45EB9EAC0ACF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/fractionizer.c */; };
+		D65D446ACDDD4A5CB04F3DA5 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statedetection.c */ = {isa = PBXBuildFile; fileRef = 8E8322FCFC8349359197A0DE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statedetection.c */; };
+		D679B154E83644B6906E3D9C /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/smadata_layer.c */ = {isa = PBXBuildFile; fileRef = 405EB378E8FB4EEF9CE5753A /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/smadata_layer.c */; };
+		D67C241D62674BB686A9AAAA /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/defractionizer.c */ = {isa = PBXBuildFile; fileRef = 0834206CFFD24F909D8A04C3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/defractionizer.c */; };
+		D78A76DCFC044FED9CCEAD33 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netchannel.c */ = {isa = PBXBuildFile; fileRef = CA6FB9783CED47B3A8A0280F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netchannel.c */; };
+		E2054A97CF584B06B0BCD3A4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/busevents.c */ = {isa = PBXBuildFile; fileRef = 24FC2D4656A0447CBC7A56B4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/busevents.c */; };
+		E232724FAF8A4E1AAF4A34B2 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.c */ = {isa = PBXBuildFile; fileRef = 75AFA216C5AB48DD9ADF24D3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.c */; };
+		E64A22A594D5467998D057C8 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.c */ = {isa = PBXBuildFile; fileRef = 2956B54A3FF8456D9970C4AA /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.c */; };
+		E8959413945148758AD64A60 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 1CB008209E37406AA0D8D87D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */; };
+		ED4EF11F8D3E4DBEBD0A8705 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/serial_posix.c */ = {isa = PBXBuildFile; fileRef = 3B5E43C582BB4685A39C83BB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/serial_posix.c */; };
+		F166C6C74507490F98D57A54 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/prot_layer.c */ = {isa = PBXBuildFile; fileRef = 1C2484C4CB8248A4BD95C85B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/prot_layer.c */; };
+		F396EE50EDBC481EBB2B5DDB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/driver_layer.c */ = {isa = PBXBuildFile; fileRef = C77AC3CDC7884612AF9DCA36 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/driver_layer.c */; };
+		F6DC0B91D0AD490C8E45B487 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 049438509C354F8BA5927193 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */; };
+		F933EF5C693D4AAAA4396369 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/smanet.c */ = {isa = PBXBuildFile; fileRef = ACD6168AC0444EE092E87D14 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/smanet.c */; };
+		FDCEAB4F105F45D0A0B91D03 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateident.c */ = {isa = PBXBuildFile; fileRef = D1AFB005B1FF46D1B257CBBB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateident.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		04A8301DC514431886DC7DE4 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		1EF29391412F4A2A96C1E21A /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		5DDBD0413F524F578BAF2B98 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		E41E3C36444E4F7C85F60D1B /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		1A8B1A18072D4A1FAF18E2CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 099DCEC6D6EC43F9A345E4A5;
+			remoteInfo = yasdi_drv_ip;
+		};
+		1B18E69E5E724481AC065F0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51E530FF6A481C8D9A81E2;
+			remoteInfo = ZERO_CHECK;
+		};
+		2AC44C9FA8F44251B39B42EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33CAE9A566144007976F5DBC;
+			remoteInfo = yasdimaster;
+		};
+		2BD7634F1E4D46E59799939C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18951203F5E4F0EAADE3116;
+			remoteInfo = yasdi;
+		};
+		41CA16D0869F48B092250525 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18951203F5E4F0EAADE3116;
+			remoteInfo = yasdi;
+		};
+		4497E24CB4D84B5584C68218 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8304970F3FEF4FECAB4403F8;
+			remoteInfo = yasdi_drv_serial;
+		};
+		65D7B6973B6440EA86C4B27D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51E530FF6A481C8D9A81E2;
+			remoteInfo = ZERO_CHECK;
+		};
+		7F56DF3AAB35491E8626172A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F66C2A9E14E64D8A9A1CF589;
+			remoteInfo = ALL_BUILD;
+		};
+		A19F5786592D47A0A3A1C857 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18951203F5E4F0EAADE3116;
+			remoteInfo = yasdi;
+		};
+		AA343EE9BD9447B39C3C7D58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33CAE9A566144007976F5DBC;
+			remoteInfo = yasdimaster;
+		};
+		B881DF3CAFEA41409CA14CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69063625B428454582E1CC5C;
+			remoteInfo = yasdishell;
+		};
+		BBECDEEE44794B47AE318967 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18951203F5E4F0EAADE3116;
+			remoteInfo = yasdi;
+		};
+		BFF918186AAF471CAD373193 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51E530FF6A481C8D9A81E2;
+			remoteInfo = ZERO_CHECK;
+		};
+		D674EA548FCB461C996B6263 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18951203F5E4F0EAADE3116;
+			remoteInfo = yasdi;
+		};
+		DD6D3F2D8ECF4A5E9887AF71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51E530FF6A481C8D9A81E2;
+			remoteInfo = ZERO_CHECK;
+		};
+		DDD779EE8B5C402A98D90622 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51E530FF6A481C8D9A81E2;
+			remoteInfo = ZERO_CHECK;
+		};
+		E5A3A995753E4D03ABBFB4DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C51E530FF6A481C8D9A81E2;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		049438509C354F8BA5927193 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		067C5A86E2614BAC959F306F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/mempool.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = mempool.c; path = ../../core/mempool.c; sourceTree = SOURCE_ROOT; };
+		0834206CFFD24F909D8A04C3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/defractionizer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = defractionizer.c; path = ../../core/defractionizer.c; sourceTree = SOURCE_ROOT; };
+		0BB56AF7391E413FBCBEC7E8 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		0CAB4BA1212144BEAAA8B399 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statewritechan.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = statewritechan.c; path = ../../master/statewritechan.c; sourceTree = SOURCE_ROOT; };
+		0D06F37F5FBC418D8937E4C0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		0DD35FC5A62948618D6BA02A /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/repository.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = repository.c; path = ../../core/repository.c; sourceTree = SOURCE_ROOT; };
+		129103720550454FB4651D7D /* yasdimaster */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libyasdimaster.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C2484C4CB8248A4BD95C85B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/prot_layer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = prot_layer.c; path = ../../core/prot_layer.c; sourceTree = SOURCE_ROOT; };
+		1C60E73FBC75437090D52BA4 /* yasdishell */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = yasdishell; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CB008209E37406AA0D8D87D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		24FC2D4656A0447CBC7A56B4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/busevents.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = busevents.c; path = ../../master/busevents.c; sourceTree = SOURCE_ROOT; };
+		28A8B0182CC246DA8BBD5F2F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minmap.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = minmap.c; path = ../../core/minmap.c; sourceTree = SOURCE_ROOT; };
+		2956B54A3FF8456D9970C4AA /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = libyasdimaster.c; path = ../../libs/libyasdimaster.c; sourceTree = SOURCE_ROOT; };
+		296C0D7CB99C45EB9EAC0ACF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/fractionizer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = fractionizer.c; path = ../../core/fractionizer.c; sourceTree = SOURCE_ROOT; };
+		3B5E43C582BB4685A39C83BB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/serial_posix.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = serial_posix.c; path = ../../driver/serial_posix.c; sourceTree = SOURCE_ROOT; };
+		3F8B86D8BD4243AD8CC492CE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netdevice.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = netdevice.c; path = ../../master/netdevice.c; sourceTree = SOURCE_ROOT; };
+		3FE0C9BC501B423D9519D608 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statereadchan.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = statereadchan.c; path = ../../master/statereadchan.c; sourceTree = SOURCE_ROOT; };
+		405EB378E8FB4EEF9CE5753A /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/smadata_layer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = smadata_layer.c; path = ../../core/smadata_layer.c; sourceTree = SOURCE_ROOT; };
+		41CFC8FB66AD44CF8CE051B0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/iorequest.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = iorequest.c; path = ../../core/iorequest.c; sourceTree = SOURCE_ROOT; };
+		4D9AFB4588AE49248926B8CC /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		500381A76DC1471A82CA439E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = libyasdi.h; path = ../../libs/libyasdi.h; sourceTree = SOURCE_ROOT; };
+		501FEAA6EE8D49C096789AB3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/os/os_linux.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = os_linux.c; path = ../../os/os_linux.c; sourceTree = SOURCE_ROOT; };
+		50F50D89949E451B82B1DE05 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/chanvalrepo.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = chanvalrepo.c; path = ../../master/chanvalrepo.c; sourceTree = SOURCE_ROOT; };
+		5C9F4CD00518463892A1DF44 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/scheduler.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = scheduler.c; path = ../../core/scheduler.c; sourceTree = SOURCE_ROOT; };
+		64F0C8DE7AEC4669A247FD5B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/plant.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = plant.c; path = ../../master/plant.c; sourceTree = SOURCE_ROOT; };
+		68D4CD902BB94BBAA577640E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateconfig.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stateconfig.c; path = ../../master/stateconfig.c; sourceTree = SOURCE_ROOT; };
+		743F40272C524A8DB3E18CFF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minqueue.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = minqueue.c; path = ../../core/minqueue.c; sourceTree = SOURCE_ROOT; };
+		75AFA216C5AB48DD9ADF24D3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = libyasdi.c; path = ../../libs/libyasdi.c; sourceTree = SOURCE_ROOT; };
+		76006050C21440DFAFAE1B63 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/router.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = router.c; path = ../../core/router.c; sourceTree = SOURCE_ROOT; };
+		79146ED25A484DE088DB27CD /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/byteorder.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = byteorder.c; path = ../../core/byteorder.c; sourceTree = SOURCE_ROOT; };
+		7AE5919DB1184B109A29C231 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/mastercmd.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = mastercmd.c; path = ../../master/mastercmd.c; sourceTree = SOURCE_ROOT; };
+		7E968A0D30C8418E96FCE076 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/tools.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = tools.c; path = ../../core/tools.c; sourceTree = SOURCE_ROOT; };
+		81ED647CAF804159BC64F4DE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/netpacket.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = netpacket.c; path = ../../core/netpacket.c; sourceTree = SOURCE_ROOT; };
+		8383C426DF77442B85E18217 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/shell/CommonShellUIMain.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = CommonShellUIMain.c; path = ../../shell/CommonShellUIMain.c; sourceTree = SOURCE_ROOT; };
+		86EC45C593174EFDA601E784 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8E8322FCFC8349359197A0DE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statedetection.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = statedetection.c; path = ../../master/statedetection.c; sourceTree = SOURCE_ROOT; };
+		91EEF1DBAC914966A044536F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/ip_generic.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = ip_generic.c; path = ../../driver/ip_generic.c; sourceTree = SOURCE_ROOT; };
+		A277264C3C794551952D8347 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/main.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = main.c; path = ../../master/main.c; sourceTree = SOURCE_ROOT; };
+		A51AFF3C8CAD4D08937E335D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/include/os.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = os.h; path = ../../include/os.h; sourceTree = SOURCE_ROOT; };
+		ACD6168AC0444EE092E87D14 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/smanet.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = smanet.c; path = ../../protocol/smanet.c; sourceTree = SOURCE_ROOT; };
+		B2A63D0AC77843B59082F06F /* yasdi_drv_serial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_serial.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3579BFC506F4F2FB49154E0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/sunnynet.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = sunnynet.c; path = ../../protocol/sunnynet.c; sourceTree = SOURCE_ROOT; };
+		BCA9FC7BD7A84C4E8AC79749 /* yasdi_drv_ip */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libyasdi_drv_ip.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5A0CBB47663422EAF911D2F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/smadef.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = smadef.h; path = ../../smalib/smadef.h; sourceTree = SOURCE_ROOT; };
+		C64D70796C5C4225927A2946 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = libyasdimaster.h; path = ../../libs/libyasdimaster.h; sourceTree = SOURCE_ROOT; };
+		C77AC3CDC7884612AF9DCA36 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/driver_layer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = driver_layer.c; path = ../../core/driver_layer.c; sourceTree = SOURCE_ROOT; };
+		CA6FB9783CED47B3A8A0280F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netchannel.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = netchannel.c; path = ../../master/netchannel.c; sourceTree = SOURCE_ROOT; };
+		CEC2D8FD7A614249872D0529 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/statistic_writer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = statistic_writer.c; path = ../../core/statistic_writer.c; sourceTree = SOURCE_ROOT; };
+		CEE63370BEA94D929E16EE14 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/timer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = timer.c; path = ../../core/timer.c; sourceTree = SOURCE_ROOT; };
+		D1AFB005B1FF46D1B257CBBB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateident.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = stateident.c; path = ../../master/stateident.c; sourceTree = SOURCE_ROOT; };
+		D2506429093D4D8F97CA7083 /* yasdi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libyasdi.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		D792CF6E2E6147D49935DB1E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/objman.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = objman.c; path = ../../master/objman.c; sourceTree = SOURCE_ROOT; };
+		D9CD6D9A631C4C948ECFFB23 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/getini.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = getini.c; path = ../../smalib/getini.c; sourceTree = SOURCE_ROOT; };
+		FA756AA58D1246CD9606F6ED /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/ysecurity.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = ysecurity.c; path = ../../master/ysecurity.c; sourceTree = SOURCE_ROOT; };
+		FECBE3E91EC94D56BAC6DE83 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		132347FF621D4FC9AB2FAB51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2506429093D4D8F97CA7083 /* yasdi */,
+				BCA9FC7BD7A84C4E8AC79749 /* yasdi_drv_ip */,
+				B2A63D0AC77843B59082F06F /* yasdi_drv_serial */,
+				129103720550454FB4651D7D /* yasdimaster */,
+				1C60E73FBC75437090D52BA4 /* yasdishell */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		153B5A8FE2ED48988F7540E4 /* yasdishell */ = {
+			isa = PBXGroup;
+			children = (
+				4914E6E857B7411CB27C241B /* Source Files */,
+				0D06F37F5FBC418D8937E4C0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = yasdishell;
+			sourceTree = "<group>";
+		};
+		1F1AEB192C4C4891BA5750D2 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				79146ED25A484DE088DB27CD /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/byteorder.c */,
+				0834206CFFD24F909D8A04C3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/defractionizer.c */,
+				C77AC3CDC7884612AF9DCA36 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/driver_layer.c */,
+				296C0D7CB99C45EB9EAC0ACF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/fractionizer.c */,
+				41CFC8FB66AD44CF8CE051B0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/iorequest.c */,
+				067C5A86E2614BAC959F306F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/mempool.c */,
+				28A8B0182CC246DA8BBD5F2F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minmap.c */,
+				743F40272C524A8DB3E18CFF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minqueue.c */,
+				81ED647CAF804159BC64F4DE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/netpacket.c */,
+				1C2484C4CB8248A4BD95C85B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/prot_layer.c */,
+				0DD35FC5A62948618D6BA02A /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/repository.c */,
+				76006050C21440DFAFAE1B63 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/router.c */,
+				5C9F4CD00518463892A1DF44 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/scheduler.c */,
+				405EB378E8FB4EEF9CE5753A /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/smadata_layer.c */,
+				CEC2D8FD7A614249872D0529 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/statistic_writer.c */,
+				CEE63370BEA94D929E16EE14 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/timer.c */,
+				7E968A0D30C8418E96FCE076 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/tools.c */,
+				75AFA216C5AB48DD9ADF24D3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.c */,
+				501FEAA6EE8D49C096789AB3 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/os/os_linux.c */,
+				ACD6168AC0444EE092E87D14 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/smanet.c */,
+				B3579BFC506F4F2FB49154E0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/sunnynet.c */,
+				D9CD6D9A631C4C948ECFFB23 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/getini.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		1F384A010A384D7EAC3B9367 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B5E43C582BB4685A39C83BB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/serial_posix.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		200558CD471F400D89F31686 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				84B88F3BC4114521B5E8BD99 /* CMake Rules */,
+				FECBE3E91EC94D56BAC6DE83 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		2893FA98328F4F958954E635 = {
+			isa = PBXGroup;
+			children = (
+				153B5A8FE2ED48988F7540E4 /* yasdishell */,
+				5B54904E4AA04598892F7223 /* yasdi_drv_ip */,
+				B1462B1D6D7A483F817480B7 /* yasdimaster */,
+				8A31A5DDBD2240B099B5B6BE /* yasdi_drv_serial */,
+				37A933CA3D4E489ABCAFE51C /* yasdi */,
+				CAFCF254CC5D406EB5C70E0A /* ALL_BUILD */,
+				200558CD471F400D89F31686 /* ZERO_CHECK */,
+				132347FF621D4FC9AB2FAB51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37A933CA3D4E489ABCAFE51C /* yasdi */ = {
+			isa = PBXGroup;
+			children = (
+				1F1AEB192C4C4891BA5750D2 /* Source Files */,
+				F34DFDC1176E4403B3B28072 /* Header Files */,
+				4D9AFB4588AE49248926B8CC /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = yasdi;
+			sourceTree = "<group>";
+		};
+		424FFDA7988E4E188C15E63A /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				C64D70796C5C4225927A2946 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		4914E6E857B7411CB27C241B /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				8383C426DF77442B85E18217 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/shell/CommonShellUIMain.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		5B54904E4AA04598892F7223 /* yasdi_drv_ip */ = {
+			isa = PBXGroup;
+			children = (
+				8BF36AF247374B23BD3A1028 /* Source Files */,
+				1CB008209E37406AA0D8D87D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = yasdi_drv_ip;
+			sourceTree = "<group>";
+		};
+		7B8DA54899E34FABB39555C5 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		84B88F3BC4114521B5E8BD99 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		8A31A5DDBD2240B099B5B6BE /* yasdi_drv_serial */ = {
+			isa = PBXGroup;
+			children = (
+				1F384A010A384D7EAC3B9367 /* Source Files */,
+				0BB56AF7391E413FBCBEC7E8 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = yasdi_drv_serial;
+			sourceTree = "<group>";
+		};
+		8BF36AF247374B23BD3A1028 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				91EEF1DBAC914966A044536F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/ip_generic.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		B1462B1D6D7A483F817480B7 /* yasdimaster */ = {
+			isa = PBXGroup;
+			children = (
+				DB4136E06DEB4B819B417FEC /* Source Files */,
+				424FFDA7988E4E188C15E63A /* Header Files */,
+				049438509C354F8BA5927193 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = yasdimaster;
+			sourceTree = "<group>";
+		};
+		CAFCF254CC5D406EB5C70E0A /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				7B8DA54899E34FABB39555C5 /* CMake Rules */,
+				86EC45C593174EFDA601E784 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		DB4136E06DEB4B819B417FEC /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				2956B54A3FF8456D9970C4AA /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.c */,
+				24FC2D4656A0447CBC7A56B4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/busevents.c */,
+				50F50D89949E451B82B1DE05 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/chanvalrepo.c */,
+				A277264C3C794551952D8347 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/main.c */,
+				7AE5919DB1184B109A29C231 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/mastercmd.c */,
+				CA6FB9783CED47B3A8A0280F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netchannel.c */,
+				3F8B86D8BD4243AD8CC492CE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netdevice.c */,
+				D792CF6E2E6147D49935DB1E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/objman.c */,
+				64F0C8DE7AEC4669A247FD5B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/plant.c */,
+				68D4CD902BB94BBAA577640E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateconfig.c */,
+				8E8322FCFC8349359197A0DE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statedetection.c */,
+				D1AFB005B1FF46D1B257CBBB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateident.c */,
+				3FE0C9BC501B423D9519D608 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statereadchan.c */,
+				0CAB4BA1212144BEAAA8B399 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statewritechan.c */,
+				FA756AA58D1246CD9606F6ED /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/ysecurity.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		F34DFDC1176E4403B3B28072 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				A51AFF3C8CAD4D08937E335D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/include/os.h */,
+				500381A76DC1471A82CA439E /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.h */,
+				C5A0CBB47663422EAF911D2F /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/smadef.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		099DCEC6D6EC43F9A345E4A5 /* yasdi_drv_ip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA3CF76A88E148FF98DA4017 /* Build configuration list for PBXNativeTarget "yasdi_drv_ip" */;
+			buildPhases = (
+				5AD0707791C64E23AC83C216 /* Sources */,
+				76D98AD075504836B22543D6 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				923589A5C5B64EBC905E5A88 /* PBXTargetDependency */,
+				90EB9C09D814456BA3696F65 /* PBXTargetDependency */,
+			);
+			name = yasdi_drv_ip;
+			productName = yasdi_drv_ip;
+			productReference = BCA9FC7BD7A84C4E8AC79749 /* yasdi_drv_ip */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		33CAE9A566144007976F5DBC /* yasdimaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FADE2E419F234933ABB0B91D /* Build configuration list for PBXNativeTarget "yasdimaster" */;
+			buildPhases = (
+				DC1DC6ABC80748D698D964F3 /* Sources */,
+				711E0C25DA4D445586ECB6FF /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B806707109F442BB0B5CBB1 /* PBXTargetDependency */,
+				1F1B79D594AC473CA59362F1 /* PBXTargetDependency */,
+			);
+			name = yasdimaster;
+			productName = yasdimaster;
+			productReference = 129103720550454FB4651D7D /* yasdimaster */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		69063625B428454582E1CC5C /* yasdishell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E317B99CDD6340668E8E2991 /* Build configuration list for PBXNativeTarget "yasdishell" */;
+			buildPhases = (
+				C7F5FB219AAE43F09D57A7A3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60D8E80A80FB451F8B75307B /* PBXTargetDependency */,
+				7BCBDC8BB97E488EAC2B5C68 /* PBXTargetDependency */,
+				183F515745134107B5EEFFA8 /* PBXTargetDependency */,
+			);
+			name = yasdishell;
+			productName = yasdishell;
+			productReference = 1C60E73FBC75437090D52BA4 /* yasdishell */;
+			productType = "com.apple.product-type.tool";
+		};
+		8304970F3FEF4FECAB4403F8 /* yasdi_drv_serial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B279381C8F4942689A56C584 /* Build configuration list for PBXNativeTarget "yasdi_drv_serial" */;
+			buildPhases = (
+				CAF6B5E1BD074F33A5334AB2 /* Sources */,
+				87B4830593CC4FE1A7AF6C22 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B44A502B88D34A5784538AC2 /* PBXTargetDependency */,
+				6E9AC55556BB4E3F83A3E2BF /* PBXTargetDependency */,
+			);
+			name = yasdi_drv_serial;
+			productName = yasdi_drv_serial;
+			productReference = B2A63D0AC77843B59082F06F /* yasdi_drv_serial */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		A18951203F5E4F0EAADE3116 /* yasdi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C90F65566E7A45E1AA02C9A6 /* Build configuration list for PBXNativeTarget "yasdi" */;
+			buildPhases = (
+				7E8A829F208C4D7D821993F0 /* Sources */,
+				B437F06ECE324D6D91B335D0 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D78740D96F3C449A91ECC7DD /* PBXTargetDependency */,
+			);
+			name = yasdi;
+			productName = yasdi;
+			productReference = D2506429093D4D8F97CA7083 /* yasdi */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7864B9E7E59D4CE3A99B2008 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0910;
+			};
+			buildConfigurationList = 206678A0EC814FFC88519BAB /* Build configuration list for PBXProject "yasdi" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				E41E3C36444E4F7C85F60D1B /* Debug */,
+				5DDBD0413F524F578BAF2B98 /* Release */,
+				1EF29391412F4A2A96C1E21A /* MinSizeRel */,
+				04A8301DC514431886DC7DE4 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 2893FA98328F4F958954E635;
+			projectDirPath = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake";
+			projectRoot = "";
+			targets = (
+				F66C2A9E14E64D8A9A1CF589 /* ALL_BUILD */,
+				73B3C9000FE54A9385B601D5 /* RUN_TESTS */,
+				3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */,
+				43D28A2F7D384E9AA653DB37 /* install */,
+				A18951203F5E4F0EAADE3116 /* yasdi */,
+				099DCEC6D6EC43F9A345E4A5 /* yasdi_drv_ip */,
+				8304970F3FEF4FECAB4403F8 /* yasdi_drv_serial */,
+				33CAE9A566144007976F5DBC /* yasdimaster */,
+				69063625B428454582E1CC5C /* yasdishell */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E061863F0CB4407BAC72C75 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		39FA15ADD8B24E8C862361A2 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		6AFBD7ED3C4F4089A685350A = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		711E0C25DA4D445586ECB6FF /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/yasdimaster_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		76D98AD075504836B22543D6 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/yasdi_drv_ip_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		78844AD4D27E433A88D4B625 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		87B4830593CC4FE1A7AF6C22 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/yasdi_drv_serial_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		914B876857DD442B9BB615D0 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		AAAB9CBAC4214CE9AAFE3DC8 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B0D078BEED3047EC9DD739BD /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/RUN_TESTS_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B437F06ECE324D6D91B335D0 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode -f /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/CMakeScripts/yasdi_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		D0F7B5F7E94B4BF58C806815 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AD0707791C64E23AC83C216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82BD8CC58DC24E5F9AF7410D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/ip_generic.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E8A829F208C4D7D821993F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EA38973951E4BAF9FB52A8D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/byteorder.c */,
+				D67C241D62674BB686A9AAAA /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/defractionizer.c */,
+				F396EE50EDBC481EBB2B5DDB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/driver_layer.c */,
+				D5C98A69E38541A5BD46EBA4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/fractionizer.c */,
+				6AABFC1CA3F4485E928EFBB6 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/iorequest.c */,
+				1803DE7820D44A55861F6BF0 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/mempool.c */,
+				65FD51D2F7B44B74993CD8FC /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minmap.c */,
+				77F69C4B366D48468FD738A4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/minqueue.c */,
+				CE4CA81C3AF04B4AB87FC73C /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/netpacket.c */,
+				F166C6C74507490F98D57A54 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/prot_layer.c */,
+				1EC9E28853FC49C496B192AB /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/repository.c */,
+				A265E78224264E7BA21D7B5C /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/router.c */,
+				6E1B91D86EB6438A9F9C472B /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/scheduler.c */,
+				D679B154E83644B6906E3D9C /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/smadata_layer.c */,
+				20A70A51752C4F5B9C14F033 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/statistic_writer.c */,
+				587D95CD8466490E8094CC2D /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/timer.c */,
+				CB3FF230221D49A3AD087E39 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/core/tools.c */,
+				E232724FAF8A4E1AAF4A34B2 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdi.c */,
+				BE6591EE8DB6471E99EF05FE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/os/os_linux.c */,
+				F933EF5C693D4AAAA4396369 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/smanet.c */,
+				0759E5A0B9024526991648C6 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/protocol/sunnynet.c */,
+				01F4480BE37246478C6ADB15 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/smalib/getini.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7F5FB219AAE43F09D57A7A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA8B20FEC3B4663AE2FA404 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/shell/CommonShellUIMain.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAF6B5E1BD074F33A5334AB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED4EF11F8D3E4DBEBD0A8705 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/driver/serial_posix.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC1DC6ABC80748D698D964F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E64A22A594D5467998D057C8 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/libs/libyasdimaster.c */,
+				E2054A97CF584B06B0BCD3A4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/busevents.c */,
+				020FE5FD5C7343D6898C1E11 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/chanvalrepo.c */,
+				0167BEBD39CF42138E8CC234 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/main.c */,
+				9BD8E608F72740449713ACEF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/mastercmd.c */,
+				D78A76DCFC044FED9CCEAD33 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netchannel.c */,
+				40F17C9452F6425D840A26E4 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/netdevice.c */,
+				561B4B353AFE4C4AA7C85FFF /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/objman.c */,
+				87DF854265D641F1A80A96EE /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/plant.c */,
+				D28C7672B6E04B2FB6C70E06 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateconfig.c */,
+				D65D446ACDDD4A5CB04F3DA5 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statedetection.c */,
+				FDCEAB4F105F45D0A0B91D03 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/stateident.c */,
+				18D17042E0DE47A8A4DBB199 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statereadchan.c */,
+				C678092B318A4B1EAB67E6BD /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/statewritechan.c */,
+				86C6765A0F00494D903D9797 /* /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/master/ysecurity.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		183F515745134107B5EEFFA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */;
+			targetProxy = 65D7B6973B6440EA86C4B27D /* PBXContainerItemProxy */;
+		};
+		1E6C3607DA214BCF88D6ED7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33CAE9A566144007976F5DBC /* yasdimaster */;
+			targetProxy = 2AC44C9FA8F44251B39B42EB /* PBXContainerItemProxy */;
+		};
+		1F1B79D594AC473CA59362F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */;
+			targetProxy = E5A3A995753E4D03ABBFB4DA /* PBXContainerItemProxy */;
+		};
+		320E12AB69C64E589FB4A7A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69063625B428454582E1CC5C /* yasdishell */;
+			targetProxy = B881DF3CAFEA41409CA14CAB /* PBXContainerItemProxy */;
+		};
+		390AE2BD34154FED967354E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 099DCEC6D6EC43F9A345E4A5 /* yasdi_drv_ip */;
+			targetProxy = 1A8B1A18072D4A1FAF18E2CF /* PBXContainerItemProxy */;
+		};
+		60D8E80A80FB451F8B75307B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33CAE9A566144007976F5DBC /* yasdimaster */;
+			targetProxy = AA343EE9BD9447B39C3C7D58 /* PBXContainerItemProxy */;
+		};
+		6E9AC55556BB4E3F83A3E2BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */;
+			targetProxy = BFF918186AAF471CAD373193 /* PBXContainerItemProxy */;
+		};
+		751F2B3F3CAF4F90990D9749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8304970F3FEF4FECAB4403F8 /* yasdi_drv_serial */;
+			targetProxy = 4497E24CB4D84B5584C68218 /* PBXContainerItemProxy */;
+		};
+		7B806707109F442BB0B5CBB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18951203F5E4F0EAADE3116 /* yasdi */;
+			targetProxy = 2BD7634F1E4D46E59799939C /* PBXContainerItemProxy */;
+		};
+		7BCBDC8BB97E488EAC2B5C68 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18951203F5E4F0EAADE3116 /* yasdi */;
+			targetProxy = D674EA548FCB461C996B6263 /* PBXContainerItemProxy */;
+		};
+		90EB9C09D814456BA3696F65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */;
+			targetProxy = 1B18E69E5E724481AC065F0B /* PBXContainerItemProxy */;
+		};
+		923589A5C5B64EBC905E5A88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18951203F5E4F0EAADE3116 /* yasdi */;
+			targetProxy = 41CA16D0869F48B092250525 /* PBXContainerItemProxy */;
+		};
+		B26542A6A6644989A6303DBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */;
+			targetProxy = DD6D3F2D8ECF4A5E9887AF71 /* PBXContainerItemProxy */;
+		};
+		B44A502B88D34A5784538AC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18951203F5E4F0EAADE3116 /* yasdi */;
+			targetProxy = A19F5786592D47A0A3A1C857 /* PBXContainerItemProxy */;
+		};
+		D78740D96F3C449A91ECC7DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C51E530FF6A481C8D9A81E2 /* ZERO_CHECK */;
+			targetProxy = DDD779EE8B5C402A98D90622 /* PBXContainerItemProxy */;
+		};
+		EDC1FFBD79A445C2B967A87C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18951203F5E4F0EAADE3116 /* yasdi */;
+			targetProxy = BBECDEEE44794B47AE318967 /* PBXContainerItemProxy */;
+		};
+		FB08BD9D69E8441C9B3BC122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F66C2A9E14E64D8A9A1CF589 /* ALL_BUILD */;
+			targetProxy = 7F56DF3AAB35491E8626172A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		035B74764E0C43A4B82DB8A2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		0BC7E123AA474F59942941A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdimaster.1.8.1.dylib /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdishell;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		15DC065C1BAA4BD9B9DCAA59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdimaster.1.8.1.dylib /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdishell;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		20A0FBA08BED43C3AC63CB14 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		22106ACB647F4B57AB3C282C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		231CF489387A4FCF9CFB8FA8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		2A97AB4873844B5EA31C0FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_serial_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi_drv_serial.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_serial.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		30F118B6945B40A48CF164EE /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_serial_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi_drv_serial.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_serial.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		3D2268F016C646B2BB27A2A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		40DB29247BFF49E29F179B17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		43BFA069C68D41A6A82D5F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		4C8AFA8AA8594821ADFBC087 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		4E6179A4998D4641BF6119AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/build";
+			};
+			name = Debug;
+		};
+		54C9373D295849BC86244213 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		5A62E0743F0F4B5998D96000 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		618D6C59641B47BB90044FEF /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdimaster_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdimaster.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdimaster.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6AFF8B7BFC1546C1BE7DD0B8 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		6B5B5E2514304F10A4BFE145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_serial_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi_drv_serial.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_serial.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		75BCDB0522864702BDF5E98E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_serial_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi_drv_serial.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_serial.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		7A40A8A284B34546B25562F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi.1.dylib  -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7B7D2D9087A84BA7B42DB67B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_ip_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi_drv_ip.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_ip.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7F247D3189684902A8B0BB58 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/build";
+			};
+			name = MinSizeRel;
+		};
+		85E7CA4232E549FD8100FC3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		9526865711014C99ABA0B1D3 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A037EBD900A143E1A5A7BA7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdimaster_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdimaster.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdimaster.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		A4DF9D58B0294EB59ACD00AA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdimaster.1.8.1.dylib /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdishell;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		ABF0166F0BC94D1899DFCB01 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B064A1AE9B534C8C8513241C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/build";
+			};
+			name = RelWithDebInfo;
+		};
+		B5AE9AAADF4F4FDEA568BE21 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdimaster_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdimaster.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdimaster.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BFADCFB1AA86464C99F0F19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdimaster_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "   -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdimaster.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Debug/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdimaster.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		C2C609CD879C4C97B7274683 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi.1.dylib  -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C3C21C8159D4433D82917FC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/build";
+			};
+			name = Release;
+		};
+		D55E6710C7514A1B8FA63BDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		D63CFAA781F743C9ACE28D8F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_ip_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi_drv_ip.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_ip.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D6501D27569D4F9191298758 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdimaster.1.8.1.dylib /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdishell;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		E69720799A7F4A748954CF03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_ip_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi_drv_ip.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_ip.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		EDD8FF8E160C4E72B3D7304C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/MinSizeRel/libyasdi.1.dylib  -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EEAE814AD9744B058D5F80E9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_drv_ip_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = " /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME) /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi_drv_ip.1.dylib  /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/RelWithDebInfo/libyasdi.1.8.1.dylib -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi_drv_ip.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		EF5EE955FCD74E64979FD4CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		FCB08E574170437B83B32C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 1.8.1;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",yasdi_EXPORTS);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../include","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../os","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../core","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../smalib","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../protocol","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../master","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/../../libs++","/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/yasdi-1/projects/generic-cmake/./incprj");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC  ";
+				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names -install_name /Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode/Release/libyasdi.1.dylib  -ldl -lpthread";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yasdi.1.8.1;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/janverrept/Documents/Development/Projects/Personal/Xcode/MacSunnySender/Frameworks/YASDI/build-xcode";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		206678A0EC814FFC88519BAB /* Build configuration list for PBXProject "yasdi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E6179A4998D4641BF6119AD /* Debug */,
+				C3C21C8159D4433D82917FC1 /* Release */,
+				7F247D3189684902A8B0BB58 /* MinSizeRel */,
+				B064A1AE9B534C8C8513241C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		46C7EF98B174425E8B3118F1 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C8AFA8AA8594821ADFBC087 /* Debug */,
+				54C9373D295849BC86244213 /* Release */,
+				ABF0166F0BC94D1899DFCB01 /* MinSizeRel */,
+				6AFF8B7BFC1546C1BE7DD0B8 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		86DEE792C1234544B3304627 /* Build configuration list for PBXAggregateTarget "RUN_TESTS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF5EE955FCD74E64979FD4CA /* Debug */,
+				85E7CA4232E549FD8100FC3C /* Release */,
+				5A62E0743F0F4B5998D96000 /* MinSizeRel */,
+				20A0FBA08BED43C3AC63CB14 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B279381C8F4942689A56C584 /* Build configuration list for PBXNativeTarget "yasdi_drv_serial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B5B5E2514304F10A4BFE145 /* Debug */,
+				2A97AB4873844B5EA31C0FBA /* Release */,
+				30F118B6945B40A48CF164EE /* MinSizeRel */,
+				75BCDB0522864702BDF5E98E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C2A05B8EC1E84F249501E705 /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40DB29247BFF49E29F179B17 /* Debug */,
+				3D2268F016C646B2BB27A2A1 /* Release */,
+				231CF489387A4FCF9CFB8FA8 /* MinSizeRel */,
+				9526865711014C99ABA0B1D3 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C90F65566E7A45E1AA02C9A6 /* Build configuration list for PBXNativeTarget "yasdi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A40A8A284B34546B25562F0 /* Debug */,
+				FCB08E574170437B83B32C8E /* Release */,
+				EDD8FF8E160C4E72B3D7304C /* MinSizeRel */,
+				C2C609CD879C4C97B7274683 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CA3CF76A88E148FF98DA4017 /* Build configuration list for PBXNativeTarget "yasdi_drv_ip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B7D2D9087A84BA7B42DB67B /* Debug */,
+				E69720799A7F4A748954CF03 /* Release */,
+				D63CFAA781F743C9ACE28D8F /* MinSizeRel */,
+				EEAE814AD9744B058D5F80E9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E317B99CDD6340668E8E2991 /* Build configuration list for PBXNativeTarget "yasdishell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15DC065C1BAA4BD9B9DCAA59 /* Debug */,
+				0BC7E123AA474F59942941A8 /* Release */,
+				A4DF9D58B0294EB59ACD00AA /* MinSizeRel */,
+				D6501D27569D4F9191298758 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F80140F178D743F0B77C2E34 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D55E6710C7514A1B8FA63BDB /* Debug */,
+				43BFA069C68D41A6A82D5F99 /* Release */,
+				22106ACB647F4B57AB3C282C /* MinSizeRel */,
+				035B74764E0C43A4B82DB8A2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FADE2E419F234933ABB0B91D /* Build configuration list for PBXNativeTarget "yasdimaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFADCFB1AA86464C99F0F19E /* Debug */,
+				A037EBD900A143E1A5A7BA7A /* Release */,
+				618D6C59641B47BB90044FEF /* MinSizeRel */,
+				B5AE9AAADF4F4FDEA568BE21 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7864B9E7E59D4CE3A99B2008 /* Project object */;
+}

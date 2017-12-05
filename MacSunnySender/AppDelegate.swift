@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             #endif
             
             //TODO:Re-enable async device detection
-            //SMAInverter.handleAllYasdiEvents()
+            SMAInverter.handleAllYasdiEvents()
             SMAInverter.createInverters(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
         }
         
