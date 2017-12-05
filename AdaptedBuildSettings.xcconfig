@@ -11,5 +11,5 @@ SWIFT_INSTALL_OBJC_HEADER = YES
 SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)-Bridging-Header.h"
 
 // Incude the source-headers for the otherwise binary dylibs
-HEADER_SEARCH_PATHS = "$(SRCROOT)/**"
+HEADER_SEARCH_PATHS = "$(SRCROOT)"
 
