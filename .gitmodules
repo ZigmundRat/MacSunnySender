@@ -1,9 +1,9 @@
-[submodule "Frameworks/YASDI/yasdi-1"]
-	path = Frameworks/YASDI/yasdi-1
-	url = https://TheMisfit68@github.com/TheMisfit68/libyasdi.git
 [submodule "Frameworks/JVCocoa"]
 	path = Frameworks/JVCocoa
 	url = https://TheMisfit68@github.com/TheMisfit68/JVCocoa.git
 [submodule "Frameworks/GRDB"]
 	path = Frameworks/GRDB
 	url = https://TheMisfit68@github.com/TheMisfit68/GRDB.swift.git
+[submodule "Frameworks/YASDI/yasdi-1"]
+	path = Frameworks/YASDI/yasdi-1
+	url = https://TheMisfit68@github.com/TheMisfit68/libyasdi.git
