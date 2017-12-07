@@ -104,7 +104,8 @@ class SMAInverter: InverterViewModel{
         var devices:[Handle]? = nil
         
         var yasdiResultCode:Int32 = -1
-        yasdiResultCode = DoStartDeviceDetection(CInt(maxNumber), 1);
+        print("deviceDetectionWillStart")
+        yasdiResultCode = DoStartDeviceDetection(CInt(maxNumber), 0);
         
         if yasdiResultCode > -1 {
             
@@ -199,8 +200,7 @@ class SMAInverter: InverterViewModel{
                                             repeats: true
         )
         
-        print("✅ Inverter \(name!) found online")
-        
+        debugger.log(debugLevel: .Succes, "Inverter \(name!) found online")
     }
     
     
@@ -239,7 +239,6 @@ class SMAInverter: InverterViewModel{
                     for _ in 0..<numberOfChannels{
                         
                         let channelNumber = Int(channelHandles.pointee)
-                        
                         var yasdiResultCode:Int32 = -1
                         let channelName: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                         yasdiResultCode = GetChannelName(
@@ -314,9 +313,9 @@ class SMAInverter: InverterViewModel{
                         case .spotChannels:
                             spotChannels.append(channelRecord)
                         case .parameterChannels:
-                            spotChannels.append(channelRecord)
+                            parameterChannels.append(channelRecord)
                         case .testChannels:
-                            spotChannels.append(channelRecord)
+                            testChannels.append(channelRecord)
                         default:
                             break
                         }
@@ -373,11 +372,12 @@ class SMAInverter: InverterViewModel{
                 var currentValues:[Measurement] = []
                 
                 for channel in channelsToRead{
-                    let channelNumber = channel.number!
                     
+                    let inverterNumber = Handle(model.number!)
+                    let channelNumber = Handle(channel.number!)
                     
                     var recordedTimeStamp = systemTimeStamp
-                    let onlineTimeStamp = GetChannelValueTimeStamp(Handle(channelNumber), number!)
+                    let onlineTimeStamp = GetChannelValueTimeStamp(channelNumber, inverterNumber)
                     if onlineTimeStamp > 0{
                         recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
                     }else{
@@ -388,13 +388,12 @@ class SMAInverter: InverterViewModel{
                     let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
                     
-                    let  yasdiResultCode:Int32 = GetChannelValue(Handle(channelNumber),
-                                                                 number!,
+                    let  yasdiResultCode:Int32 = GetChannelValue(channelNumber,
+                                                                 inverterNumber,
                                                                  currentValue,
                                                                  currentValueAsText,
                                                                  DWORD(MAXCSTRINGLENGTH),
                                                                  maxChannelAgeInSeconds)
-                    
                     
                     
                     if yasdiResultCode > -1 {
@@ -507,8 +506,6 @@ class SMAInverter: InverterViewModel{
                 
             }
         }
-        print(CSVSource) // replace with saved CSVFile
-        
     }
     
     private func searchData(forDate reportDate:Date)->[Row]?{

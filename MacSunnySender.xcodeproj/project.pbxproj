@@ -3624,6 +3624,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC9FC2231F38E5FD0000A6DD /* Build configuration list for PBXNativeTarget "MacSunnySender" */;
 			buildPhases = (
+				DC9BE95D1FD8965D00F8F173 /* ShellScript */,
 				DC2BA42B1F450050001D0744 /* Copy Files */,
 				DC9FC20D1F38E5FD0000A6DD /* Sources */,
 				DC4086711FBCD233000A9B4E /* Resources */,
@@ -3955,6 +3956,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC9BE95D1FD8965D00F8F173 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n#  Report Build Variables.sh\n#  JVCocoa\n#\n#  Created by Administrator on 28/04/14.\n#  Copyright (c) 2014 OneClick BVBA. All rights reserved.\n\n\necho \"＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿\"\necho \"BUILDING PRODUCT ${PRODUCT_NAME}\"\necho \"SRCROOT = ${SRCROOT}\"\necho \"BUILT_PRODUCTS_DIR = ${BUILT_PRODUCTS_DIR}\"\necho \"CONFIGURATION_BUILD_DIR = ${CONFIGURATION_BUILD_DIR}\"\necho \"DSTROOT = ${DSTROOT}\"\necho \"＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC9FC20D1F38E5FD0000A6DD /* Sources */ = {

@@ -1,6 +1,7 @@
-Test release version on server
+Async device detection yelds an error, Re-enable async device detection
 
-Re-enable async device detection
+Test release version on server from 12:15
+
 check 1 hour =  10KB of data (new start at 11:07 at 561 KB)
 
 compose real data for the emailbody from the data returned by select statement
