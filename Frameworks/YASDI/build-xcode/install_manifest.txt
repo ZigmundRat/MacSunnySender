@@ -1,0 +1,13 @@
+/usr/local/bin/yasdishell
+/usr/local/lib/libyasdi.1.8.1.dylib
+/usr/local/lib/libyasdi.1.dylib
+/usr/local/lib/libyasdi.dylib
+/usr/local/lib/libyasdimaster.1.8.1.dylib
+/usr/local/lib/libyasdimaster.1.dylib
+/usr/local/lib/libyasdimaster.dylib
+/usr/local/lib/libyasdi_drv_ip.1.8.1.dylib
+/usr/local/lib/libyasdi_drv_ip.1.dylib
+/usr/local/lib/libyasdi_drv_ip.dylib
+/usr/local/lib/libyasdi_drv_serial.1.8.1.dylib
+/usr/local/lib/libyasdi_drv_serial.1.dylib
+/usr/local/lib/libyasdi_drv_serial.dylib
