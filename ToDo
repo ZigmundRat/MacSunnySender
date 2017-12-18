@@ -1,13 +1,14 @@
-Async device detection yelds an error, Re-enable async device detection
+Test Async device detection
+Test Async value reading and storing
+Get polling date reimplemented
+Simplify the use of external framework
+Test release version on server
 
-Test release version on server from 12:15
-
-check 1 hour =  10KB of data (new start at 11:07 at 561 KB)
+Test the tableviews-datasource protocol
 
 compose real data for the emailbody from the data returned by select statement
 (mail is composed from valueColumns 15 minutes apart)
 
-Test the tableviews-datasource protocol
 
 
 
