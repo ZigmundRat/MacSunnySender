@@ -22,14 +22,16 @@ protocol InverterViewModel {
     
 }
 
+
 /// C-callback functions
 // Should always be declared global as pointer to a named function or to a unnamed closure!!!
 typealias callbackFunctionType = @convention(c) (TYASDIDetectionSub ,DWORD,DWORD) -> Void
-var callBackFunctionForYasdiDeviceDetectionEvents:callbackFunctionType = {(event: TYASDIDetectionSub, deviceHandle: DWORD, param1: DWORD)->()  in
+var callBackFunctionForYasdiEvents:callbackFunctionType = {(event: TYASDIDetectionSub, deviceHandle: DWORD, param1: DWORD)->()  in
     
     debugger.log(debugLevel: .Succes, "Callback function finally does get called 😁")
     switch event{
     case YASDI_EVENT_DEVICE_ADDED:
+        SMAInverter.createInverter(withHandle: deviceHandle)
         debugger.log(debugLevel:.Message ,"Device \(deviceHandle) added")
     case YASDI_EVENT_DEVICE_REMOVED:
         debugger.log(debugLevel:.Message,"Device \(deviceHandle) removed")
@@ -52,6 +54,7 @@ class SMAInverter: InverterViewModel{
         case allChannels
     }
     
+    public static var detectionTimer:Timer? = nil
     public static var inverters:[SMAInverter] = []
     public var model:Inverter!
     
@@ -72,57 +75,35 @@ class SMAInverter: InverterViewModel{
     private var testChannels:[Channel] = []
     
     class func handleAllYasdiEvents(){
-        yasdiMasterAddEventListener(&callBackFunctionForYasdiDeviceDetectionEvents, YASDI_EVENT_DEVICE_DETECTION)
-        //yasdiMasterAddEventListener(&callBackFunctionForYasdiEvents, YASDI_EVENT_CHANNEL_NEW_VALUE)
-        //yasdiMasterAddEventListener(&callBackFunctionForYasdiEvents, YASDI_EVENT_CHANNEL_VALUE_SET)
+        //        let callBackFunction: callbackFunctionType = {subEventType, param1, param2 in
+        //            print("Callback function gets called")
+        //        }
+        yasdiMasterAddEventListener(unsafeBitCast(callBackFunctionForYasdiEvents, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_DEVICE_DETECTION)
+        yasdiMasterAddEventListener(unsafeBitCast(callBackFunctionForYasdiEvents, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_NEW_VALUE)
+        yasdiMasterAddEventListener(unsafeBitCast(callBackFunctionForYasdiEvents, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_VALUE_SET)
+        
     }
     
-    class func createInverters(maxNumberToSearch maxNumber:Int){
-        if let devices:[Handle] = searchDevices(maxNumberToSearch:maxNumber){
-            for device in devices{
-                
-                var inverterModel = composeInverterModel(fromDevice:device)
-                
-                // Archive in SQL and
-                // complete the model-class with the PK from the SQlrecord
-                var  sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
-                let changedSQLRecords = sqlRecord.changeOrCreateRecord(matchFields: ["serial"])
-                inverterModel.inverterID = changedSQLRecords?.first?[0]
-                
-                let inverterViewModel = SMAInverter(model:inverterModel)
-                inverters.append(inverterViewModel)
-                
-                
-                // Automaticly create a document for each inverter that was found
-                NSDocumentController.shared.addDocument(Document(inverter:inverterViewModel))
-            }
-        }
+    class public func enableAsyncDeviceDetection(maxNumberToSearch:Int){
+        
+        detectionTimer = Timer.scheduledTimer(timeInterval: 30,
+                                              target: SMAInverter.self,
+                                              selector: #selector(SMAInverter.self.runAsyncDeviceDetection),
+                                              userInfo: maxNumberToSearch,
+                                              repeats: true)
+        
+        runAsyncDeviceDetection(timer:detectionTimer!) // Fire immediately to get things started already
+        
     }
     
-    class private func searchDevices(maxNumberToSearch maxNumber:Int)->[Handle]?{
+    @objc class public func runAsyncDeviceDetection(timer:Timer){
         
-        var devices:[Handle]? = nil
-        
-        var yasdiResultCode:Int32 = -1
-        print("deviceDetectionWillStart")
-        yasdiResultCode = DoStartDeviceDetection(CInt(maxNumber), 0);
-        
-        if yasdiResultCode > -1 {
+        if inverters.count <= 0{
+            print("WillDoDeviceDetection")
+            let maxNumberToSearch = CInt(timer.userInfo as! Int)
             
-            var yasdiResultCode:DWORD = 0
-            let deviceHandles:UnsafeMutablePointer<Handle> = UnsafeMutablePointer<Handle>.allocate(capacity:maxNumber)
-            yasdiResultCode = GetDeviceHandles(deviceHandles, DWORD(maxNumber))
-            if yasdiResultCode > 0 {
-                
-                // convert to a swift array of devicehandles
-                devices = []
-                let numberOfDevices = yasdiResultCode
-                for _ in 0..<numberOfDevices{
-                    devices!.append(deviceHandles.pointee)
-                    _ = deviceHandles.advanced(by: 1)
-                }
-            }
-        }else{
+            var yasdiResultCode:Int32 = -1
+            yasdiResultCode = DoStartDeviceDetection(maxNumberToSearch, 0);
             
             let errorCode = Int(yasdiResultCode)
             
@@ -139,11 +120,28 @@ class SMAInverter: InverterViewModel{
             
         }
         
-        return devices
+    }
+    
+    class func createInverter(withHandle handle:Handle){
+        
+        var inverterModel = composeInverterModel(fromHandle:handle)
+        
+        // Archive in SQL and
+        // complete the model-class with the PK from the SQlrecord
+        var  sqlRecord = JVSQliteRecord(data:inverterModel, in:dataBaseQueue)
+        let changedSQLRecords = sqlRecord.changeOrCreateRecord(matchFields: ["serial"])
+        inverterModel.inverterID = changedSQLRecords?.first?[0]
+        
+        let inverterViewModel = SMAInverter(model:inverterModel)
+        inverters.append(inverterViewModel)
+        
+        // Automaticly create a document for each inverter that was found
+        NSDocumentController.shared.addDocument(Document(inverter:inverterViewModel))
+     
     }
     
     
-    class private func composeInverterModel(fromDevice deviceHandle:Handle)->Inverter{
+    class private func composeInverterModel(fromHandle deviceHandle:Handle)->Inverter{
         
         var deviceSN:DWORD = 2000814023
         var deviceName:String = "WR46A-01 SN:2000814023"
