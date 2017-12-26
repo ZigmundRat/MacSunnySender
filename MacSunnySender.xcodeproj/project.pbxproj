@@ -61,7 +61,9 @@
 		DC2C69221FD721FF00F2248A /* JVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C647E1FD71DCF00F2248A /* JVView.swift */; };
 		DC2C69231FD721FF00F2248A /* JVWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C647F1FD71DCF00F2248A /* JVWindow.swift */; };
 		DC2C69241FD721FF00F2248A /* JVString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2C64801FD71DCF00F2248A /* JVString.swift */; };
+		DC6762A01FEC2EE1007E81F6 /* SunnyReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC67629F1FEC2EE1007E81F6 /* SunnyReporter.swift */; };
 		DC6A7F5F1F461A02002BD9A3 /* YasdiConfigFile.ini in Copy Files */ = {isa = PBXBuildFile; fileRef = DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */; };
+		DCDE90C61FF2A96400F4BD0C /* JVTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDE90C51FF2A96400F4BD0C /* JVTimer.swift */; };
 		DCF8BA2C1FD72EBF00D0D401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9FC21A1F38E5FD0000A6DD /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -492,7 +494,7 @@
 		DC2C60621FD71DCE00F2248A /* CompilerIdC.LinkFileList */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CompilerIdC.LinkFileList; sourceTree = "<group>"; };
 		DC2C60631FD71DCE00F2248A /* CMakeCCompilerId.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = CMakeCCompilerId.dia; sourceTree = "<group>"; };
 		DC2C60641FD71DCE00F2248A /* CompilerIdC-generated-files.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-generated-files.hmap"; sourceTree = "<group>"; };
-		DC2C60651FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C60651FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C60661FD71DCE00F2248A /* CompilerIdC.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = CompilerIdC.hmap; sourceTree = "<group>"; };
 		DC2C60671FD71DCE00F2248A /* CompilerIdC-own-target-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-own-target-headers.hmap"; sourceTree = "<group>"; };
 		DC2C60681FD71DCE00F2248A /* CompilerIdC-project-headers.hmap */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CompilerIdC-project-headers.hmap"; sourceTree = "<group>"; };
@@ -507,13 +509,13 @@
 		DC2C60731FD71DCE00F2248A /* feature_tests.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = feature_tests.bin; sourceTree = "<group>"; };
 		DC2C60741FD71DCE00F2248A /* feature_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = feature_tests.c; sourceTree = "<group>"; };
 		DC2C60751FD71DCE00F2248A /* TargetDirectories.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TargetDirectories.txt; sourceTree = "<group>"; };
-		DC2C60791FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
-		DC2C607B1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
-		DC2C607D1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
-		DC2C607F1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
-		DC2C60811FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
-		DC2C60831FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
-		DC2C60861FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C60791FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
+		DC2C607B1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
+		DC2C607D1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
+		DC2C607F1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
+		DC2C60811FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
+		DC2C60831FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
+		DC2C60861FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C60871FD71DCE00F2248A /* Script-AAAB9CBAC4214CE9AAFE3DC8.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Script-AAAB9CBAC4214CE9AAFE3DC8.sh"; sourceTree = "<group>"; };
 		DC2C608B1FD71DCE00F2248A /* minmap.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = minmap.d; sourceTree = "<group>"; };
 		DC2C608C1FD71DCE00F2248A /* smanet.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = smanet.o; sourceTree = "<group>"; };
@@ -583,24 +585,24 @@
 		DC2C60CC1FD71DCE00F2248A /* iorequest.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = iorequest.o; sourceTree = "<group>"; };
 		DC2C60CD1FD71DCE00F2248A /* getini.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = getini.d; sourceTree = "<group>"; };
 		DC2C60CE1FD71DCE00F2248A /* smadata_layer.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = smadata_layer.o; sourceTree = "<group>"; };
-		DC2C60CF1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C60CF1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C60D01FD71DCE00F2248A /* Script-B437F06ECE324D6D91B335D0.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Script-B437F06ECE324D6D91B335D0.sh"; sourceTree = "<group>"; };
 		DC2C60D41FD71DCE00F2248A /* yasdi_drv_ip.1.8.1.LinkFileList */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yasdi_drv_ip.1.8.1.LinkFileList; sourceTree = "<group>"; };
 		DC2C60D51FD71DCE00F2248A /* ip_generic.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = ip_generic.d; sourceTree = "<group>"; };
 		DC2C60D61FD71DCE00F2248A /* ip_generic.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = ip_generic.dia; sourceTree = "<group>"; };
 		DC2C60D71FD71DCE00F2248A /* yasdi_drv_ip.1.8.1_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdi_drv_ip.1.8.1_dependency_info.dat; sourceTree = "<group>"; };
 		DC2C60D81FD71DCE00F2248A /* ip_generic.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = ip_generic.o; sourceTree = "<group>"; };
-		DC2C60D91FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C60D91FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C60DA1FD71DCE00F2248A /* Script-76D98AD075504836B22543D6.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Script-76D98AD075504836B22543D6.sh"; sourceTree = "<group>"; };
 		DC2C60DE1FD71DCE00F2248A /* serial_posix.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = serial_posix.d; sourceTree = "<group>"; };
 		DC2C60DF1FD71DCE00F2248A /* serial_posix.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = serial_posix.dia; sourceTree = "<group>"; };
 		DC2C60E01FD71DCE00F2248A /* yasdi_drv_serial.1.8.1_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdi_drv_serial.1.8.1_dependency_info.dat; sourceTree = "<group>"; };
 		DC2C60E11FD71DCE00F2248A /* yasdi_drv_serial.1.8.1.LinkFileList */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yasdi_drv_serial.1.8.1.LinkFileList; sourceTree = "<group>"; };
 		DC2C60E21FD71DCE00F2248A /* serial_posix.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = serial_posix.o; sourceTree = "<group>"; };
-		DC2C60E31FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C60E31FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C60E41FD71DCE00F2248A /* Script-87B4830593CC4FE1A7AF6C22.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Script-87B4830593CC4FE1A7AF6C22.sh"; sourceTree = "<group>"; };
 		DC2C60E61FD71DCE00F2248A /* Script-914B876857DD442B9BB615D0.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Script-914B876857DD442B9BB615D0.sh"; sourceTree = "<group>"; };
-		DC2C60E71FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C60E71FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C60EB1FD71DCE00F2248A /* objman.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = objman.o; sourceTree = "<group>"; };
 		DC2C60EC1FD71DCE00F2248A /* main.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = main.o; sourceTree = "<group>"; };
 		DC2C60ED1FD71DCE00F2248A /* busevents.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = busevents.dia; sourceTree = "<group>"; };
@@ -648,14 +650,14 @@
 		DC2C61171FD71DCE00F2248A /* plant.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = plant.dia; sourceTree = "<group>"; };
 		DC2C61181FD71DCE00F2248A /* netdevice.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = netdevice.o; sourceTree = "<group>"; };
 		DC2C61191FD71DCE00F2248A /* main.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = main.dia; sourceTree = "<group>"; };
-		DC2C611A1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C611A1FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C611B1FD71DCE00F2248A /* Script-711E0C25DA4D445586ECB6FF.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Script-711E0C25DA4D445586ECB6FF.sh"; sourceTree = "<group>"; };
 		DC2C611F1FD71DCE00F2248A /* CommonShellUIMain.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; path = CommonShellUIMain.d; sourceTree = "<group>"; };
 		DC2C61201FD71DCE00F2248A /* CommonShellUIMain.dia */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommonShellUIMain.dia; sourceTree = "<group>"; };
 		DC2C61211FD71DCE00F2248A /* CommonShellUIMain.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = CommonShellUIMain.o; sourceTree = "<group>"; };
 		DC2C61221FD71DCE00F2248A /* yasdishell.LinkFileList */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = yasdishell.LinkFileList; sourceTree = "<group>"; };
 		DC2C61231FD71DCE00F2248A /* yasdishell_dependency_info.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = yasdishell_dependency_info.dat; sourceTree = "<group>"; };
-		DC2C61241FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = file; path = dgph; sourceTree = "<group>"; };
+		DC2C61241FD71DCE00F2248A /* dgph */ = {isa = PBXFileReference; lastKnownFileType = text; path = dgph; sourceTree = "<group>"; };
 		DC2C61251FD71DCE00F2248A /* cmake_install.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cmake_install.cmake; sourceTree = "<group>"; };
 		DC2C61261FD71DCE00F2248A /* CTestTestfile.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CTestTestfile.cmake; sourceTree = "<group>"; };
 		DC2C61271FD71DCE00F2248A /* yasdi.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = yasdi.xcodeproj; sourceTree = "<group>"; };
@@ -1440,6 +1442,7 @@
 		DC5D86341F50AEA2004FEF58 /* MacSunnySenderData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MacSunnySenderData.sqlite; sourceTree = "<group>"; };
 		DC60FB691F5A2AAD00FB380F /* Schermafbeelding 2017-08-20 om 10.33.57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Schermafbeelding 2017-08-20 om 10.33.57.png"; sourceTree = SOURCE_ROOT; };
 		DC64C7FD1F65D45500D9C377 /* SampleData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SampleData; sourceTree = "<group>"; };
+		DC67629F1FEC2EE1007E81F6 /* SunnyReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SunnyReporter.swift; path = MacSunnySender/MainWindow/SunnyReporter.swift; sourceTree = SOURCE_ROOT; };
 		DC6A7F571F460E76002BD9A3 /* YasdiConfigFile.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = YasdiConfigFile.ini; sourceTree = "<group>"; };
 		DC84666A1F5B33A500A98140 /* yasdiInstallNames.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = yasdiInstallNames.xcconfig; sourceTree = "<group>"; };
 		DC8D0E9E1F38FEB800FBE865 /* MacSunnySender-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacSunnySender-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1462,6 +1465,7 @@
 		DCB05FF81F498ADE00767FC7 /* WR46A-01.dti */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WR46A-01.dti"; sourceTree = "<group>"; };
 		DCB282F61F390F6D00E66CA1 /* SMADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMADriver.swift; sourceTree = "<group>"; };
 		DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMAInverter.swift; sourceTree = "<group>"; };
+		DCDE90C51FF2A96400F4BD0C /* JVTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JVTimer.swift; sourceTree = "<group>"; };
 		DCE0B1A91F48E313006A867E /* EmailClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailClient.swift; sourceTree = "<group>"; };
 		DCE6C6EA1F687375003D719B /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -3078,6 +3082,7 @@
 				DC2C646E1FD71DCF00F2248A /* JVStack.swift */,
 				DC2C646F1FD71DCF00F2248A /* JVCalculator.swift */,
 				DC2C64701FD71DCF00F2248A /* JVDebugger.swift */,
+				DCDE90C51FF2A96400F4BD0C /* JVTimer.swift */,
 				DC2C64711FD71DCF00F2248A /* ToDo */,
 				DC2C64721FD71DCF00F2248A /* JVGeometry.swift */,
 				DC2C64731FD71DCF00F2248A /* JVFullExtension.swift */,
@@ -3613,6 +3618,7 @@
 			children = (
 				DCB282F71F390F6D00E66CA1 /* SMAInverter.swift */,
 				DCB282F61F390F6D00E66CA1 /* SMADriver.swift */,
+				DC67629F1FEC2EE1007E81F6 /* SunnyReporter.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -3980,6 +3986,8 @@
 			files = (
 				DC2C69141FD721FF00F2248A /* JVBool.swift in Sources */,
 				DC2C69151FD721FF00F2248A /* JVImage.swift in Sources */,
+				DCDE90C61FF2A96400F4BD0C /* JVTimer.swift in Sources */,
+				DC6762A01FEC2EE1007E81F6 /* SunnyReporter.swift in Sources */,
 				DC2C69161FD721FF00F2248A /* JVTypeCasting.swift in Sources */,
 				DC2C69171FD721FF00F2248A /* JVSingleton protocol.swift in Sources */,
 				DC2C69181FD721FF00F2248A /* JVArray.swift in Sources */,

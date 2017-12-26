@@ -22,30 +22,62 @@ protocol InverterViewModel {
     
 }
 
-
 /// C-callback functions
 // Should always be declared global as pointer to a named function or to a unnamed closure!!!
-typealias callbackFunctionType = @convention(c) (TYASDIDetectionSub ,DWORD,DWORD) -> Void
-var callBackFunctionForYasdiEvents:callbackFunctionType = {(event: TYASDIDetectionSub, deviceHandle: DWORD, param1: DWORD)->()  in
+typealias deviceCallbackFunctionType = @convention(c) (TYASDIDetectionSub,DWORD,DWORD) -> Void
+var deviceCallBackFunction:deviceCallbackFunctionType = {(event: TYASDIDetectionSub, deviceHandle: DWORD, param1: DWORD)->()  in
     
-    debugger.log(debugLevel: .Succes, "Callback function finally does get called 😁")
+    let inverter = SMAInverter.Inverters.filter{$0.number == deviceHandle}.first
+    
     switch event{
     case YASDI_EVENT_DEVICE_ADDED:
         SMAInverter.createInverter(withHandle: deviceHandle)
-        debugger.log(debugLevel:.Message ,"Device \(deviceHandle) added")
+        if let inverterName = SMAInverter.Inverters.last?.name{
+            debugger.log(debugLevel: .Succes, "Inverter \(inverterName) found online")
+        }
     case YASDI_EVENT_DEVICE_REMOVED:
-        debugger.log(debugLevel:.Message,"Device \(deviceHandle) removed")
+        if let inverterName = inverter?.name, let index = SMAInverter.Inverters.index(of:inverter!){
+            SMAInverter.Inverters.remove(at:index)
+            debugger.log(debugLevel: .Message, "Inverter \(inverterName) was removed")
+        }
     case YASDI_EVENT_DEVICE_SEARCH_END:
-        debugger.log(debugLevel:.Message,"No more devices found")
+        debugger.log(debugLevel:.Succes,"All devices found")
     case YASDI_EVENT_DOWNLOAD_CHANLIST:
-        debugger.log(debugLevel:.Message,"Channels downloaded")
+        if param1 < 100{
+            debugger.log(debugLevel:.Message,"\(param1)% of channels downloaded")
+        }else{
+            debugger.log(debugLevel:.Succes,"All channels downloaded")
+            inverter?.startAsyncValueReading()
+        }
     default:
         debugger.log(debugLevel:.Error,"Unkwown event occured during async device detection")
     }
     
 }
 
-class SMAInverter: InverterViewModel{
+typealias valueCallbackFunctionType =  @convention(c)(DWORD,DWORD,UnsafeMutablePointer<Double>,UnsafeMutablePointer<CChar>,Int) -> Void
+var valueCallBackFunction:valueCallbackFunctionType = {(handle:DWORD, dDeviceHandle:DWORD, value:UnsafeMutablePointer<Double>,valueAsText:UnsafeMutablePointer<CChar>,erorrcode:Int)->() in
+    
+    print("A new value of \(value.pointee) was detected for channel \(handle)")
+    
+    let inverter = SMAInverter.Inverters.filter{$0.number == dDeviceHandle}.first
+    inverter?.processMeasurement(device:dDeviceHandle, channel:handle, value:value.pointee)
+}
+
+class SMAInverter: InverterViewModel, Equatable{
+    
+    static func ==(lhs: SMAInverter, rhs: SMAInverter) -> Bool {
+        return (lhs.number == rhs.number) && (lhs.serial == rhs.serial)
+    }
+    
+    typealias ID = Int
+    
+    enum InverterState:Int{
+        case Offline
+        case Online
+        case Ready
+        case Active
+    }
     
     enum ChannelsType:UInt32{
         case spotChannels
@@ -54,8 +86,9 @@ class SMAInverter: InverterViewModel{
         case allChannels
     }
     
-    public static var detectionTimer:Timer? = nil
-    public static var inverters:[SMAInverter] = []
+    //    public static var DetectionTimer:Timer? = nil
+    public static var Inverters:[SMAInverter] = []
+    
     public var model:Inverter!
     
     var serial: Int?{return model.serial}
@@ -67,59 +100,125 @@ class SMAInverter: InverterViewModel{
     public var parameterValues:[Measurement]? = nil // These values will eventually be displayed by the parameterViewcontroller
     public var testValues:[Measurement]? = nil // These values will not be displayed for now
     
-    private var pollingTimer: Timer! = nil
-    
-    typealias ID = Int
+    private var pollingTimer:Timer? = nil
     private var spotChannels:[Channel] = []
     private var parameterChannels:[Channel] = []
     private var testChannels:[Channel] = []
     
-    class func handleAllYasdiEvents(){
-        //        let callBackFunction: callbackFunctionType = {subEventType, param1, param2 in
-        //            print("Callback function gets called")
-        //        }
-        yasdiMasterAddEventListener(unsafeBitCast(callBackFunctionForYasdiEvents, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_DEVICE_DETECTION)
-        yasdiMasterAddEventListener(unsafeBitCast(callBackFunctionForYasdiEvents, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_NEW_VALUE)
-        yasdiMasterAddEventListener(unsafeBitCast(callBackFunctionForYasdiEvents, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_VALUE_SET)
+    class public func startAsyncDeviceDetection(maxNumberToSearch:Int){
         
-    }
-    
-    class public func enableAsyncDeviceDetection(maxNumberToSearch:Int){
+        yasdiMasterAddEventListener(unsafeBitCast(deviceCallBackFunction, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_DEVICE_DETECTION)
         
-        detectionTimer = Timer.scheduledTimer(timeInterval: 30,
-                                              target: SMAInverter.self,
-                                              selector: #selector(SMAInverter.self.runAsyncDeviceDetection),
-                                              userInfo: maxNumberToSearch,
-                                              repeats: true)
+        var yasdiResultCode:Int32 = -1
+        yasdiResultCode = DoStartDeviceDetection(CInt(maxNumberToSearch), 0)
         
-        runAsyncDeviceDetection(timer:detectionTimer!) // Fire immediately to get things started already
-        
-    }
-    
-    @objc class public func runAsyncDeviceDetection(timer:Timer){
-        
-        if inverters.count <= 0{
-            print("WillDoDeviceDetection")
-            let maxNumberToSearch = CInt(timer.userInfo as! Int)
-            
-            var yasdiResultCode:Int32 = -1
-            yasdiResultCode = DoStartDeviceDetection(maxNumberToSearch, 0);
-            
-            let errorCode = Int(yasdiResultCode)
-            
-            switch errorCode {
-            case YE_OK:
-                debugger.log(debugLevel: .Message, "Device detection started")
-            case YE_INVAL_ARGUMENT:
-                debugger.log(debugLevel: .Error, "Invalid device count for device detection")
-            case YE_DEV_DETECT_IN_PROGRESS:
-                debugger.log(debugLevel: .Warning, "Device detection was already running...")
-            default:
-                break
-            }
-            
+        let errorCode = Int(yasdiResultCode)
+        switch errorCode {
+        case YE_OK:
+            debugger.log(debugLevel: .Message, "Device detection started")
+        case YE_DEV_DETECT_IN_PROGRESS:
+            debugger.log(debugLevel: .Warning, "Device detection is already running...")
+        case YE_NOT_ALL_DEVS_FOUND:
+            debugger.log(debugLevel: .Error, "Not all devices found...")
+        default:
+            break
         }
         
+        //        DetectionTimer = Timer.startOnMainThread(timeInterval: 30,
+        //                                                 target: SMAInverter.self,
+        //                                                 selector: #selector(SMAInverter.manageDevices),
+        //                                                 userInfo: maxNumberToSearch,
+        //                                                 fireDirect: true,
+        //                                                 repeats: true)
+    }
+    
+    class public func stopAsyncDeviceDetection(){
+        
+        var yasdiResultCode:Int32 = -1
+        yasdiResultCode = DoStopDeviceDetection()
+        
+        let errorCode = Int(yasdiResultCode)
+        switch errorCode {
+        case YE_OK:
+            debugger.log(debugLevel: .Message, "Device detection ended")
+        default:
+            break
+        }
+        
+        yasdiMasterRemEventListener(unsafeBitCast(deviceCallBackFunction, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_DEVICE_DETECTION)
+        
+        //        DetectionTimer?.invalidate()
+        //        DetectionTimer = nil
+    }
+    
+    public func startAsyncValueReading(){
+        
+        yasdiMasterAddEventListener(unsafeBitCast(valueCallBackFunction, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_NEW_VALUE)
+        //        yasdiMasterAddEventListener(unsafeBitCast(valueCallBackFunction, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_VALUE_SET)
+        
+        // Sample spotvalues at a fixed time interval (30seconds here)
+        pollingTimer = Timer.startOnMainThread(timeInterval: 1,
+                                               target: self,
+                                               selector:#selector(readValues),
+                                               userInfo: ChannelsType.spotChannels,
+                                               fireDirect: true,
+                                               repeats: true)
+        
+    }
+    
+    public func stopAsyncValueReading(){
+        
+        yasdiMasterRemEventListener(unsafeBitCast(valueCallBackFunction, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_NEW_VALUE)
+        //        yasdiMasterRemEventListener(unsafeBitCast(valueCallBackFunction, to: UnsafeMutableRawPointer.self) , YASDI_EVENT_CHANNEL_VALUE_SET)
+        
+        pollingTimer?.invalidate()
+        pollingTimer = nil
+    }
+    
+//    @objc class public func manageDevices(timer:Timer){
+//        
+//        
+//        if itsDayTime{
+//            
+//            // During daytime: try to find the maximum number of Inverters available in the system
+//            let maxNumberToSearch = CInt(timer.userInfo as! Int)
+//            if Inverters.count < maxNumberToSearch{
+//                
+//            }
+//            
+//        }else{
+//            
+//            // During nightTime: remove all existing devices from the system
+//            if SMAInverter.Inverters.count > 0 {
+//                for inverter in SMAInverter.Inverters{
+//                    if let deviceHandle = inverter.number{
+//                        var yasdiResultCode:Int32 = -1
+//                        yasdiResultCode = RemoveDevice(deviceHandle)
+//                        let errorCode = Int(yasdiResultCode)
+//                        switch errorCode {
+//                        case YE_NO_ERROR:
+//                            break
+//                        default:
+//                            debugger.log(debugLevel: .Error, "Device \(deviceHandle) couldn't be removed from the system")
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        
+//    }
+    
+    private class var itsDayTime:Bool{
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeZone = TimeZone.current
+        timeFormatter.dateFormat = "HH:mm:ss" // Local time string
+        
+        let systemTimeStamp = Date()
+        let currentLocalHour = Calendar.current.component(Calendar.Component.hour, from: systemTimeStamp)
+        
+        // Only record dat between 06:00 and 22:59
+        return (6...22) ~= currentLocalHour
     }
     
     class func createInverter(withHandle handle:Handle){
@@ -133,11 +232,11 @@ class SMAInverter: InverterViewModel{
         inverterModel.inverterID = changedSQLRecords?.first?[0]
         
         let inverterViewModel = SMAInverter(model:inverterModel)
-        inverters.append(inverterViewModel)
+        Inverters.append(inverterViewModel)
         
         // Automaticly create a document for each inverter that was found
         NSDocumentController.shared.addDocument(Document(inverter:inverterViewModel))
-     
+        
     }
     
     
@@ -151,7 +250,7 @@ class SMAInverter: InverterViewModel{
         let deviceSNvar: UnsafeMutablePointer<DWORD> = UnsafeMutablePointer<DWORD>.allocate(capacity: 1)
         yasdiResultCode = GetDeviceSN(deviceHandle,
                                       deviceSNvar)
-        if yasdiResultCode > -1 {
+        if yasdiResultCode >= YE_OK {
             deviceSN = deviceSNvar.pointee
         }
         
@@ -159,7 +258,7 @@ class SMAInverter: InverterViewModel{
         yasdiResultCode = GetDeviceName(deviceHandle,
                                         deviceNameVar,
                                         Int32(MAXCSTRINGLENGTH))
-        if yasdiResultCode > -1 {
+        if yasdiResultCode >= YE_OK {
             deviceName = String(cString:deviceNameVar)
         }
         
@@ -167,11 +266,11 @@ class SMAInverter: InverterViewModel{
         yasdiResultCode = GetDeviceType(deviceHandle,
                                         deviceTypeVar,
                                         Int32(MAXCSTRINGLENGTH))
-        if yasdiResultCode > -1 {
+        if yasdiResultCode >= YE_OK {
             deviceType = String(cString: deviceTypeVar)
         }
         
-        let inverterRecord = Inverter(
+        let inverterRecord:Inverter = Inverter(
             inverterID: nil,
             serial: Int(deviceSN),
             number: deviceHandle,
@@ -189,18 +288,7 @@ class SMAInverter: InverterViewModel{
         
         // Read all channels just once
         readChannels(maxNumberToSearch: 30, channelType: .allChannels)
-        
-        // Sample spotvalues at a fixed time interval (30seconds here)
-        pollingTimer = Timer.scheduledTimer(timeInterval: 30,
-                                            target: self,
-                                            selector: #selector(self.readValues),
-                                            userInfo: ChannelsType.spotChannels,
-                                            repeats: true
-        )
-        
-        debugger.log(debugLevel: .Succes, "Inverter \(name!) found online")
     }
-    
     
     private func readChannels(maxNumberToSearch:Int, channelType:ChannelsType = .allChannels){
         
@@ -245,12 +333,12 @@ class SMAInverter: InverterViewModel{
                             DWORD(MAXCSTRINGLENGTH)
                         )
                         
-                        if yasdiResultCode > -1 {
+                        if yasdiResultCode >= YE_OK {
                             
                             let unit: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                             yasdiResultCode = GetChannelUnit(Handle(channelNumber), unit, DWORD(MAXCSTRINGLENGTH))
                             
-                            if yasdiResultCode > -1 {
+                            if yasdiResultCode >= YE_OK {
                                 
                                 // Create the model
                                 var channelRecord = Channel(
@@ -318,6 +406,8 @@ class SMAInverter: InverterViewModel{
                             break
                         }
                     }
+                    
+                    startAsyncValueReading()
                 }
                 
             }else{
@@ -343,11 +433,8 @@ class SMAInverter: InverterViewModel{
         timeFormatter.timeZone = TimeZone.current
         timeFormatter.dateFormat = "HH:mm:ss" // Local time string
         
-        let systemTimeStamp = Date()
-        let currentLocalHour = Calendar.current.component(Calendar.Component.hour, from: systemTimeStamp)
-        
-        // Only record dat between 06:00 and 22:59
-        if (6...22) ~= currentLocalHour{
+        // Only record data between 06:00 and 22:59
+        if SMAInverter.itsDayTime{
             
             var channelTypesToRead = [channelType]
             if channelType == .allChannels{
@@ -367,165 +454,81 @@ class SMAInverter: InverterViewModel{
                     channelsToRead = spotChannels + parameterChannels + testChannels
                 }
                 
-                var currentValues:[Measurement] = []
-                
                 for channel in channelsToRead{
                     
                     let inverterNumber = Handle(model.number!)
                     let channelNumber = Handle(channel.number!)
-                    
-                    var recordedTimeStamp = systemTimeStamp
-                    let onlineTimeStamp = GetChannelValueTimeStamp(channelNumber, inverterNumber)
-                    if onlineTimeStamp > 0{
-                        recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
-                    }else{
-                        debugger.log(debugLevel: .Error, "Error reading timestamp of channel number \(channelNumber)")
-                    }
-                    
-                    let currentValue:UnsafeMutablePointer<Double> = UnsafeMutablePointer<Double>.allocate(capacity: 1)
-                    let currentValueAsText: UnsafeMutablePointer<CChar> = UnsafeMutablePointer<CChar>.allocate(capacity: MAXCSTRINGLENGTH)
                     let maxChannelAgeInSeconds:DWORD = 5
-                    
-                    let  yasdiResultCode:Int32 = GetChannelValue(channelNumber,
-                                                                 inverterNumber,
-                                                                 currentValue,
-                                                                 currentValueAsText,
-                                                                 DWORD(MAXCSTRINGLENGTH),
-                                                                 maxChannelAgeInSeconds)
+                    let  yasdiResultCode:Int32 = GetChannelValueAsync(channelNumber,
+                                                                      inverterNumber,
+                                                                      maxChannelAgeInSeconds)
                     
                     
-                    if yasdiResultCode > -1 {
-                        
-                        // Create the model
-                        var measurementRecord = Measurement(
-                            measurementID: nil,
-                            samplingTime: timeFormatter.string(from: systemTimeStamp),
-                            timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
-                            date: dateFormatter.string(from: recordedTimeStamp),
-                            time: timeFormatter.string(from: recordedTimeStamp),
-                            value: currentValue.pointee,
-                            channelID: channel.channelID
-                        )
-                        
-                        // Archive in SQL and
-                        // complete the model-class with the PK from the SQlrecord
-                        var sqlRecord = JVSQliteRecord(data:measurementRecord, in:dataBaseQueue)
-                        let changedSQLRecords = sqlRecord.createRecord()
-                        measurementRecord.channelID = changedSQLRecords?.first?[0]
-                        
-                        currentValues.append(measurementRecord)
-                        
-                    }else{
-                        
-                        var errorType:String
-                        switch yasdiResultCode {
-                        case -1:
-                            errorType = "Invalid handle"
-                        case -2:
-                            errorType = "YASDI shutdown"
-                        case -3:
-                            errorType = "Timeout"
-                        case -4:
-                            errorType = "Invalid value"
-                        case -5:
-                            errorType = "Permissions"
-                        default:
-                            errorType = "Unknown"
-                        }
-                        debugger.log(debugLevel: .Error, "\(errorType)-error while reading value of channel number \(channelNumber)")
-                        
+                    let errorCode = Int(yasdiResultCode)
+                    switch errorCode {
+                    case YE_OK:
+                        debugger.log(debugLevel: .Message, "Start reading a new value from channel \(channelNumber)")
+                    case YE_UNKNOWN_HANDLE:
+                        break
+                    case YE_NO_ACCESS_RIGHTS:
+                        break
+                    default:
+                        break
                     }
                     
                 }
-                
-                // Divide all channels found, by channeltype
-                switch  typeToRead{
-                case .spotChannels:
-                    measurementValues = currentValues
-                case .parameterChannels:
-                    parameterValues = currentValues
-                case .testChannels:
-                    testValues = currentValues
-                default:
-                    break
-                }
-                
             }
-            
         }
     }
     
-    public func saveCsvFile(forDate dateQueried: String){
+    fileprivate func processMeasurement(device deviceHandle:Handle, channel channelHandle:Handle, value:Double){
+        
+        //        let channelType = timer.userInfo as! ChannelsType
+        
+        let sqlTimeStampFormatter = DateFormatter()
+        sqlTimeStampFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ" // GMT date string in SQL-format
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
         
-        var CSVSource = """
-                SUNNY-MAIL
-                Version    1.2
-                Source    SDC
-                Date    01/12/2017
-                Language    EN
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeZone = TimeZone.current
+        timeFormatter.dateFormat = "HH:mm:ss" // Local time string
         
-                Type    Serialnumber    Channel    Date    DailyValue    10:47:06    11:02:06
-        """
+        let systemTimeStamp = Date()
         
-        let dataSeperator = ";"
-        
-        if let dailyRecords = searchData(forDate: Date()){
-            let columNamesToReport = ["Type","SerialNumber","Channel","Date","DailyValue","valueColumns"]
+        var recordedTimeStamp = systemTimeStamp
+        let onlineTimeStamp = GetChannelValueTimeStamp(channelHandle, deviceHandle)
+        if onlineTimeStamp > 0{
+            recordedTimeStamp = Date(timeIntervalSince1970:TimeInterval(onlineTimeStamp))
             
-            if let firstRecordedTime = dateFormatter.date(from: (dailyRecords.first!["samplingTime"])!){
-                
-                var timeToReport = firstRecordedTime
-                
-                for record in dailyRecords{
-                    let recordedTime = dateFormatter.date(from: (record["samplingTime"])!)
-                    
-                    if recordedTime?.compare(timeToReport) == ComparisonResult.orderedAscending{
-                        // Not there yet
-                    }else if recordedTime?.compare(timeToReport) == ComparisonResult.orderedDescending{
-                        // Shooting past the interval, point to the next higher interval
-                        while recordedTime?.compare(timeToReport) == ComparisonResult.orderedDescending{
-                            timeToReport = timeToReport.addingTimeInterval(15*60)
-                        }
-                        // and give it a second shot
-                        if recordedTime?.compare(timeToReport) == ComparisonResult.orderedSame{
-                            // recordsToReport.append(record)
-                        }
-                    }else{
-                        // When it was recorded at the exact time-interval
-                        // Put the record in the report
-                        // recordsToReport.append(record)
-                    }
-                    
-                }
-                
-            }
+            // Create the model
+            var measurementRecord = Measurement(
+                measurementID: nil,
+                samplingTime: timeFormatter.string(from: systemTimeStamp),
+                timeStamp: sqlTimeStampFormatter.string(from: recordedTimeStamp),
+                date: dateFormatter.string(from: recordedTimeStamp),
+                time: timeFormatter.string(from: recordedTimeStamp),
+                value: value,
+                channelID: Int(channelHandle)
+            )
+            
+            // Archive in SQL and
+            // complete the model-class with the PK from the SQlrecord
+            var sqlRecord = JVSQliteRecord(data:measurementRecord, in:dataBaseQueue)
+            let changedSQLRecords = sqlRecord.createRecord()
+            measurementRecord.channelID = changedSQLRecords?.first?[0]
+            
+        }else{
+            debugger.log(debugLevel: .Error, "Error reading timestamp of channel number \(channelHandle)")
         }
+        
+        
+        
     }
-    
-    private func searchData(forDate reportDate:Date)->[Row]?{
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "dd-MM-yyyy" // Local date string
-        
-        let searchRequest = Measurement(
-            measurementID: nil,
-            samplingTime: nil,
-            timeStamp: nil,
-            date: dateFormatter.string(from: reportDate),
-            time: nil,
-            value: nil,
-            channelID: nil
-        )
-        
-        var dailyRequest = JVSQliteRecord(data:searchRequest, in:dataBaseQueue)
-        
-        return dailyRequest.findRecords()
-    }
-    
     
 }
+
+
+

@@ -42,8 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 doTempCodeTesting()
             #endif
             
-            SMAInverter.handleAllYasdiEvents()
-            SMAInverter.enableAsyncDeviceDetection(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
+            SMAInverter.startAsyncDeviceDetection(maxNumberToSearch: PrefsWindowController.sharedInstance.maxNumberOfInvertersInPlant)
         }
         
     }
@@ -51,7 +50,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         
         // Insert code here to tear down your application
+        SMAInverter.stopAsyncDeviceDetection()
         SMADriver.unInstallDrivers()
+        
         yasdiMasterShutdown()
         
     }

@@ -1,6 +1,8 @@
-Test Async device detection
-Test Async value reading and storing
-Get polling date reimplemented
+Test Async value reading and storing:
+remove detectionTimer
+remove print statement
+
+
 Simplify the use of external framework
 Test release version on server
 

@@ -25,8 +25,8 @@ class Document: NSDocument {
     convenience override init(){
         
         self.init(inverter:nil)
-        if (!SMAInverter.inverters.isEmpty) && (docNumber <= SMAInverter.inverters.lastIndex!){
-            self.inverter = SMAInverter.inverters[docNumber]
+        if (!SMAInverter.Inverters.isEmpty) && (docNumber <= SMAInverter.Inverters.lastIndex!){
+            self.inverter = SMAInverter.Inverters[docNumber]
         }
         
     }
